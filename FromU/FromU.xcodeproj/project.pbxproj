@@ -7,15 +7,44 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57D2FA699169EC547E2A490D /* Pods_FromU_FromUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288984F8A76FF21EC70077CC /* Pods_FromU_FromUUITests.framework */; };
 		5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */; };
 		5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */; };
-		5E84C68E29A50D7F00F5BA81 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68D29A50D7F00F5BA81 /* ViewController.swift */; };
+		5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */; };
 		5E84C69129A50D7F00F5BA81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C68F29A50D7F00F5BA81 /* Main.storyboard */; };
 		5E84C69329A50D8000F5BA81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C69229A50D8000F5BA81 /* Assets.xcassets */; };
 		5E84C69629A50D8000F5BA81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C69429A50D8000F5BA81 /* LaunchScreen.storyboard */; };
 		5E84C6A129A50D8000F5BA81 /* FromUTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C6A029A50D8000F5BA81 /* FromUTests.swift */; };
 		5E84C6AB29A50D8000F5BA81 /* FromUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C6AA29A50D8000F5BA81 /* FromUUITests.swift */; };
 		5E84C6AD29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C6AC29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift */; };
+		5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */; };
+		5E84C70229A6380D00F5BA81 /* MySpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */; };
+		5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70329A6381900F5BA81 /* Mailbox.storyboard */; };
+		5E84C70629A6382100F5BA81 /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70529A6382100F5BA81 /* MailboxViewController.swift */; };
+		5E84C70829A6383200F5BA81 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70729A6383200F5BA81 /* Calendar.storyboard */; };
+		5E84C70A29A6383900F5BA81 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70929A6383900F5BA81 /* CalendarViewController.swift */; };
+		5E84C70E29A6386100F5BA81 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70D29A6386100F5BA81 /* Diary.storyboard */; };
+		5E84C71029A6386C00F5BA81 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */; };
+		5E84C71329A6498400F5BA81 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C71229A6498400F5BA81 /* UIView.swift */; };
+		5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */; };
+		5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */; };
+		5EB3CA6829A8C435004DF5AA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */; };
+		5EB3CA6929A8C437004DF5AA /* Pretendard-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6529A8C07B004DF5AA /* Pretendard-ExtraBold.otf */; };
+		5EB3CA6A29A8C439004DF5AA /* Pretendard-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6129A8C07A004DF5AA /* Pretendard-ExtraLight.otf */; };
+		5EB3CA6B29A8C43B004DF5AA /* Pretendard-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA5F29A8C07A004DF5AA /* Pretendard-Light.otf */; };
+		5EB3CA6C29A8C43E004DF5AA /* Pretendard-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA5E29A8C07A004DF5AA /* Pretendard-Medium.otf */; };
+		5EB3CA6D29A8C440004DF5AA /* Pretendard-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6429A8C07B004DF5AA /* Pretendard-Regular.otf */; };
+		5EB3CA6E29A8C442004DF5AA /* Pretendard-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6029A8C07A004DF5AA /* Pretendard-SemiBold.otf */; };
+		5EB3CA6F29A8C444004DF5AA /* Pretendard-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6229A8C07A004DF5AA /* Pretendard-Thin.otf */; };
+		5EB3CA7029A8C446004DF5AA /* EF_Diary.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA5D29A8BF9E004DF5AA /* EF_Diary.ttf */; };
+		5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7129A8C4B3004DF5AA /* UIViewController.swift */; };
+		5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7329A8C651004DF5AA /* UIColor.swift */; };
+		5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */; };
+		5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */; };
+		5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */; };
+		5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEC2E029A66B9800CB809E /* testViewController.swift */; };
+		889059C238B5448A4402FF92 /* Pods_FromUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */; };
+		8C3225FD65C8F6386A8AA8A0 /* Pods_FromU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891A2042572B9CF7B069BE6B /* Pods_FromU.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,10 +65,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		288984F8A76FF21EC70077CC /* Pods_FromU_FromUUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromU_FromUUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		404C7B44A349F42168ED2A57 /* Pods-FromU-FromUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.debug.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		45BFAD8461DCD57B5BE22C30 /* Pods-FromUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromUTests.debug.xcconfig"; path = "Target Support Files/Pods-FromUTests/Pods-FromUTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5E84C68629A50D7F00F5BA81 /* FromU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FromU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5E84C68D29A50D7F00F5BA81 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		5E84C69029A50D7F00F5BA81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5E84C69229A50D8000F5BA81 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5E84C69529A50D8000F5BA81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +82,37 @@
 		5E84C6A629A50D8000F5BA81 /* FromUUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FromUUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E84C6AA29A50D8000F5BA81 /* FromUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromUUITests.swift; sourceTree = "<group>"; };
 		5E84C6AC29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromUUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MySpace.storyboard; sourceTree = "<group>"; };
+		5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceViewController.swift; sourceTree = "<group>"; };
+		5E84C70329A6381900F5BA81 /* Mailbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mailbox.storyboard; sourceTree = "<group>"; };
+		5E84C70529A6382100F5BA81 /* MailboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
+		5E84C70729A6383200F5BA81 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
+		5E84C70929A6383900F5BA81 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		5E84C70D29A6386100F5BA81 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
+		5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		5E84C71229A6498400F5BA81 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfoViewController.swift; sourceTree = "<group>"; };
+		5EB3CA5D29A8BF9E004DF5AA /* EF_Diary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EF_Diary.ttf; sourceTree = "<group>"; };
+		5EB3CA5E29A8C07A004DF5AA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
+		5EB3CA5F29A8C07A004DF5AA /* Pretendard-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Light.otf"; sourceTree = "<group>"; };
+		5EB3CA6029A8C07A004DF5AA /* Pretendard-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-SemiBold.otf"; sourceTree = "<group>"; };
+		5EB3CA6129A8C07A004DF5AA /* Pretendard-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraLight.otf"; sourceTree = "<group>"; };
+		5EB3CA6229A8C07A004DF5AA /* Pretendard-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Thin.otf"; sourceTree = "<group>"; };
+		5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Bold.otf"; sourceTree = "<group>"; };
+		5EB3CA6429A8C07B004DF5AA /* Pretendard-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Regular.otf"; sourceTree = "<group>"; };
+		5EB3CA6529A8C07B004DF5AA /* Pretendard-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-ExtraBold.otf"; sourceTree = "<group>"; };
+		5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Black.otf"; sourceTree = "<group>"; };
+		5EB3CA7129A8C4B3004DF5AA /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		5EB3CA7329A8C651004DF5AA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBirthDayViewController.swift; sourceTree = "<group>"; };
+		5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGenderViewController.swift; sourceTree = "<group>"; };
+		5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingInfo.storyboard; sourceTree = "<group>"; };
+		5EBEC2E029A66B9800CB809E /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
+		68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.release.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.release.xcconfig"; sourceTree = "<group>"; };
+		891A2042572B9CF7B069BE6B /* Pods_FromU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A991ACB7CE4E4F7F0F13BB81 /* Pods-FromU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU.release.xcconfig"; path = "Target Support Files/Pods-FromU/Pods-FromU.release.xcconfig"; sourceTree = "<group>"; };
+		B5633EDA532234155B1BBAF6 /* Pods-FromUTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromUTests.release.xcconfig"; path = "Target Support Files/Pods-FromUTests/Pods-FromUTests.release.xcconfig"; sourceTree = "<group>"; };
+		CBA7C182C7CC572943350C73 /* Pods-FromU.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU.debug.xcconfig"; path = "Target Support Files/Pods-FromU/Pods-FromU.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C3225FD65C8F6386A8AA8A0 /* Pods_FromU.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				889059C238B5448A4402FF92 /* Pods_FromUTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +136,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57D2FA699169EC547E2A490D /* Pods_FromU_FromUUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54B26276D35E620A9F70680D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CBA7C182C7CC572943350C73 /* Pods-FromU.debug.xcconfig */,
+				A991ACB7CE4E4F7F0F13BB81 /* Pods-FromU.release.xcconfig */,
+				404C7B44A349F42168ED2A57 /* Pods-FromU-FromUUITests.debug.xcconfig */,
+				68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */,
+				45BFAD8461DCD57B5BE22C30 /* Pods-FromUTests.debug.xcconfig */,
+				B5633EDA532234155B1BBAF6 /* Pods-FromUTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5E84C67D29A50D7F00F5BA81 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +163,8 @@
 				5E84C69F29A50D8000F5BA81 /* FromUTests */,
 				5E84C6A929A50D8000F5BA81 /* FromUUITests */,
 				5E84C68729A50D7F00F5BA81 /* Products */,
+				54B26276D35E620A9F70680D /* Pods */,
+				A29AD87B94AFD27802CED433 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,13 +181,15 @@
 		5E84C68829A50D7F00F5BA81 /* FromU */ = {
 			isa = PBXGroup;
 			children = (
+				5E84C6F529A6364D00F5BA81 /* Configuration */,
+				5E84C6F629A6365800F5BA81 /* Util */,
+				5E84C6F729A6366400F5BA81 /* Source */,
 				5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */,
 				5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */,
-				5E84C68D29A50D7F00F5BA81 /* ViewController.swift */,
-				5E84C68F29A50D7F00F5BA81 /* Main.storyboard */,
 				5E84C69229A50D8000F5BA81 /* Assets.xcassets */,
 				5E84C69429A50D8000F5BA81 /* LaunchScreen.storyboard */,
 				5E84C69729A50D8000F5BA81 /* Info.plist */,
+				5EB3CA5C29A8BF89004DF5AA /* Fonts */,
 			);
 			path = FromU;
 			sourceTree = "<group>";
@@ -127,6 +211,144 @@
 			path = FromUUITests;
 			sourceTree = "<group>";
 		};
+		5E84C6F529A6364D00F5BA81 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
+		5E84C6F629A6365800F5BA81 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C71129A6497200F5BA81 /* Extension */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		5E84C6F729A6366400F5BA81 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C6FA29A6368E00F5BA81 /* TabBar */,
+				5E84C6F829A6367500F5BA81 /* Auth */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		5E84C6F829A6367500F5BA81 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				5EBEC2DB29A653F300CB809E /* SettingInfo */,
+				5E84C6F929A6368100F5BA81 /* Login */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		5E84C6F929A6368100F5BA81 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */,
+				5E84C68F29A50D7F00F5BA81 /* Main.storyboard */,
+				5EBEC2E029A66B9800CB809E /* testViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		5E84C6FA29A6368E00F5BA81 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C6FB29A636EC00F5BA81 /* Diary */,
+				5E84C6FC29A636F500F5BA81 /* Calendar */,
+				5E84C6FD29A636FE00F5BA81 /* Mailbox */,
+				5E84C6FE29A6373B00F5BA81 /* MySpace */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		5E84C6FB29A636EC00F5BA81 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C70D29A6386100F5BA81 /* Diary.storyboard */,
+				5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		5E84C6FC29A636F500F5BA81 /* Calendar */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C70729A6383200F5BA81 /* Calendar.storyboard */,
+				5E84C70929A6383900F5BA81 /* CalendarViewController.swift */,
+			);
+			path = Calendar;
+			sourceTree = "<group>";
+		};
+		5E84C6FD29A636FE00F5BA81 /* Mailbox */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C70329A6381900F5BA81 /* Mailbox.storyboard */,
+				5E84C70529A6382100F5BA81 /* MailboxViewController.swift */,
+			);
+			path = Mailbox;
+			sourceTree = "<group>";
+		};
+		5E84C6FE29A6373B00F5BA81 /* MySpace */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */,
+				5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */,
+			);
+			path = MySpace;
+			sourceTree = "<group>";
+		};
+		5E84C71129A6497200F5BA81 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				5E84C71229A6498400F5BA81 /* UIView.swift */,
+				5EB3CA7129A8C4B3004DF5AA /* UIViewController.swift */,
+				5EB3CA7329A8C651004DF5AA /* UIColor.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		5EB3CA5C29A8BF89004DF5AA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */,
+				5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */,
+				5EB3CA6529A8C07B004DF5AA /* Pretendard-ExtraBold.otf */,
+				5EB3CA6129A8C07A004DF5AA /* Pretendard-ExtraLight.otf */,
+				5EB3CA5F29A8C07A004DF5AA /* Pretendard-Light.otf */,
+				5EB3CA5E29A8C07A004DF5AA /* Pretendard-Medium.otf */,
+				5EB3CA6429A8C07B004DF5AA /* Pretendard-Regular.otf */,
+				5EB3CA6029A8C07A004DF5AA /* Pretendard-SemiBold.otf */,
+				5EB3CA6229A8C07A004DF5AA /* Pretendard-Thin.otf */,
+				5EB3CA5D29A8BF9E004DF5AA /* EF_Diary.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		5EBEC2DB29A653F300CB809E /* SettingInfo */ = {
+			isa = PBXGroup;
+			children = (
+				5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */,
+				5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */,
+				5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */,
+				5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */,
+			);
+			path = SettingInfo;
+			sourceTree = "<group>";
+		};
+		A29AD87B94AFD27802CED433 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				891A2042572B9CF7B069BE6B /* Pods_FromU.framework */,
+				288984F8A76FF21EC70077CC /* Pods_FromU_FromUUITests.framework */,
+				3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +356,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E84C6B029A50D8000F5BA81 /* Build configuration list for PBXNativeTarget "FromU" */;
 			buildPhases = (
+				53468E99876A3A03B5EF1076 /* [CP] Check Pods Manifest.lock */,
 				5E84C68229A50D7F00F5BA81 /* Sources */,
 				5E84C68329A50D7F00F5BA81 /* Frameworks */,
 				5E84C68429A50D7F00F5BA81 /* Resources */,
+				844F2BDC36ECFB9425C3CEBC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +375,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E84C6B329A50D8000F5BA81 /* Build configuration list for PBXNativeTarget "FromUTests" */;
 			buildPhases = (
+				9542A6A61FA9866AB0E9A291 /* [CP] Check Pods Manifest.lock */,
 				5E84C69829A50D8000F5BA81 /* Sources */,
 				5E84C69929A50D8000F5BA81 /* Frameworks */,
 				5E84C69A29A50D8000F5BA81 /* Resources */,
@@ -169,9 +394,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5E84C6B629A50D8000F5BA81 /* Build configuration list for PBXNativeTarget "FromUUITests" */;
 			buildPhases = (
+				E2B536BD1758F11B0D9DE6E8 /* [CP] Check Pods Manifest.lock */,
 				5E84C6A229A50D8000F5BA81 /* Sources */,
 				5E84C6A329A50D8000F5BA81 /* Frameworks */,
 				5E84C6A429A50D8000F5BA81 /* Resources */,
+				9A11D33AEB0B9E3DEB448DF9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -231,9 +458,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5EB3CA6B29A8C43B004DF5AA /* Pretendard-Light.otf in Resources */,
+				5EB3CA7029A8C446004DF5AA /* EF_Diary.ttf in Resources */,
+				5E84C70E29A6386100F5BA81 /* Diary.storyboard in Resources */,
+				5EB3CA6829A8C435004DF5AA /* Pretendard-Bold.otf in Resources */,
+				5EB3CA6E29A8C442004DF5AA /* Pretendard-SemiBold.otf in Resources */,
+				5E84C70829A6383200F5BA81 /* Calendar.storyboard in Resources */,
 				5E84C69629A50D8000F5BA81 /* LaunchScreen.storyboard in Resources */,
 				5E84C69329A50D8000F5BA81 /* Assets.xcassets in Resources */,
+				5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */,
+				5EB3CA6D29A8C440004DF5AA /* Pretendard-Regular.otf in Resources */,
+				5EB3CA6C29A8C43E004DF5AA /* Pretendard-Medium.otf in Resources */,
+				5EB3CA6F29A8C444004DF5AA /* Pretendard-Thin.otf in Resources */,
+				5EB3CA6A29A8C439004DF5AA /* Pretendard-ExtraLight.otf in Resources */,
+				5EB3CA6929A8C437004DF5AA /* Pretendard-ExtraBold.otf in Resources */,
 				5E84C69129A50D7F00F5BA81 /* Main.storyboard in Resources */,
+				5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */,
+				5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */,
+				5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,14 +495,128 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		53468E99876A3A03B5EF1076 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FromU-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		844F2BDC36ECFB9425C3CEBC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FromU/Pods-FromU-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FromU/Pods-FromU-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FromU/Pods-FromU-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9542A6A61FA9866AB0E9A291 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FromUTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9A11D33AEB0B9E3DEB448DF9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E2B536BD1758F11B0D9DE6E8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FromU-FromUUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		5E84C68229A50D7F00F5BA81 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5E84C68E29A50D7F00F5BA81 /* ViewController.swift in Sources */,
+				5E84C71329A6498400F5BA81 /* UIView.swift in Sources */,
+				5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */,
+				5E84C70A29A6383900F5BA81 /* CalendarViewController.swift in Sources */,
+				5E84C70629A6382100F5BA81 /* MailboxViewController.swift in Sources */,
+				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
+				5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */,
+				5E84C71029A6386C00F5BA81 /* DiaryViewController.swift in Sources */,
 				5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */,
+				5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */,
 				5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */,
+				5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */,
+				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
+				5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */,
+				5E84C70229A6380D00F5BA81 /* MySpaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +788,7 @@
 		};
 		5E84C6B129A50D8000F5BA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBA7C182C7CC572943350C73 /* Pods-FromU.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -445,6 +802,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -460,6 +818,7 @@
 		};
 		5E84C6B229A50D8000F5BA81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A991ACB7CE4E4F7F0F13BB81 /* Pods-FromU.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -473,6 +832,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +848,7 @@
 		};
 		5E84C6B429A50D8000F5BA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 45BFAD8461DCD57B5BE22C30 /* Pods-FromUTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +869,7 @@
 		};
 		5E84C6B529A50D8000F5BA81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B5633EDA532234155B1BBAF6 /* Pods-FromUTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +890,7 @@
 		};
 		5E84C6B729A50D8000F5BA81 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 404C7B44A349F42168ED2A57 /* Pods-FromU-FromUUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +909,7 @@
 		};
 		5E84C6B829A50D8000F5BA81 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

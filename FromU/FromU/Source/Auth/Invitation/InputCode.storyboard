@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="EF_Diary.ttf">
+            <string>EF_Diary</string>
+        </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Input Code View Controller-->
+        <scene sceneID="jzR-A2-Kbc">
+            <objects>
+                <viewController storyboardIdentifier="InputCodeViewController" id="quH-ra-7iE" customClass="InputCodeViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FdS-Rw-Av3">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연인의 코드를 입력해줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwM-tO-rrP">
+                                <rect key="frame" x="16" y="138" width="203" height="25.666666666666657"/>
+                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="예) FROMU123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsN-oV-W74">
+                                <rect key="frame" x="16" y="283.66666666666669" width="361" height="34"/>
+                                <color key="tintColor">
+                                    <string key="name" base64-UTF8="YES">
+cHJpbWFyeQhTZWNvbmQ
+</string>
+                                </color>
+                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="18"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-b5-8VG">
+                                <rect key="frame" x="16" y="682" width="361" height="56"/>
+                                <color key="backgroundColor" red="0.93725490570000003" green="0.94509804249999996" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="Guf-zY-6ss"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="연결하기">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapConnectBtn:" destination="quH-ra-7iE" eventType="touchUpInside" id="2dv-ng-sij"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5글자 이내(특수문자 및 공백 제외)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-uB-PSZ">
+                                <rect key="frame" x="16" y="331.66666666666669" width="180.33333333333334" height="15.333333333333314"/>
+                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="12"/>
+                                <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bcX-Y3-lxb"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bcX-Y3-lxb" firstAttribute="trailing" secondItem="h9i-b5-8VG" secondAttribute="trailing" constant="16" id="1EE-lo-nO4"/>
+                            <constraint firstItem="wsN-oV-W74" firstAttribute="top" secondItem="gwM-tO-rrP" secondAttribute="bottom" constant="120" id="3p6-dK-SFp"/>
+                            <constraint firstItem="gwM-tO-rrP" firstAttribute="leading" secondItem="bcX-Y3-lxb" secondAttribute="leading" constant="16" id="9rx-ne-KD4"/>
+                            <constraint firstItem="wsN-oV-W74" firstAttribute="leading" secondItem="bcX-Y3-lxb" secondAttribute="leading" constant="16" id="C9Z-8f-hF0"/>
+                            <constraint firstItem="gwM-tO-rrP" firstAttribute="top" secondItem="FdS-Rw-Av3" secondAttribute="top" constant="138" id="UvR-yM-WBG"/>
+                            <constraint firstItem="bcX-Y3-lxb" firstAttribute="bottom" secondItem="h9i-b5-8VG" secondAttribute="bottom" constant="80" id="Ym0-ns-LVr"/>
+                            <constraint firstItem="bcX-Y3-lxb" firstAttribute="trailing" secondItem="wsN-oV-W74" secondAttribute="trailing" constant="16" id="d26-WB-J5f"/>
+                            <constraint firstItem="jGa-uB-PSZ" firstAttribute="top" secondItem="wsN-oV-W74" secondAttribute="bottom" constant="14" id="hsq-Wm-o7u"/>
+                            <constraint firstItem="jGa-uB-PSZ" firstAttribute="leading" secondItem="bcX-Y3-lxb" secondAttribute="leading" constant="16" id="rAZ-Cw-0zY"/>
+                            <constraint firstItem="h9i-b5-8VG" firstAttribute="leading" secondItem="bcX-Y3-lxb" secondAttribute="leading" constant="16" id="u5Q-cp-XAR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="codeTextField" destination="wsN-oV-W74" id="dE7-6Z-efA"/>
+                        <outlet property="connectBtn" destination="h9i-b5-8VG" id="VrF-Cg-SRe"/>
+                        <outlet property="explainLabel" destination="gwM-tO-rrP" id="BFD-rs-RMj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcf-gF-zwi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="12" y="-34"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor>
+            <string key="name" base64-UTF8="YES">
+cHJpbWFyeQhTZWNvbmQ
+</string>
+            <color red="0.65490196078431373" green="0.20784313725490197" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -22,11 +22,18 @@ class LoginViewController: UIViewController {
     
     @IBAction func didTapKakaoBtn(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "SettingInfo", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingNickNameViewController") as? SettingNickNameViewController else {return}
-        
+        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
+
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
+
         self.navigationController?.pushViewController(vc, animated: true)
-        //loginWithKakao()
+        
+//        let storyboard = UIStoryboard(name: "SettingInfo", bundle: nil)
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingNickNameViewController") as? SettingNickNameViewController else {return}
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
+        
+//        loginWithKakao()
         
     }
     
@@ -40,6 +47,11 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        for fontFamilyName in UIFont.familyNames{
+            for fontName in UIFont.fontNames(forFamilyName: fontFamilyName){
+                print("Family: \(fontFamilyName)     Font: \(fontName)")
+            }
+        }
 //        let myNavigationController = storyboard?.instantiateViewController(withIdentifier: "MyNavigationController") as! UINavigationController
 //        
 //        let rootViewController = myNavigationController.viewControllers.first

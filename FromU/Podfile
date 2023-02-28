@@ -6,7 +6,6 @@ target 'FromU' do
   use_frameworks!
 pod 'KakaoSDK'
   # Pods for FromU
-
   target 'FromUTests' do
     inherit! :search_paths
     # Pods for testing

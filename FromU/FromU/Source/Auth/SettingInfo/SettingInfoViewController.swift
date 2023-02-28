@@ -21,14 +21,12 @@ class SettingNickNameViewController: UIViewController {
     //다음 버튼 활성화시켜주는 함수
     func changeNextBtnActive() {
         nextBtn.backgroundColor = UIColor.primary01
-        bottomBorder.backgroundColor = UIColor.primary02.cgColor
         nextBtn.isEnabled = true
     }
     
     //다음 버튼 비활성화시켜주는 함수
     func changeNextBtnNonActive() {
         nextBtn.backgroundColor = UIColor.disabled
-        bottomBorder.backgroundColor = UIColor.disabled.cgColor
         nextBtn.isEnabled = false
     }
     
@@ -82,7 +80,9 @@ class SettingNickNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        nextBtn.isEnabled = false
+        
         nickNameTextField.delegate = self
         
         //화면 어딘가를 눌렀을때 키보드 내리기
@@ -114,9 +114,26 @@ class SettingNickNameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        navigationController?.isNavigationBarHidden = false
+    }
+    
 }
 
 extension SettingNickNameViewController: UITextFieldDelegate{
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        bottomBorder.backgroundColor = UIColor.primary02.cgColor
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        bottomBorder.backgroundColor = UIColor.disabled.cgColor
+    }
     
     //return 버튼 눌렀을 때 이벤트 생성
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

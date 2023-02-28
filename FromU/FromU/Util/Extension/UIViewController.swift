@@ -16,6 +16,13 @@ extension UIViewController {
         self.view.addGestureRecognizer(tap)
     }
     
+    func dismissKeyboardWithChangeBoarderColorWhenTappedAround() {
+        let tap: UITapGestureRecognizer =
+        UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard))
+        //        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    
     @objc func dismissKeyboard() {
         self.view.endEditing(false)
     }

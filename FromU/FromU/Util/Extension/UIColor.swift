@@ -31,6 +31,10 @@ extension UIColor {
         return UIColor(hex:0xA735FF)
     }
     
+    static var primaryLight: UIColor {
+        return UIColor(hex:0xE2DBFF)
+    }
+    
     static var disabled: UIColor {
         return UIColor(hex:0xDEDEE2)
     }
@@ -38,4 +42,9 @@ extension UIColor {
     static var disabledText: UIColor {
         return UIColor(hex:0x999999)
     }
+    
+    static var icon: UIColor {
+        return UIColor(hex:0x6F6F6F)
+    }
+  
 }

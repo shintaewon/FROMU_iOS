@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		57D2FA699169EC547E2A490D /* Pods_FromU_FromUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288984F8A76FF21EC70077CC /* Pods_FromU_FromUUITests.framework */; };
+		5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E38900629AC864A004EB7A6 /* InputCode.storyboard */; };
+		5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */; };
+		5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900C29ACFE5B004EB7A6 /* UIFont.swift */; };
 		5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */; };
 		5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */; };
 		5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */; };
@@ -41,6 +44,9 @@
 		5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7329A8C651004DF5AA /* UIColor.swift */; };
 		5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */; };
 		5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */; };
+		5EB3CA7A29A9C33C004DF5AA /* SettingFirstDayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7929A9C33C004DF5AA /* SettingFirstDayViewController.swift */; };
+		5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */; };
+		5EB3CA8129A9C6EF004DF5AA /* Invitation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */; };
 		5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */; };
 		5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEC2E029A66B9800CB809E /* testViewController.swift */; };
 		889059C238B5448A4402FF92 /* Pods_FromUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */; };
@@ -69,6 +75,9 @@
 		3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404C7B44A349F42168ED2A57 /* Pods-FromU-FromUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.debug.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		45BFAD8461DCD57B5BE22C30 /* Pods-FromUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromUTests.debug.xcconfig"; path = "Target Support Files/Pods-FromUTests/Pods-FromUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E38900629AC864A004EB7A6 /* InputCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputCode.storyboard; sourceTree = "<group>"; };
+		5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeViewController.swift; sourceTree = "<group>"; };
+		5E38900C29ACFE5B004EB7A6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
 		5E84C68629A50D7F00F5BA81 /* FromU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FromU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +115,9 @@
 		5EB3CA7329A8C651004DF5AA /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingBirthDayViewController.swift; sourceTree = "<group>"; };
 		5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGenderViewController.swift; sourceTree = "<group>"; };
+		5EB3CA7929A9C33C004DF5AA /* SettingFirstDayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingFirstDayViewController.swift; sourceTree = "<group>"; };
+		5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
+		5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invitation.storyboard; sourceTree = "<group>"; };
 		5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingInfo.storyboard; sourceTree = "<group>"; };
 		5EBEC2E029A66B9800CB809E /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.release.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -238,6 +250,7 @@
 		5E84C6F829A6367500F5BA81 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				5EB3CA7B29A9C6AD004DF5AA /* Invitation */,
 				5EBEC2DB29A653F300CB809E /* SettingInfo */,
 				5E84C6F929A6368100F5BA81 /* Login */,
 			);
@@ -307,6 +320,7 @@
 				5E84C71229A6498400F5BA81 /* UIView.swift */,
 				5EB3CA7129A8C4B3004DF5AA /* UIViewController.swift */,
 				5EB3CA7329A8C651004DF5AA /* UIColor.swift */,
+				5E38900C29ACFE5B004EB7A6 /* UIFont.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,6 +342,17 @@
 			path = Fonts;
 			sourceTree = "<group>";
 		};
+		5EB3CA7B29A9C6AD004DF5AA /* Invitation */ = {
+			isa = PBXGroup;
+			children = (
+				5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */,
+				5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */,
+				5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */,
+				5E38900629AC864A004EB7A6 /* InputCode.storyboard */,
+			);
+			path = Invitation;
+			sourceTree = "<group>";
+		};
 		5EBEC2DB29A653F300CB809E /* SettingInfo */ = {
 			isa = PBXGroup;
 			children = (
@@ -335,6 +360,7 @@
 				5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */,
 				5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */,
 				5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */,
+				5EB3CA7929A9C33C004DF5AA /* SettingFirstDayViewController.swift */,
 			);
 			path = SettingInfo;
 			sourceTree = "<group>";
@@ -466,6 +492,7 @@
 				5E84C70829A6383200F5BA81 /* Calendar.storyboard in Resources */,
 				5E84C69629A50D8000F5BA81 /* LaunchScreen.storyboard in Resources */,
 				5E84C69329A50D8000F5BA81 /* Assets.xcassets in Resources */,
+				5EB3CA8129A9C6EF004DF5AA /* Invitation.storyboard in Resources */,
 				5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */,
 				5EB3CA6D29A8C440004DF5AA /* Pretendard-Regular.otf in Resources */,
 				5EB3CA6C29A8C43E004DF5AA /* Pretendard-Medium.otf in Resources */,
@@ -475,6 +502,7 @@
 				5E84C69129A50D7F00F5BA81 /* Main.storyboard in Resources */,
 				5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */,
 				5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */,
+				5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */,
 				5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -609,12 +637,16 @@
 				5E84C70629A6382100F5BA81 /* MailboxViewController.swift in Sources */,
 				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
 				5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */,
+				5EB3CA7A29A9C33C004DF5AA /* SettingFirstDayViewController.swift in Sources */,
 				5E84C71029A6386C00F5BA81 /* DiaryViewController.swift in Sources */,
+				5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */,
+				5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */,
 				5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */,
 				5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */,
 				5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */,
 				5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */,
 				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
+				5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */,
 				5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */,
 				5E84C70229A6380D00F5BA81 /* MySpaceViewController.swift in Sources */,
 			);

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingBirthDayViewController: UIViewController {
+class SettingFirstDayViewController: UIViewController {
 
     @IBOutlet weak var yearTextField: UITextField!
     
@@ -20,20 +20,21 @@ class SettingBirthDayViewController: UIViewController {
     var yearTextCount : Int = 0 // 텍스트 길이 세주는 변수
     var monthTextCount : Int = 0 // 텍스트 길이 세주는 변수
     var dayTextCount : Int = 0 // 텍스트 길이 세주는 변수
-    
-    @IBOutlet var bottomBorder: UIView!
+    let bottomBorder = CALayer()
     
     var bottomConstraint: NSLayoutConstraint? //다음 버튼 하단 유동적 Constraint를 위한 변수
     
     //다음 버튼 활성화시켜주는 함수
     func changeNextBtnActive() {
         nextBtn.backgroundColor = UIColor.primary01
+        bottomBorder.backgroundColor = UIColor.primary02.cgColor
         nextBtn.isEnabled = true
     }
     
     //다음 버튼 비활성화시켜주는 함수
     func changeNextBtnNonActive() {
         nextBtn.backgroundColor = UIColor.disabled
+        bottomBorder.backgroundColor = UIColor.disabled.cgColor
         nextBtn.isEnabled = false
     }
     
@@ -55,7 +56,9 @@ class SettingBirthDayViewController: UIViewController {
     
     @IBAction func didTapNextBtn(_ sender: Any) {
          
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingGenderViewController") as? SettingGenderViewController else {return}
+        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -81,7 +84,7 @@ class SettingBirthDayViewController: UIViewController {
 
         monthTextCount = textField.text?.count ?? 0
         
-        if (yearTextCount == 4) && (monthTextCount > 0) && (dayTextCount == 2){
+        if (yearTextCount == 4) && (monthTextCount == 2) && (dayTextCount == 2){
             changeNextBtnActive()
         }
         else{
@@ -97,25 +100,6 @@ class SettingBirthDayViewController: UIViewController {
 
         dayTextCount = textField.text?.count ?? 0
         
-        if (yearTextCount == 4) && (monthTextCount == 2) && (dayTextCount > 0){
-            changeNextBtnActive()
-        }
-        else{
-            changeNextBtnNonActive()
-        }
-
-        
-        if dayTextCount == 2 {
-            dismissKeyboard()
-        }
-        
-    }
-    
-    func checkValidation(){
-        yearTextCount = yearTextField.text?.count ?? 0
-        monthTextCount = monthTextField.text?.count ?? 0
-        dayTextCount = dayTextField.text?.count ?? 0
-        
         if (yearTextCount == 4) && (monthTextCount == 2) && (dayTextCount == 2){
             changeNextBtnActive()
         }
@@ -123,12 +107,13 @@ class SettingBirthDayViewController: UIViewController {
             changeNextBtnNonActive()
         }
         
+        if dayTextCount == 2 {
+            dismissKeyboard()
+        }
+        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        nextBtn.isEnabled = false
         
         yearTextField.delegate = self
         monthTextField.delegate = self
@@ -141,6 +126,8 @@ class SettingBirthDayViewController: UIViewController {
         yearTextField.borderStyle = .none
         monthTextField.borderStyle = .none
         dayTextField.borderStyle = .none
+
+        
         
         
         nextBtn.layer.cornerRadius = 8
@@ -163,21 +150,13 @@ class SettingBirthDayViewController: UIViewController {
         dayTextField.addTarget(self, action: #selector(SettingBirthDayViewController.dayTextFieldDidChange(_:)), for: .editingChanged)
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-
-        navigationController?.navigationBar.tintColor = .icon
-    }
 }
 
-extension SettingBirthDayViewController: UITextFieldDelegate{
+extension SettingFirstDayViewController: UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        bottomBorder.backgroundColor = UIColor.primary02
         textField.text = ""
-        changeNextBtnNonActive()
     }
-    
     
     //return 버튼 눌렀을 때 이벤트 생성
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -189,40 +168,11 @@ extension SettingBirthDayViewController: UITextFieldDelegate{
             return true
         }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        bottomBorder.backgroundColor = UIColor.disabled
-        if textField == monthTextField{
-            if textField.text?.count == 1 {
-                textField.text = "0" + (textField.text ?? "")
-            }
-        }
-        else if textField == dayTextField{
-            if textField.text?.count == 1 {
-                textField.text = "0" + (textField.text ?? "")
-            }
-        }
-        checkValidation()
-    }
-    
     //공백 입력 방지 && 최대숫자 제한
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == yearTextField{
      
-            // Check if the resulting text will be within the range of 1 to 12
-            if let text = textField.text, let range = Range(range, in: text), let input = Int(string) {
-                
-                let newText = text.replacingCharacters(in: range, with: String(input))
-                if let number = Int(newText), (1...2023).contains(number) {
-                    print(number)
-                    return true
-                }
-                else{
-                    return false
-                }
-                
-            }
-            
             let maxLength = 4
             let currentString = (textField.text ?? "") as NSString
             
@@ -231,52 +181,12 @@ extension SettingBirthDayViewController: UITextFieldDelegate{
             return newString.count <= maxLength
                 
             }
-        else if textField == monthTextField{
-            
-            // Check if the resulting text will be within the range of 1 to 12
-            if let text = textField.text, let range = Range(range, in: text), let input = Int(string) {
-                
-                let newText = text.replacingCharacters(in: range, with: String(input))
-                if let number = Int(newText), (1...12).contains(number) {
-                    print(number)
-                    return true
-                }
-                else{
-                    return false
-                }
-                
-            }
-            
-            let maxLength = 2
-            let currentString = (textField.text ?? "") as NSString
-            let newString = currentString.replacingCharacters(in: range, with: string)
-
-            return newString.count <= maxLength
-        }
         else{
-            // Check if the resulting text will be within the range of 1 to 12
-            if let text = textField.text, let range = Range(range, in: text), let input = Int(string) {
-                
-                let newText = text.replacingCharacters(in: range, with: String(input))
-                if let number = Int(newText), (1...31).contains(number) {
-                    print(number)
-                    return true
-                }
-                else{
-                    return false
-                }
-                
-            }
-            
             let maxLength = 2
             let currentString = (textField.text ?? "") as NSString
             let newString = currentString.replacingCharacters(in: range, with: string)
 
             return newString.count <= maxLength
-        }
-        
-        if (string == " ") {
-            return false
         }
         
         return true

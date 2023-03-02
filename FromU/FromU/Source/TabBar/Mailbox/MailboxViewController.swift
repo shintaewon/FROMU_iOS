@@ -2,12 +2,12 @@
 //  MailboxViewController.swift
 //  FromU
 //
-//  Created by 신태원 on 2023/02/22.
+//  Created by 신태원 on 2023/03/01.
 //
 
 import UIKit
 
-class MailboxViewController: UINavigationController {
+class MailboxViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

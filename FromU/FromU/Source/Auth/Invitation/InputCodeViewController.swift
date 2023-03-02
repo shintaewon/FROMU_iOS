@@ -59,7 +59,17 @@ class InputCodeViewController: UIViewController {
     
     @IBAction func didTapConnectBtn(_ sender: Any) {
          
-        showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
+        if codeTextField.text == "11111111"{
+            let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
+            
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
+            
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        else{
+            showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
+        }
+        
     }
     
     override func viewDidLoad() {
@@ -95,10 +105,7 @@ class InputCodeViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
-        
-        
     }
-
 
 }
 
@@ -154,7 +161,7 @@ extension InputCodeViewController{
         toastLabel.layer.cornerRadius = 4
         toastLabel.clipsToBounds  =  true
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 3.0, delay: 0.1, options: .curveEaseOut,animations: {
+        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut,animations: {
             toastLabel.alpha = 0.0
             }, completion: {(isCompleted) in
                 toastLabel.removeFromSuperview()

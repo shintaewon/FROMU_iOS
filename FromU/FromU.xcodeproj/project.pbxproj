@@ -21,14 +21,20 @@
 		5E84C6AB29A50D8000F5BA81 /* FromUUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C6AA29A50D8000F5BA81 /* FromUUITests.swift */; };
 		5E84C6AD29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C6AC29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift */; };
 		5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */; };
-		5E84C70229A6380D00F5BA81 /* MySpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */; };
 		5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70329A6381900F5BA81 /* Mailbox.storyboard */; };
-		5E84C70629A6382100F5BA81 /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70529A6382100F5BA81 /* MailboxViewController.swift */; };
 		5E84C70829A6383200F5BA81 /* Calendar.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70729A6383200F5BA81 /* Calendar.storyboard */; };
-		5E84C70A29A6383900F5BA81 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70929A6383900F5BA81 /* CalendarViewController.swift */; };
 		5E84C70E29A6386100F5BA81 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E84C70D29A6386100F5BA81 /* Diary.storyboard */; };
-		5E84C71029A6386C00F5BA81 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */; };
 		5E84C71329A6498400F5BA81 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C71229A6498400F5BA81 /* UIView.swift */; };
+		5E94127F29AE1FF9003ADFF5 /* MatchingComplete.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E94127E29AE1FF9003ADFF5 /* MatchingComplete.storyboard */; };
+		5E94128129AE200B003ADFF5 /* MatchingCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128029AE200B003ADFF5 /* MatchingCompleteViewController.swift */; };
+		5E94128329AE2232003ADFF5 /* SetMailBoxName.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E94128229AE2232003ADFF5 /* SetMailBoxName.storyboard */; };
+		5E94128529AE2353003ADFF5 /* SetMailBoxNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128429AE2353003ADFF5 /* SetMailBoxNameViewController.swift */; };
+		5E94128729AEF9D3003ADFF5 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128629AEF9D3003ADFF5 /* MainTabBarController.swift */; };
+		5E94128929AF2B8E003ADFF5 /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128829AF2B8E003ADFF5 /* DiaryViewController.swift */; };
+		5E94128B29AF2B9E003ADFF5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128A29AF2B9E003ADFF5 /* CalendarViewController.swift */; };
+		5E94128D29AF2C3D003ADFF5 /* MailboxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128C29AF2C3D003ADFF5 /* MailboxViewController.swift */; };
+		5E94128F29AF2C52003ADFF5 /* MySpaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94128E29AF2C52003ADFF5 /* MySpaceViewController.swift */; };
+		5E94129129AF49B7003ADFF5 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E94129029AF49B7003ADFF5 /* UIImage.swift */; };
 		5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */; };
 		5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */; };
 		5EB3CA6829A8C435004DF5AA /* Pretendard-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */; };
@@ -48,7 +54,6 @@
 		5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */; };
 		5EB3CA8129A9C6EF004DF5AA /* Invitation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */; };
 		5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */; };
-		5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EBEC2E029A66B9800CB809E /* testViewController.swift */; };
 		889059C238B5448A4402FF92 /* Pods_FromUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */; };
 		8C3225FD65C8F6386A8AA8A0 /* Pods_FromU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891A2042572B9CF7B069BE6B /* Pods_FromU.framework */; };
 /* End PBXBuildFile section */
@@ -92,14 +97,20 @@
 		5E84C6AA29A50D8000F5BA81 /* FromUUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromUUITests.swift; sourceTree = "<group>"; };
 		5E84C6AC29A50D8000F5BA81 /* FromUUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FromUUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MySpace.storyboard; sourceTree = "<group>"; };
-		5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceViewController.swift; sourceTree = "<group>"; };
 		5E84C70329A6381900F5BA81 /* Mailbox.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Mailbox.storyboard; sourceTree = "<group>"; };
-		5E84C70529A6382100F5BA81 /* MailboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
 		5E84C70729A6383200F5BA81 /* Calendar.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendar.storyboard; sourceTree = "<group>"; };
-		5E84C70929A6383900F5BA81 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		5E84C70D29A6386100F5BA81 /* Diary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
-		5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
 		5E84C71229A6498400F5BA81 /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		5E94127E29AE1FF9003ADFF5 /* MatchingComplete.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MatchingComplete.storyboard; sourceTree = "<group>"; };
+		5E94128029AE200B003ADFF5 /* MatchingCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingCompleteViewController.swift; sourceTree = "<group>"; };
+		5E94128229AE2232003ADFF5 /* SetMailBoxName.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetMailBoxName.storyboard; sourceTree = "<group>"; };
+		5E94128429AE2353003ADFF5 /* SetMailBoxNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailBoxNameViewController.swift; sourceTree = "<group>"; };
+		5E94128629AEF9D3003ADFF5 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5E94128829AF2B8E003ADFF5 /* DiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryViewController.swift; sourceTree = "<group>"; };
+		5E94128A29AF2B9E003ADFF5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		5E94128C29AF2C3D003ADFF5 /* MailboxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxViewController.swift; sourceTree = "<group>"; };
+		5E94128E29AF2C52003ADFF5 /* MySpaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySpaceViewController.swift; sourceTree = "<group>"; };
+		5E94129029AF49B7003ADFF5 /* UIImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingInfoViewController.swift; sourceTree = "<group>"; };
 		5EB3CA5D29A8BF9E004DF5AA /* EF_Diary.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = EF_Diary.ttf; sourceTree = "<group>"; };
 		5EB3CA5E29A8C07A004DF5AA /* Pretendard-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Pretendard-Medium.otf"; sourceTree = "<group>"; };
@@ -119,7 +130,6 @@
 		5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
 		5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invitation.storyboard; sourceTree = "<group>"; };
 		5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingInfo.storyboard; sourceTree = "<group>"; };
-		5EBEC2E029A66B9800CB809E /* testViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testViewController.swift; sourceTree = "<group>"; };
 		68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.release.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		891A2042572B9CF7B069BE6B /* Pods_FromU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A991ACB7CE4E4F7F0F13BB81 /* Pods-FromU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU.release.xcconfig"; path = "Target Support Files/Pods-FromU/Pods-FromU.release.xcconfig"; sourceTree = "<group>"; };
@@ -262,7 +272,6 @@
 			children = (
 				5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */,
 				5E84C68F29A50D7F00F5BA81 /* Main.storyboard */,
-				5EBEC2E029A66B9800CB809E /* testViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -282,7 +291,8 @@
 			isa = PBXGroup;
 			children = (
 				5E84C70D29A6386100F5BA81 /* Diary.storyboard */,
-				5E84C70F29A6386C00F5BA81 /* DiaryViewController.swift */,
+				5E94128629AEF9D3003ADFF5 /* MainTabBarController.swift */,
+				5E94128829AF2B8E003ADFF5 /* DiaryViewController.swift */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -291,7 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				5E84C70729A6383200F5BA81 /* Calendar.storyboard */,
-				5E84C70929A6383900F5BA81 /* CalendarViewController.swift */,
+				5E94128A29AF2B9E003ADFF5 /* CalendarViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -300,7 +310,7 @@
 			isa = PBXGroup;
 			children = (
 				5E84C70329A6381900F5BA81 /* Mailbox.storyboard */,
-				5E84C70529A6382100F5BA81 /* MailboxViewController.swift */,
+				5E94128C29AF2C3D003ADFF5 /* MailboxViewController.swift */,
 			);
 			path = Mailbox;
 			sourceTree = "<group>";
@@ -309,7 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				5E84C6FF29A637F000F5BA81 /* MySpace.storyboard */,
-				5E84C70129A6380D00F5BA81 /* MySpaceViewController.swift */,
+				5E94128E29AF2C52003ADFF5 /* MySpaceViewController.swift */,
 			);
 			path = MySpace;
 			sourceTree = "<group>";
@@ -321,6 +331,7 @@
 				5EB3CA7129A8C4B3004DF5AA /* UIViewController.swift */,
 				5EB3CA7329A8C651004DF5AA /* UIColor.swift */,
 				5E38900C29ACFE5B004EB7A6 /* UIFont.swift */,
+				5E94129029AF49B7003ADFF5 /* UIImage.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -349,6 +360,10 @@
 				5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */,
 				5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */,
 				5E38900629AC864A004EB7A6 /* InputCode.storyboard */,
+				5E94128029AE200B003ADFF5 /* MatchingCompleteViewController.swift */,
+				5E94127E29AE1FF9003ADFF5 /* MatchingComplete.storyboard */,
+				5E94128429AE2353003ADFF5 /* SetMailBoxNameViewController.swift */,
+				5E94128229AE2232003ADFF5 /* SetMailBoxName.storyboard */,
 			);
 			path = Invitation;
 			sourceTree = "<group>";
@@ -493,6 +508,7 @@
 				5E84C69629A50D8000F5BA81 /* LaunchScreen.storyboard in Resources */,
 				5E84C69329A50D8000F5BA81 /* Assets.xcassets in Resources */,
 				5EB3CA8129A9C6EF004DF5AA /* Invitation.storyboard in Resources */,
+				5E94128329AE2232003ADFF5 /* SetMailBoxName.storyboard in Resources */,
 				5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */,
 				5EB3CA6D29A8C440004DF5AA /* Pretendard-Regular.otf in Resources */,
 				5EB3CA6C29A8C43E004DF5AA /* Pretendard-Medium.otf in Resources */,
@@ -504,6 +520,7 @@
 				5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */,
 				5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */,
 				5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */,
+				5E94127F29AE1FF9003ADFF5 /* MatchingComplete.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -631,24 +648,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E94128B29AF2B9E003ADFF5 /* CalendarViewController.swift in Sources */,
 				5E84C71329A6498400F5BA81 /* UIView.swift in Sources */,
 				5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */,
-				5E84C70A29A6383900F5BA81 /* CalendarViewController.swift in Sources */,
-				5E84C70629A6382100F5BA81 /* MailboxViewController.swift in Sources */,
+				5E94128729AEF9D3003ADFF5 /* MainTabBarController.swift in Sources */,
 				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
+				5E94128D29AF2C3D003ADFF5 /* MailboxViewController.swift in Sources */,
+				5E94129129AF49B7003ADFF5 /* UIImage.swift in Sources */,
+				5E94128529AE2353003ADFF5 /* SetMailBoxNameViewController.swift in Sources */,
 				5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */,
 				5EB3CA7A29A9C33C004DF5AA /* SettingFirstDayViewController.swift in Sources */,
-				5E84C71029A6386C00F5BA81 /* DiaryViewController.swift in Sources */,
 				5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */,
 				5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */,
+				5E94128F29AF2C52003ADFF5 /* MySpaceViewController.swift in Sources */,
 				5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */,
 				5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */,
 				5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */,
 				5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */,
+				5E94128129AE200B003ADFF5 /* MatchingCompleteViewController.swift in Sources */,
+				5E94128929AF2B8E003ADFF5 /* DiaryViewController.swift in Sources */,
 				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
 				5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */,
-				5EBEC2E129A66B9800CB809E /* testViewController.swift in Sources */,
-				5E84C70229A6380D00F5BA81 /* MySpaceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

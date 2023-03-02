@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Mailbox View Controller-->
+        <!--우편함-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
                 <viewController storyboardIdentifier="MailboxViewController" id="Y6W-OH-hqX" customClass="MailboxViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,6 +18,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="우편함" image="icn_letter" selectedImage="icn_letter" id="e0Z-ev-b2s"/>
                     <navigationItem key="navigationItem" id="Tfy-wN-W15"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
@@ -46,6 +47,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icn_letter" width="24" height="24"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

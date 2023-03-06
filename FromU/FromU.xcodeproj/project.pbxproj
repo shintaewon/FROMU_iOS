@@ -8,6 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		57D2FA699169EC547E2A490D /* Pods_FromU_FromUUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288984F8A76FF21EC70077CC /* Pods_FromU_FromUUITests.framework */; };
+		5E0B47D029B0E36C00B0B3CF /* SettingFirstDay.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B47CF29B0E36C00B0B3CF /* SettingFirstDay.storyboard */; };
+		5E0B47D329B2127800B0B3CF /* AddDiaryBook.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B47D229B2127800B0B3CF /* AddDiaryBook.storyboard */; };
+		5E0B47D529B212BD00B0B3CF /* SelectCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47D429B212BD00B0B3CF /* SelectCoverViewController.swift */; };
+		5E0B47D729B2133300B0B3CF /* SettingDiaryNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47D629B2133300B0B3CF /* SettingDiaryNameViewController.swift */; };
+		5E0B47D929B2139000B0B3CF /* CompleteDiarySettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47D829B2139000B0B3CF /* CompleteDiarySettingViewController.swift */; };
+		5E0B47DC29B2E50900B0B3CF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47DB29B2E50900B0B3CF /* UserService.swift */; };
+		5E0B47DE29B2E51500B0B3CF /* UserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47DD29B2E51500B0B3CF /* UserAPI.swift */; };
+		5E0B47E029B2E62B00B0B3CF /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47DF29B2E62B00B0B3CF /* Constant.swift */; };
+		5E0B47E329B2EA6300B0B3CF /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47E229B2EA6300B0B3CF /* LoginResponse.swift */; };
+		5E0B47E529B324B000B0B3CF /* SubscriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47E429B324B000B0B3CF /* SubscriptionViewController.swift */; };
+		5E0B47E829B4710600B0B3CF /* Cafe24SsurroundAir.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5E0B47E629B46C4600B0B3CF /* Cafe24SsurroundAir.ttf */; };
+		5E0B47EA29B4853800B0B3CF /* SignupResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47E929B4853800B0B3CF /* SignupResponse.swift */; };
+		5E0B47ED29B48DA800B0B3CF /* RefreshResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47EC29B48DA800B0B3CF /* RefreshResponse.swift */; };
+		5E0B47F129B49E0C00B0B3CF /* CoupleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47F029B49E0C00B0B3CF /* CoupleService.swift */; };
+		5E0B47F329B49E1800B0B3CF /* CoupleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47F229B49E1800B0B3CF /* CoupleAPI.swift */; };
+		5E0B47F629B4A16D00B0B3CF /* InputPartnerCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47F529B4A16D00B0B3CF /* InputPartnerCodeResponse.swift */; };
+		5E0B47F829B4B7D400B0B3CF /* SetMailBoxNameResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47F729B4B7D400B0B3CF /* SetMailBoxNameResponse.swift */; };
+		5E0B47FA29B4B91400B0B3CF /* CheckMailResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E0B47F929B4B91400B0B3CF /* CheckMailResponse.swift */; };
 		5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E38900629AC864A004EB7A6 /* InputCode.storyboard */; };
 		5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */; };
 		5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900C29ACFE5B004EB7A6 /* UIFont.swift */; };
@@ -80,6 +98,24 @@
 		3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromUTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		404C7B44A349F42168ED2A57 /* Pods-FromU-FromUUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.debug.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		45BFAD8461DCD57B5BE22C30 /* Pods-FromUTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromUTests.debug.xcconfig"; path = "Target Support Files/Pods-FromUTests/Pods-FromUTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5E0B47CF29B0E36C00B0B3CF /* SettingFirstDay.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = SettingFirstDay.storyboard; sourceTree = "<group>"; };
+		5E0B47D229B2127800B0B3CF /* AddDiaryBook.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddDiaryBook.storyboard; sourceTree = "<group>"; };
+		5E0B47D429B212BD00B0B3CF /* SelectCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectCoverViewController.swift; sourceTree = "<group>"; };
+		5E0B47D629B2133300B0B3CF /* SettingDiaryNameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingDiaryNameViewController.swift; sourceTree = "<group>"; };
+		5E0B47D829B2139000B0B3CF /* CompleteDiarySettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteDiarySettingViewController.swift; sourceTree = "<group>"; };
+		5E0B47DB29B2E50900B0B3CF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		5E0B47DD29B2E51500B0B3CF /* UserAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAPI.swift; sourceTree = "<group>"; };
+		5E0B47DF29B2E62B00B0B3CF /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
+		5E0B47E229B2EA6300B0B3CF /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		5E0B47E429B324B000B0B3CF /* SubscriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionViewController.swift; sourceTree = "<group>"; };
+		5E0B47E629B46C4600B0B3CF /* Cafe24SsurroundAir.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24SsurroundAir.ttf; sourceTree = "<group>"; };
+		5E0B47E929B4853800B0B3CF /* SignupResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponse.swift; sourceTree = "<group>"; };
+		5E0B47EC29B48DA800B0B3CF /* RefreshResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshResponse.swift; sourceTree = "<group>"; };
+		5E0B47F029B49E0C00B0B3CF /* CoupleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleService.swift; sourceTree = "<group>"; };
+		5E0B47F229B49E1800B0B3CF /* CoupleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleAPI.swift; sourceTree = "<group>"; };
+		5E0B47F529B4A16D00B0B3CF /* InputPartnerCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputPartnerCodeResponse.swift; sourceTree = "<group>"; };
+		5E0B47F729B4B7D400B0B3CF /* SetMailBoxNameResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetMailBoxNameResponse.swift; sourceTree = "<group>"; };
+		5E0B47F929B4B91400B0B3CF /* CheckMailResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckMailResponse.swift; sourceTree = "<group>"; };
 		5E38900629AC864A004EB7A6 /* InputCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputCode.storyboard; sourceTree = "<group>"; };
 		5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeViewController.swift; sourceTree = "<group>"; };
 		5E38900C29ACFE5B004EB7A6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -178,6 +214,66 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		5E0B47D129B2123A00B0B3CF /* AddDiaryBook */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47D229B2127800B0B3CF /* AddDiaryBook.storyboard */,
+				5E0B47D429B212BD00B0B3CF /* SelectCoverViewController.swift */,
+				5E0B47D629B2133300B0B3CF /* SettingDiaryNameViewController.swift */,
+				5E0B47D829B2139000B0B3CF /* CompleteDiarySettingViewController.swift */,
+			);
+			path = AddDiaryBook;
+			sourceTree = "<group>";
+		};
+		5E0B47DA29B2E4E500B0B3CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47EE29B49DD400B0B3CF /* USER */,
+				5E0B47EF29B49DEC00B0B3CF /* COUPLE */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		5E0B47E129B2EA1A00B0B3CF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47E229B2EA6300B0B3CF /* LoginResponse.swift */,
+				5E0B47E929B4853800B0B3CF /* SignupResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		5E0B47EE29B49DD400B0B3CF /* USER */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47E129B2EA1A00B0B3CF /* Response */,
+				5E0B47DB29B2E50900B0B3CF /* UserService.swift */,
+				5E0B47DD29B2E51500B0B3CF /* UserAPI.swift */,
+			);
+			path = USER;
+			sourceTree = "<group>";
+		};
+		5E0B47EF29B49DEC00B0B3CF /* COUPLE */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47F429B4A15600B0B3CF /* Response */,
+				5E0B47F029B49E0C00B0B3CF /* CoupleService.swift */,
+				5E0B47F229B49E1800B0B3CF /* CoupleAPI.swift */,
+			);
+			path = COUPLE;
+			sourceTree = "<group>";
+		};
+		5E0B47F429B4A15600B0B3CF /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5E0B47EC29B48DA800B0B3CF /* RefreshResponse.swift */,
+				5E0B47F529B4A16D00B0B3CF /* InputPartnerCodeResponse.swift */,
+				5E0B47F729B4B7D400B0B3CF /* SetMailBoxNameResponse.swift */,
+				5E0B47F929B4B91400B0B3CF /* CheckMailResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
 		5E84C67D29A50D7F00F5BA81 = {
 			isa = PBXGroup;
 			children = (
@@ -236,6 +332,7 @@
 		5E84C6F529A6364D00F5BA81 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				5E0B47DF29B2E62B00B0B3CF /* Constant.swift */,
 			);
 			path = Configuration;
 			sourceTree = "<group>";
@@ -279,6 +376,7 @@
 		5E84C6FA29A6368E00F5BA81 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				5E0B47DA29B2E4E500B0B3CF /* Network */,
 				5E84C6FB29A636EC00F5BA81 /* Diary */,
 				5E84C6FC29A636F500F5BA81 /* Calendar */,
 				5E84C6FD29A636FE00F5BA81 /* Mailbox */,
@@ -293,6 +391,8 @@
 				5E84C70D29A6386100F5BA81 /* Diary.storyboard */,
 				5E94128629AEF9D3003ADFF5 /* MainTabBarController.swift */,
 				5E94128829AF2B8E003ADFF5 /* DiaryViewController.swift */,
+				5E0B47D129B2123A00B0B3CF /* AddDiaryBook */,
+				5EC4355D29B0E06600835D51 /* SettingFirstDay */,
 			);
 			path = Diary;
 			sourceTree = "<group>";
@@ -339,6 +439,7 @@
 		5EB3CA5C29A8BF89004DF5AA /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				5E0B47E629B46C4600B0B3CF /* Cafe24SsurroundAir.ttf */,
 				5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */,
 				5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */,
 				5EB3CA6529A8C07B004DF5AA /* Pretendard-ExtraBold.otf */,
@@ -375,9 +476,18 @@
 				5EB3CA5A29A8BE94004DF5AA /* SettingInfoViewController.swift */,
 				5EB3CA7529A8EFB2004DF5AA /* SettingBirthDayViewController.swift */,
 				5EB3CA7729A9A8CB004DF5AA /* SettingGenderViewController.swift */,
-				5EB3CA7929A9C33C004DF5AA /* SettingFirstDayViewController.swift */,
+				5E0B47E429B324B000B0B3CF /* SubscriptionViewController.swift */,
 			);
 			path = SettingInfo;
+			sourceTree = "<group>";
+		};
+		5EC4355D29B0E06600835D51 /* SettingFirstDay */ = {
+			isa = PBXGroup;
+			children = (
+				5EB3CA7929A9C33C004DF5AA /* SettingFirstDayViewController.swift */,
+				5E0B47CF29B0E36C00B0B3CF /* SettingFirstDay.storyboard */,
+			);
+			path = SettingFirstDay;
 			sourceTree = "<group>";
 		};
 		A29AD87B94AFD27802CED433 /* Frameworks */ = {
@@ -511,12 +621,15 @@
 				5E94128329AE2232003ADFF5 /* SetMailBoxName.storyboard in Resources */,
 				5EB3CA6729A8C433004DF5AA /* Pretendard-Black.otf in Resources */,
 				5EB3CA6D29A8C440004DF5AA /* Pretendard-Regular.otf in Resources */,
+				5E0B47D029B0E36C00B0B3CF /* SettingFirstDay.storyboard in Resources */,
 				5EB3CA6C29A8C43E004DF5AA /* Pretendard-Medium.otf in Resources */,
 				5EB3CA6F29A8C444004DF5AA /* Pretendard-Thin.otf in Resources */,
 				5EB3CA6A29A8C439004DF5AA /* Pretendard-ExtraLight.otf in Resources */,
 				5EB3CA6929A8C437004DF5AA /* Pretendard-ExtraBold.otf in Resources */,
+				5E0B47E829B4710600B0B3CF /* Cafe24SsurroundAir.ttf in Resources */,
 				5E84C69129A50D7F00F5BA81 /* Main.storyboard in Resources */,
 				5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */,
+				5E0B47D329B2127800B0B3CF /* AddDiaryBook.storyboard in Resources */,
 				5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */,
 				5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */,
 				5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */,
@@ -648,27 +761,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5E0B47D529B212BD00B0B3CF /* SelectCoverViewController.swift in Sources */,
+				5E0B47DC29B2E50900B0B3CF /* UserService.swift in Sources */,
 				5E94128B29AF2B9E003ADFF5 /* CalendarViewController.swift in Sources */,
+				5E0B47DE29B2E51500B0B3CF /* UserAPI.swift in Sources */,
 				5E84C71329A6498400F5BA81 /* UIView.swift in Sources */,
 				5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */,
 				5E94128729AEF9D3003ADFF5 /* MainTabBarController.swift in Sources */,
+				5E0B47F129B49E0C00B0B3CF /* CoupleService.swift in Sources */,
+				5E0B47F329B49E1800B0B3CF /* CoupleAPI.swift in Sources */,
+				5E0B47F629B4A16D00B0B3CF /* InputPartnerCodeResponse.swift in Sources */,
 				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
 				5E94128D29AF2C3D003ADFF5 /* MailboxViewController.swift in Sources */,
 				5E94129129AF49B7003ADFF5 /* UIImage.swift in Sources */,
 				5E94128529AE2353003ADFF5 /* SetMailBoxNameViewController.swift in Sources */,
 				5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */,
+				5E0B47E529B324B000B0B3CF /* SubscriptionViewController.swift in Sources */,
 				5EB3CA7A29A9C33C004DF5AA /* SettingFirstDayViewController.swift in Sources */,
 				5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */,
 				5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */,
+				5E0B47D729B2133300B0B3CF /* SettingDiaryNameViewController.swift in Sources */,
+				5E0B47FA29B4B91400B0B3CF /* CheckMailResponse.swift in Sources */,
 				5E94128F29AF2C52003ADFF5 /* MySpaceViewController.swift in Sources */,
 				5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */,
 				5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */,
 				5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */,
+				5E0B47E029B2E62B00B0B3CF /* Constant.swift in Sources */,
+				5E0B47D929B2139000B0B3CF /* CompleteDiarySettingViewController.swift in Sources */,
 				5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */,
+				5E0B47EA29B4853800B0B3CF /* SignupResponse.swift in Sources */,
 				5E94128129AE200B003ADFF5 /* MatchingCompleteViewController.swift in Sources */,
+				5E0B47E329B2EA6300B0B3CF /* LoginResponse.swift in Sources */,
 				5E94128929AF2B8E003ADFF5 /* DiaryViewController.swift in Sources */,
 				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
+				5E0B47F829B4B7D400B0B3CF /* SetMailBoxNameResponse.swift in Sources */,
 				5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */,
+				5E0B47ED29B48DA800B0B3CF /* RefreshResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Moya
+
 class SetMailBoxNameViewController: UIViewController {
 
     
@@ -79,13 +81,15 @@ class SetMailBoxNameViewController: UIViewController {
             view.endEditing(true)
         }
         else{
-            let storyboard = UIStoryboard(name: "Diary", bundle: nil)
             
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
-            
-            vc.modalPresentationStyle = .fullScreen
-            
-            self.present(vc, animated: true)
+            checkMailBoxName()
+//            let storyboard = UIStoryboard(name: "Diary", bundle: nil)
+//
+//            guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
+//
+//            vc.modalPresentationStyle = .fullScreen
+//
+//            self.present(vc, animated: true)
         }
         
     }
@@ -124,9 +128,7 @@ class SetMailBoxNameViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
         
         NotificationCenter.default.addObserver(self, selector: #selector(textDidChange(_:)), name: UITextField.textDidChangeNotification, object: nil)
-        
-        
-
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -177,5 +179,52 @@ extension SetMailBoxNameViewController: UITextFieldDelegate{
         }
         
         return true
+    }
+}
+
+extension SetMailBoxNameViewController{
+    
+    func checkMailBoxName(){
+        
+        let mailBoxName = mailboxNameTextField.text
+        let suffix = "함"
+        
+        let result = mailBoxName?.replacingOccurrences(of: suffix, with: "") ?? ""
+        print(result) // Output: 우편
+        
+        CoupleAPI.providerCouple.request( .checkMail(mailboxName: result)){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(CheckMailResponse.self)
+                    print(response)
+                    
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> checkMailBoxName Error : \(error.localizedDescription)")
+            }
+        }
+    }
+
+    
+    func setMailBoxName(){
+        CoupleAPI.providerCouple.request( .setMailBoxName(mailboxName: mailboxNameTextField.text ?? "")){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(InputPartnerCodeResponse.self)
+                    
+                    
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> signUpFromU Error : \(error.localizedDescription)")
+            }
+        }
     }
 }

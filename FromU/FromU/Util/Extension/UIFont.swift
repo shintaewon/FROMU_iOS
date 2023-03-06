@@ -31,4 +31,14 @@ extension UIFont {
     static func EF_Diary(_ type: EF_DiaryType, size: CGFloat) -> UIFont {
         return UIFont(name: "\(type.rawValue)", size: size)!
     }
+    
+    public enum Cafe24SsurroundAirType: String {
+        case Cafe24SsurroundAir = "Cafe24SsurroundAir"
+    }
+    
+    static func Cafe24SsurroundAir(_ type: Cafe24SsurroundAirType, size: CGFloat) -> UIFont {
+        return UIFont(name: "\(type.rawValue)", size: size)!
+    }
+    
+    
 }

@@ -25,6 +25,7 @@ class SettingGenderViewController: UIViewController {
     var isMale = false
     
     @objc func femaleViewTapped() {
+        UserDefaults.standard.set("FM", forKey: "gender")
         changeNextBtnActive()
         if isFemale == false {
             isFemale = true
@@ -36,6 +37,7 @@ class SettingGenderViewController: UIViewController {
     }
     
     @objc func maleViewTapped() {
+        UserDefaults.standard.set("M", forKey: "gender")
         changeNextBtnActive()
         if isMale == false {
             isMale = true
@@ -48,9 +50,7 @@ class SettingGenderViewController: UIViewController {
     
     @IBAction func didTapNextBtn(_ sender: Any) {
         
-        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
-        
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SubscriptionViewController") as? SubscriptionViewController else {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
     }

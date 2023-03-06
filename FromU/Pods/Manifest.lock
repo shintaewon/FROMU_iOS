@@ -35,9 +35,16 @@ PODS:
     - KakaoSDKCommon/Common (= 2.11.1)
   - KakaoSDKUser (2.11.1):
     - KakaoSDKAuth (= 2.11.1)
+  - Moya (15.0.0):
+    - Moya/Core (= 15.0.0)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
   - KakaoSDK
+  - Moya
+  - SwiftKeychainWrapper
 
 SPEC REPOS:
   trunk:
@@ -52,6 +59,8 @@ SPEC REPOS:
     - KakaoSDKTalk
     - KakaoSDKTemplate
     - KakaoSDKUser
+    - Moya
+    - SwiftKeychainWrapper
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
@@ -65,7 +74,9 @@ SPEC CHECKSUMS:
   KakaoSDKTalk: 504872e5b49e5ff104c65e37d54d2a8f04c606d3
   KakaoSDKTemplate: f8ee0b33f649e436c1aaf2a3a6bd6aa3dcae2451
   KakaoSDKUser: 08c0a4f40bebdebdf948a9e3d0e44ed5c2754f99
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
+  SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 920499a8a813ee85f7042f9c8faeb4e96394b712
+PODFILE CHECKSUM: 7e0bccf23d712e11d4e29b3791a9c3db16cd5a93
 
 COCOAPODS: 1.11.3

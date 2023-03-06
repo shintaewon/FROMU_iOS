@@ -55,8 +55,28 @@ class SettingBirthDayViewController: UIViewController {
     
     @IBAction func didTapNextBtn(_ sender: Any) {
          
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingGenderViewController") as? SettingGenderViewController else {return}
+        var completeBirthDay = yearTextField.text ?? ""
         
+        if monthTextField.text?.count == 1 {
+            completeBirthDay = completeBirthDay + "0" +  (monthTextField.text ?? "")
+        }
+        else{
+            completeBirthDay = completeBirthDay + (monthTextField.text ?? "")
+        }
+        
+        if dayTextField.text?.count == 1 {
+            completeBirthDay = completeBirthDay + "0" +  (dayTextField.text ?? "")
+        }
+        else{
+            completeBirthDay = completeBirthDay + (dayTextField.text ?? "")
+        }
+        
+//        print(completeBirthDay)
+        
+        UserDefaults.standard.set(completeBirthDay, forKey: "birthDay")
+
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingGenderViewController") as? SettingGenderViewController else {return}
+
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

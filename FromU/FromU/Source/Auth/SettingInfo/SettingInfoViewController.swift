@@ -62,7 +62,7 @@ class SettingNickNameViewController: UIViewController {
                 
                 nickNameTextField.text = substring + " "
                 
-                let when = DispatchTime.now() + 0.01
+                let when = DispatchTime.now() + 0.001
                 DispatchQueue.main.asyncAfter(deadline: when) {
                     self.nickNameTextField.text = String(substring)
                 }
@@ -73,9 +73,12 @@ class SettingNickNameViewController: UIViewController {
     
     @IBAction func didTapNextBtn(_ sender: Any) {
          
+        UserDefaults.standard.set(nickNameTextField.text, forKey: "nickName")
+
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingBirthDayViewController") as? SettingBirthDayViewController else {return}
-        
+
         self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     override func viewDidLoad() {

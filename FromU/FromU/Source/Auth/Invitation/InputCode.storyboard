@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="EF_Diary.ttf">
-            <string>EF_Diary</string>
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
         </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
@@ -26,19 +26,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연인의 코드를 입력해줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gwM-tO-rrP">
-                                <rect key="frame" x="16" y="138" width="203" height="25.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <rect key="frame" x="16" y="138" width="207.66666666666666" height="23.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="예) FROMU123" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wsN-oV-W74">
-                                <rect key="frame" x="16" y="283.66666666666669" width="361" height="34"/>
+                                <rect key="frame" x="16" y="281.66666666666669" width="361" height="34"/>
                                 <color key="tintColor">
                                     <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
 </string>
                                 </color>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9i-b5-8VG">
@@ -57,8 +57,8 @@ cHJpbWFyeQhTZWNvbmQ
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8자(특수문자 및 공백 제외)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jGa-uB-PSZ">
-                                <rect key="frame" x="16" y="331.66666666666669" width="143.33333333333334" height="15.333333333333314"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="12"/>
+                                <rect key="frame" x="16" y="329.66666666666669" width="142.66666666666666" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>

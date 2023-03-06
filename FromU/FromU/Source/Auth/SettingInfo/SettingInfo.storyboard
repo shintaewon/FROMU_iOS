@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="EF_Diary.ttf">
-            <string>EF_Diary</string>
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
         </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
@@ -26,27 +26,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u4a-sC-UFm">
-                                <rect key="frame" x="16" y="138" width="180.66666666666666" height="51.333333333333343"/>
+                                <rect key="frame" x="16" y="138" width="183" height="47.333333333333343"/>
                                 <string key="text">반가워,
 너의 닉네임을 정해줘</string>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상대방과 함께하는 애칭도 좋아!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Czf-f5-Enh">
-                                <rect key="frame" x="16" y="201.33333333333334" width="211.33333333333334" height="20.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="16"/>
+                                <rect key="frame" x="16" y="197.33333333333334" width="216.66666666666666" height="19"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="예) 프롬이" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QNY-JN-Lvh">
-                                <rect key="frame" x="16" y="280" width="361" height="34"/>
+                                <rect key="frame" x="16" y="274.33333333333331" width="361" height="36"/>
                                 <color key="tintColor">
                                     <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
 </string>
                                 </color>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="18"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="uwd-TK-qDP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5E7-Bc-VCm">
@@ -65,8 +68,8 @@ cHJpbWFyeQhTZWNvbmQ
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5글자 이내(특수문자 및 공백 제외)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQi-vJ-8nO">
-                                <rect key="frame" x="16" y="328" width="180.33333333333334" height="15.333333333333314"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="12"/>
+                                <rect key="frame" x="16" y="324.33333333333331" width="180.33333333333334" height="14.333333333333314"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
                                 <color key="textColor" red="0.4352940917" green="0.4352940917" blue="0.4352940917" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -95,7 +98,7 @@ cHJpbWFyeQhTZWNvbmQ
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="12" y="-34"/>
+            <point key="canvasLocation" x="11.450381679389313" y="-34.507042253521128"/>
         </scene>
         <!--Setting Birth Day View Controller-->
         <scene sceneID="KpX-cm-w0z">
@@ -106,13 +109,13 @@ cHJpbWFyeQhTZWNvbmQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 생일을 알려줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OST-PU-yj8">
-                                <rect key="frame" x="16" y="138" width="168.33333333333334" height="25.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <rect key="frame" x="16" y="138" width="169.66666666666666" height="23.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="zSx-m9-Tmo">
-                                <rect key="frame" x="120.66666666666667" y="283.66666666666669" width="151.66666666666663" height="22"/>
+                                <rect key="frame" x="120.66666666666667" y="281.66666666666669" width="151.66666666666663" height="22"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pZJ-3S-erw">
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="22"/>
@@ -187,7 +190,7 @@ cHJpbWFyeQhTZWNvbmQ
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbb-6C-81t">
-                                <rect key="frame" x="16" y="311.66666666666669" width="361" height="1"/>
+                                <rect key="frame" x="16" y="309.66666666666669" width="361" height="1"/>
                                 <color key="backgroundColor" name="disabled"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="9ER-2Q-vBE"/>
@@ -230,13 +233,13 @@ cHJpbWFyeQhTZWNvbmQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 성별을 알려줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-K3-HJK">
-                                <rect key="frame" x="16" y="138" width="167.66666666666666" height="25.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <rect key="frame" x="16" y="138" width="155" height="23.333333333333343"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-PM-iCc">
-                                <rect key="frame" x="16" y="203.66666666666663" width="175" height="130"/>
+                                <rect key="frame" x="16" y="201.33333333333337" width="175" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-pI-bq9">
                                         <rect key="frame" x="63.666666666666671" y="28" width="48" height="74"/>
@@ -249,8 +252,8 @@ cHJpbWFyeQhTZWNvbmQ
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-ki-aa8">
-                                                <rect key="frame" x="0.0" y="48.000000000000028" width="48" height="26"/>
-                                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="47.999999999999972" width="48" height="26"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -269,7 +272,7 @@ cHJpbWFyeQhTZWNvbmQ
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssq-el-qTL">
-                                <rect key="frame" x="202" y="203.66666666666663" width="175" height="128"/>
+                                <rect key="frame" x="202" y="201.33333333333337" width="175" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JDC-MJ-qcz">
                                         <rect key="frame" x="63.666666666666686" y="27" width="48" height="74"/>
@@ -282,8 +285,8 @@ cHJpbWFyeQhTZWNvbmQ
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-CE-hnk">
-                                                <rect key="frame" x="0.0" y="48.000000000000028" width="48" height="26"/>
-                                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="16"/>
+                                                <rect key="frame" x="0.0" y="47.999999999999972" width="48" height="26"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -345,131 +348,129 @@ cHJpbWFyeQhTZWNvbmQ
             </objects>
             <point key="canvasLocation" x="1650" y="-35"/>
         </scene>
-        <!--Setting First Day View Controller-->
-        <scene sceneID="n9f-VS-A1t">
+        <!--Subscription View Controller-->
+        <scene sceneID="geO-EI-qLC">
             <objects>
-                <viewController storyboardIdentifier="SettingFirstDayViewController" id="bqr-6K-qHY" customClass="SettingFirstDayViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="M2G-5w-qBY">
+                <viewController storyboardIdentifier="SubscriptionViewController" id="qga-Dw-9OH" customClass="SubscriptionViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fU9-CO-0ib">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연인과 처음 만난 날을 알려줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ny-FE-N8T">
-                                <rect key="frame" x="16.000000000000014" y="138" width="253.33333333333337" height="25.666666666666657"/>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아라," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMH-Sc-Nmq">
+                                <rect key="frame" x="16" y="143" width="65.666666666666671" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="ZjY-0D-pEg">
-                                <rect key="frame" x="120.66666666666667" y="283.66666666666669" width="151.66666666666663" height="22"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nAh-4K-teZ">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="22"/>
-                                        <color key="tintColor">
-                                            <string key="name" base64-UTF8="YES">
-cHJpbWFyeQhTZWNvbmQ
-</string>
-                                        </color>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="22" id="G6g-6W-3WU"/>
-                                            <constraint firstAttribute="width" constant="50" id="yHy-Rh-ZSE"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CsA-cY-ukH">
-                                        <rect key="frame" x="55.999999999999986" y="0.0" width="6.3333333333333357" height="22"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
-                                        <color key="textColor" name="text-disabled"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JzP-MP-l00">
-                                        <rect key="frame" x="68.333333333333329" y="0.0" width="35" height="22"/>
-                                        <color key="tintColor">
-                                            <string key="name" base64-UTF8="YES">
-cHJpbWFyeQhTZWNvbmQ
-</string>
-                                        </color>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="35" id="nMZ-a7-k0U"/>
-                                            <constraint firstAttribute="height" constant="22" id="pUf-mZ-HRv"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWq-TO-xqg">
-                                        <rect key="frame" x="109.33333333333333" y="0.0" width="6.3333333333333286" height="22"/>
-                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
-                                        <color key="textColor" name="text-disabled"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UnG-AN-pRp">
-                                        <rect key="frame" x="121.66666666666669" y="0.0" width="30" height="22"/>
-                                        <color key="tintColor">
-                                            <string key="name" base64-UTF8="YES">
-cHJpbWFyeQhTZWNvbmQ
-</string>
-                                        </color>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="AIw-Xr-axR"/>
-                                            <constraint firstAttribute="height" constant="22" id="Fi4-3n-34O"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                </subviews>
-                            </stackView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZo-OJ-sgt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuV-Cl-2Fl">
+                                <rect key="frame" x="16" y="186.66666666666666" width="57" height="35.666666666666657"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2M7-zS-Gy0">
+                                <rect key="frame" x="16" y="606" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="aoS-EA-bBP"/>
+                                    <constraint firstAttribute="width" constant="24" id="ez5-jG-miD"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icn_checkBox_false"/>
+                                <connections>
+                                    <action selector="didTapsubscheckBtn1:" destination="qga-Dw-9OH" eventType="touchUpInside" id="SeP-Bb-gbw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OUG-Th-gkl">
                                 <rect key="frame" x="16" y="682" width="361" height="56"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.94509804249999996" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="hiN-n6-hJG"/>
+                                    <constraint firstAttribute="height" constant="56" id="Apg-rj-8nj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음">
+                                <state key="normal" title="동의하고 시작할래!">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="didTapNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Wfr-Vo-Eye"/>
-                                    <action selector="didTapNextBtn:" destination="bqr-6K-qHY" eventType="touchUpInside" id="or2-PE-KcJ"/>
+                                    <action selector="didTapNextBtn:" destination="Ld3-3Q-BFM" eventType="touchUpInside" id="LSr-0R-QjU"/>
+                                    <action selector="didTapNextBtn:" destination="8VM-6x-Mh1" eventType="touchUpInside" id="mmB-AG-N8u"/>
+                                    <action selector="didTapNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="utK-XM-VJh"/>
+                                    <action selector="didTapStartBtn:" destination="qga-Dw-9OH" eventType="touchUpInside" id="x4a-cS-g4C"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MVk-e2-A9v">
-                                <rect key="frame" x="16" y="311.66666666666669" width="361" height="1"/>
-                                <color key="backgroundColor" name="disabled"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Thy-ZP-QXA">
+                                <rect key="frame" x="16" y="634" width="24" height="24"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="1" id="UMm-lH-06I"/>
+                                    <constraint firstAttribute="height" constant="24" id="L7I-K9-xiN"/>
+                                    <constraint firstAttribute="width" constant="24" id="tHH-Wy-o0X"/>
                                 </constraints>
-                            </view>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icn_checkBox_false"/>
+                                <connections>
+                                    <action selector="didTapsubscheckBtn2:" destination="qga-Dw-9OH" eventType="touchUpInside" id="EN0-yn-N5o"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LUN-qN-uSS">
+                                <rect key="frame" x="48" y="636" width="193" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="AHP-SG-6eA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="(필수)개인 정보 수집/이용 동의">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-OR-jPu">
+                                <rect key="frame" x="48" y="608" width="91" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="iBm-AU-RqF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="(필수)이용약관">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="gCN-9t-zBU"/>
+                        <viewLayoutGuide key="safeArea" id="pgD-3t-9bY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="FZo-OJ-sgt" firstAttribute="leading" secondItem="gCN-9t-zBU" secondAttribute="leading" constant="16" id="3DK-0N-ana"/>
-                            <constraint firstItem="2Ny-FE-N8T" firstAttribute="top" secondItem="M2G-5w-qBY" secondAttribute="top" constant="138" id="3Kn-hE-Ze9"/>
-                            <constraint firstItem="ZjY-0D-pEg" firstAttribute="top" secondItem="2Ny-FE-N8T" secondAttribute="bottom" constant="120" id="GPq-2l-dF5"/>
-                            <constraint firstItem="MVk-e2-A9v" firstAttribute="top" secondItem="ZjY-0D-pEg" secondAttribute="bottom" constant="6" id="NTo-JP-UlI"/>
-                            <constraint firstItem="gCN-9t-zBU" firstAttribute="trailing" secondItem="MVk-e2-A9v" secondAttribute="trailing" constant="16" id="Oec-64-QmI"/>
-                            <constraint firstItem="2Ny-FE-N8T" firstAttribute="leading" secondItem="gCN-9t-zBU" secondAttribute="leading" constant="16" id="Svk-gS-3h2"/>
-                            <constraint firstItem="gCN-9t-zBU" firstAttribute="trailing" secondItem="FZo-OJ-sgt" secondAttribute="trailing" constant="16" id="dZK-VQ-y54"/>
-                            <constraint firstItem="MVk-e2-A9v" firstAttribute="leading" secondItem="gCN-9t-zBU" secondAttribute="leading" constant="16" id="dx8-dg-aki"/>
-                            <constraint firstItem="ZjY-0D-pEg" firstAttribute="centerX" secondItem="M2G-5w-qBY" secondAttribute="centerX" id="iYp-fX-fDU"/>
-                            <constraint firstItem="gCN-9t-zBU" firstAttribute="bottom" secondItem="FZo-OJ-sgt" secondAttribute="bottom" constant="80" id="mnw-TJ-24i"/>
+                            <constraint firstItem="OUG-Th-gkl" firstAttribute="top" secondItem="LUN-qN-uSS" secondAttribute="bottom" constant="26" id="1f1-Qa-pkL"/>
+                            <constraint firstItem="pgD-3t-9bY" firstAttribute="bottom" secondItem="OUG-Th-gkl" secondAttribute="bottom" constant="80" id="3yJ-nb-7Cc"/>
+                            <constraint firstItem="Thy-ZP-QXA" firstAttribute="top" secondItem="2M7-zS-Gy0" secondAttribute="bottom" constant="4" id="8ls-xU-Fkd"/>
+                            <constraint firstItem="TuV-Cl-2Fl" firstAttribute="leading" secondItem="pgD-3t-9bY" secondAttribute="leading" constant="16" id="I3X-bN-Fc9"/>
+                            <constraint firstItem="LUN-qN-uSS" firstAttribute="top" secondItem="HUk-OR-jPu" secondAttribute="bottom" constant="8" id="IXA-ZJ-nJR"/>
+                            <constraint firstItem="2M7-zS-Gy0" firstAttribute="leading" secondItem="pgD-3t-9bY" secondAttribute="leading" constant="16" id="Kju-mw-5Zd"/>
+                            <constraint firstItem="HUk-OR-jPu" firstAttribute="leading" secondItem="2M7-zS-Gy0" secondAttribute="trailing" constant="8" id="Q0N-4x-hIY"/>
+                            <constraint firstItem="OUG-Th-gkl" firstAttribute="top" secondItem="Thy-ZP-QXA" secondAttribute="bottom" constant="24" id="WGd-2V-kH1"/>
+                            <constraint firstItem="TMH-Sc-Nmq" firstAttribute="top" secondItem="pgD-3t-9bY" secondAttribute="top" constant="40" id="WnO-TM-gKk"/>
+                            <constraint firstItem="OUG-Th-gkl" firstAttribute="leading" secondItem="pgD-3t-9bY" secondAttribute="leading" constant="16" id="Yrb-xs-ehf"/>
+                            <constraint firstItem="pgD-3t-9bY" firstAttribute="trailing" secondItem="OUG-Th-gkl" secondAttribute="trailing" constant="16" id="erb-D5-vRi"/>
+                            <constraint firstItem="LUN-qN-uSS" firstAttribute="leading" secondItem="Thy-ZP-QXA" secondAttribute="trailing" constant="8" id="m78-Ag-E3T"/>
+                            <constraint firstItem="Thy-ZP-QXA" firstAttribute="leading" secondItem="pgD-3t-9bY" secondAttribute="leading" constant="16" id="nMN-Fz-8o7"/>
+                            <constraint firstItem="TMH-Sc-Nmq" firstAttribute="leading" secondItem="pgD-3t-9bY" secondAttribute="leading" constant="16" id="p92-Sw-U5p"/>
+                            <constraint firstItem="TuV-Cl-2Fl" firstAttribute="top" secondItem="TMH-Sc-Nmq" secondAttribute="bottom" constant="8" id="qT4-nn-KDb"/>
                         </constraints>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
-                        <outlet property="dayTextField" destination="UnG-AN-pRp" id="LMc-l5-2q2"/>
-                        <outlet property="monthTextField" destination="JzP-MP-l00" id="vCl-Ak-b57"/>
-                        <outlet property="nextBtn" destination="FZo-OJ-sgt" id="6VH-1Q-7T3"/>
-                        <outlet property="yearTextField" destination="nAh-4K-teZ" id="AQT-B3-ZSA"/>
+                        <outlet property="checkBtn1" destination="2M7-zS-Gy0" id="39e-RT-r44"/>
+                        <outlet property="checkBtn2" destination="Thy-ZP-QXA" id="vKU-x3-PVn"/>
+                        <outlet property="helloLabel" destination="TuV-Cl-2Fl" id="t7I-4x-V3g"/>
+                        <outlet property="nickNameLabel" destination="TMH-Sc-Nmq" id="HPA-ZL-Tzo"/>
+                        <outlet property="startBtn" destination="OUG-Th-gkl" id="0Wf-pe-BLF"/>
+                        <outlet property="subsBtn1" destination="HUk-OR-jPu" id="uGb-Ny-wPK"/>
+                        <outlet property="subsBtn2" destination="LUN-qN-uSS" id="kS4-Mg-T4I"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yM9-Qc-1VS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x68-ww-IGu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2579" y="-35"/>
+            <point key="canvasLocation" x="2559.5419847328244" y="-35.211267605633807"/>
         </scene>
     </scenes>
     <resources>
+        <image name="icn_checkBox_false" width="24" height="24"/>
         <image name="undraw_female_avatar_efig 1" width="48" height="48"/>
         <image name="undraw_male_avatar_g98d 1" width="48" height="48"/>
         <namedColor name="disabled">

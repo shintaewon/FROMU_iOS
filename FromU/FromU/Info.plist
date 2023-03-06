@@ -16,16 +16,18 @@
 	<string>Fonts/Pretendard-ExtraBold.otf</string>
 	<key>Item 4</key>
 	<string>Fonts/Pretendard-Medium.otf</string>
-    <key>Item 5</key>
-    <string>Fonts/Pretendard-Thin.otf</string>
-    <key>Item 6</key>
-    <string>Fonts/Pretendard-Regular.otf</string>
-    <key>Item 7</key>
-    <string>Fonts/Pretendard-SemiBold.otf</string>
-    <key>Item 8</key>
-    <string>Fonts/Pretendard-ExtraLight.otf</string>
-    <key>Item 9</key>
-    <string>Fonts/Pretendard-Bold.otf</string>
+	<key>Item 5</key>
+	<string>Fonts/Pretendard-Thin.otf</string>
+	<key>Item 6</key>
+	<string>Fonts/Pretendard-Regular.otf</string>
+	<key>Item 7</key>
+	<string>Fonts/Pretendard-SemiBold.otf</string>
+	<key>Item 8</key>
+	<string>Fonts/Pretendard-ExtraLight.otf</string>
+	<key>Item 9</key>
+	<string>Fonts/Pretendard-Bold.otf</string>
+	<key>item 10</key>
+	<string>Fonts/Cafe24SsurroundAir.ttf</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>

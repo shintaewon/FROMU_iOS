@@ -59,16 +59,18 @@ class InputCodeViewController: UIViewController {
     
     @IBAction func didTapConnectBtn(_ sender: Any) {
          
-        if codeTextField.text == "11111111"{
-            let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
-            
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
-            
-            self.navigationController?.pushViewController(vc, animated: true)
-        }
-        else{
-            showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
-        }
+        inputPartnerCode()
+        
+//        if codeTextField.text == "11111111"{
+//            let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
+//
+//            guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
+//
+//            self.navigationController?.pushViewController(vc, animated: true)
+//        }
+//        else{
+//            showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
+//        }
         
     }
     
@@ -147,6 +149,55 @@ extension InputCodeViewController: UITextFieldDelegate{
     }
 }
 
+extension InputCodeViewController{
+    
+    func inputPartnerCode(){
+        print("code:", codeTextField.text ?? "")
+        CoupleAPI.providerCouple.request( .inputPartnerCode(partnerCode: codeTextField.text ?? "")){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(InputPartnerCodeResponse.self)
+                    
+                    print(response)
+                    //일단 엔드포인트 호출 성공
+                    if response.isSuccess == true{
+                        
+                        //코드 잘못 입력한겨
+                        if response.code == 4001 {
+                            self.showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
+                        }
+                        //이미 커플 매칭 완료.. 바람..?
+                        else if response.code == 2020 {
+                            
+                            self.showToast(message: "이미 커플 매칭이 완료된 유저입니다.", font: UIFont.Pretendard(.regular, size: 14))
+                        }
+                        //매칭 성공
+                        else if response.code == 1000 {
+                            
+                            UserDefaults.standard.set(response.result?.partnerNickname, forKey: "partnerNickName")
+                            
+                            UserDefaults.standard.set(response.result?.nickname, forKey: "nickName")
+                            
+                            let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
+                            guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
+                
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                    
+            
+                } catch {
+                    print(error)
+                }
+
+            case .failure(let error):
+                print("DEBUG>> signUpFromU Error : \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
 //Toast Message를 위한 클래스 extension(코드길이가 길어서 밑에 빼둠)
 extension InputCodeViewController{
     
@@ -168,3 +219,4 @@ extension InputCodeViewController{
             })
         }
 }
+

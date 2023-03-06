@@ -9,8 +9,8 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="EF_Diary.ttf">
-            <string>EF_Diary</string>
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
         </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
@@ -26,10 +26,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="REP-GW-WIb">
-                                <rect key="frame" x="16" y="138" width="204" height="51.333333333333343"/>
+                                <rect key="frame" x="16" y="138" width="207.66666666666666" height="47.333333333333343"/>
                                 <string key="text">너에게 코드를 줄게.
 너의 연인과 연결해보자!</string>
-                                <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -49,14 +49,14 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gBT-uE-60k">
-                                <rect key="frame" x="16" y="314.33333333333331" width="361" height="1"/>
+                                <rect key="frame" x="16" y="310.33333333333331" width="361" height="1"/>
                                 <color key="backgroundColor" name="disabled"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="KvM-PH-QRB"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="h38c25s" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0E-8r-OTN">
-                                <rect key="frame" x="160.66666666666666" y="281.33333333333331" width="72" height="21"/>
+                                <rect key="frame" x="160.66666666666666" y="277.33333333333331" width="72" height="21"/>
                                 <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                 <color key="textColor">
                                     <string key="name" base64-UTF8="YES">
@@ -101,10 +101,10 @@ cHJpbWFyeQhTZWNvbmQ
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3HZ-JC-eKE">
-                                        <rect key="frame" x="67.666666666666657" y="361" width="257.66666666666674" height="51.333333333333314"/>
+                                        <rect key="frame" x="64.333333333333343" y="361" width="264.66666666666663" height="47.333333333333314"/>
                                         <string key="text">새로고침 아이콘을 눌러,
 연인과의 연결상태를 확인해봐!</string>
-                                        <fontDescription key="fontDescription" name="EF_Diary" family="EF_다이어리" pointSize="20"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -167,6 +167,7 @@ cHJpbWFyeQhTZWNvbmQ
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="descriptionView" destination="zRp-W5-HFX" id="sA8-Em-X0G"/>
+                        <outlet property="explainLabel" destination="REP-GW-WIb" id="vn7-g2-etc"/>
                         <outlet property="inputCodeBtn" destination="CDJ-ex-AC2" id="Gsg-P3-rUy"/>
                         <outlet property="invitationBtn" destination="Vea-Fe-CTl" id="H6w-P0-Euw"/>
                         <outlet property="invitationCodeLabel" destination="T0E-8r-OTN" id="hja-yt-Al7"/>

@@ -12,7 +12,7 @@ struct SetMailBoxNameResponse: Codable {
     let code: Int
     let isSuccess: Bool
     let message: String
-    let result: SetMailBoxNameResult
+    let result: SetMailBoxNameResult?
 }
 
 // MARK: - Result

@@ -12,7 +12,10 @@ class MatchingCompleteViewController: UIViewController {
     @IBOutlet weak var backgroundView: UIView!
     
     
-    @IBOutlet weak var matchingLabel: UILabel!
+    @IBOutlet weak var firstNickNameLabel: UILabel!
+    
+    @IBOutlet weak var secondNickNameLabel: UILabel!
+    
     
     func goToSetMailBoxNamePage(){
         let storyboard = UIStoryboard(name: "SetMailBoxName", bundle: nil)
@@ -25,7 +28,9 @@ class MatchingCompleteViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        matchingLabel.text = "\(UserDefaults.standard.string(forKey: "partnerNickName") ?? "")와(과) 매칭이 되었어!"
+        firstNickNameLabel.text = "\(UserDefaults.standard.string(forKey: "nickName") ?? ""),"
+        
+        secondNickNameLabel.text = "그리고 \(UserDefaults.standard.string(forKey: "partnerNickName") ?? "")."
         
         backgroundView.setGradient(color1: UIColor(red: 0.396, green: 0.667, blue: 1, alpha: 1), color2: UIColor(red: 0.786, green: 0.514, blue: 1, alpha: 1))
         

@@ -46,5 +46,12 @@ extension UIColor {
     static var icon: UIColor {
         return UIColor(hex:0x6F6F6F)
     }
+    
+    static var error: UIColor {
+        return UIColor(hex:0xFF4A6B)
+    }
   
+    static var gray06: UIColor {
+        return UIColor(hex:0x7D7D7D)
+    }
 }

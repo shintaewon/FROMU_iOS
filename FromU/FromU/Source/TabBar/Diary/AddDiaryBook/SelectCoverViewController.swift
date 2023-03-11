@@ -9,10 +9,10 @@ import UIKit
 
 class SelectCoverViewController: UIViewController {
 
-    @IBOutlet weak var colorView1: UIView!
-    @IBOutlet weak var colorView2: UIView!
-    @IBOutlet weak var colorView3: UIView!
-    @IBOutlet weak var colorView4: UIView!
+    @IBOutlet weak var colorView1: UIImageView!
+    @IBOutlet weak var colorView2: UIImageView!
+    @IBOutlet weak var colorView3: UIImageView!
+    @IBOutlet weak var colorView4: UIImageView!
     
     
     @IBOutlet weak var nextBtn: UIButton!
@@ -22,13 +22,14 @@ class SelectCoverViewController: UIViewController {
     var isClickView3 = false
     var isClickView4 = false
     
-    
+    var selectDiaryNum = 0
     
     @objc func colorView1Tapped(){
         isClickView1 = true
         isClickView2 = false
         isClickView3 = false
         isClickView4 = false
+        selectDiaryNum = 1
         
         colorView1.layer.borderColor = UIColor.primary02.cgColor
         colorView2.layer.borderColor = UIColor.clear.cgColor
@@ -44,6 +45,7 @@ class SelectCoverViewController: UIViewController {
         isClickView2 = true
         isClickView3 = false
         isClickView4 = false
+        selectDiaryNum = 2
         
         colorView1.layer.borderColor = UIColor.clear.cgColor
         colorView2.layer.borderColor = UIColor.primary02.cgColor
@@ -58,6 +60,7 @@ class SelectCoverViewController: UIViewController {
         isClickView2 = false
         isClickView3 = true
         isClickView4 = false
+        selectDiaryNum = 3
         
         colorView1.layer.borderColor = UIColor.clear.cgColor
         colorView2.layer.borderColor = UIColor.clear.cgColor
@@ -72,6 +75,7 @@ class SelectCoverViewController: UIViewController {
         isClickView2 = false
         isClickView3 = false
         isClickView4 = true
+        selectDiaryNum = 4
         
         colorView1.layer.borderColor = UIColor.clear.cgColor
         colorView2.layer.borderColor = UIColor.clear.cgColor
@@ -97,6 +101,7 @@ class SelectCoverViewController: UIViewController {
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingDiaryNameViewController") as? SettingDiaryNameViewController else {return}
         self.navigationController?.pushViewController(vc, animated: true)
+        vc.selectedDiaryNum = selectDiaryNum
     }
     
     override func viewDidLoad() {
@@ -118,6 +123,34 @@ class SelectCoverViewController: UIViewController {
         colorView2.layer.borderColor = UIColor.clear.cgColor
         colorView3.layer.borderColor = UIColor.clear.cgColor
         colorView4.layer.borderColor = UIColor.clear.cgColor
+        
+        colorView1.layer.cornerRadius = 12
+        colorView1.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        colorView1.layer.shadowOffset = CGSize(width: 0, height: 4)
+        colorView1.layer.shadowRadius = 12
+        colorView1.layer.shadowOpacity = 1
+        colorView1.layer.masksToBounds = false
+        
+        colorView2.layer.cornerRadius = 12
+        colorView2.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        colorView2.layer.shadowOffset = CGSize(width: 0, height: 4)
+        colorView2.layer.shadowRadius = 12
+        colorView2.layer.shadowOpacity = 1
+        colorView2.layer.masksToBounds = false
+        
+        colorView3.layer.cornerRadius = 12
+        colorView3.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        colorView3.layer.shadowOffset = CGSize(width: 0, height: 4)
+        colorView3.layer.shadowRadius = 12
+        colorView3.layer.shadowOpacity = 1
+        colorView3.layer.masksToBounds = false
+        
+        colorView4.layer.cornerRadius = 12
+        colorView4.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.2).cgColor
+        colorView4.layer.shadowOffset = CGSize(width: 0, height: 4)
+        colorView4.layer.shadowRadius = 12
+        colorView4.layer.shadowOpacity = 1
+        colorView4.layer.masksToBounds = false
         
         nextBtn.layer.cornerRadius = 8
         

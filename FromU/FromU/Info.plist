@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>&quot;FromU&quot;가 다이어리 내 사진 업로드 기능을 위해 갤러리 접근 권한을 요청합니다.</string>
+	<key>NSCameraUsageDescription</key>
+	<string>&quot;FromU&quot;가 다이어리 내 사진 업로드 기능을 위해 카메라 사용 접근 권한을 요청합니다.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string></string>

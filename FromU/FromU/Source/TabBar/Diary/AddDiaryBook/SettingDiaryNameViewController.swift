@@ -7,7 +7,7 @@
 
 import UIKit
 
-import UIKit
+import Moya
 
 class SettingDiaryNameViewController: UIViewController {
 
@@ -15,6 +15,8 @@ class SettingDiaryNameViewController: UIViewController {
     @IBOutlet weak var diaryNameTextField: UITextField!
     
     @IBOutlet weak var nextBtn: UIButton! //하단 다음 버튼
+    
+    var selectedDiaryNum = 0
     
     let bottomBorder = CALayer()
     
@@ -75,8 +77,7 @@ class SettingDiaryNameViewController: UIViewController {
     
     @IBAction func didTapNextBtn(_ sender: Any) {
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompleteDiarySettingViewController") as? CompleteDiarySettingViewController else {return}
-        self.navigationController?.pushViewController(vc, animated: true)
+        registerDiaryBook()
         
     }
     
@@ -150,4 +151,31 @@ extension SettingDiaryNameViewController: UITextFieldDelegate{
         
         return true
     }
+}
+
+extension SettingDiaryNameViewController{
+    
+    func registerDiaryBook(){
+        DiaryBookAPI.providerDiaryBook.request( .registerDiaryBook(coverNum: selectedDiaryNum, name: diaryNameTextField.text ?? "")){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(RegisterDiaryBookResponse.self)
+                    
+                    print(response)
+                    
+                    if response.isSuccess == true{
+                        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CompleteDiarySettingViewController") as? CompleteDiarySettingViewController else {return}
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> setMailBoxName Error : \(error.localizedDescription)")
+            }
+        }
+    }
+    
 }

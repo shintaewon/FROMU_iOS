@@ -12,8 +12,10 @@ import Moya
 class SetMailBoxNameViewController: UIViewController {
 
     
+    @IBOutlet weak var mainLabel: UILabel!
     @IBOutlet weak var mailboxNameTextField: UITextField!
     
+    @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var decideBtn: UIButton! //하단 다음 버튼
     
     let bottomBorder = CALayer()
@@ -87,15 +89,15 @@ class SetMailBoxNameViewController: UIViewController {
 //
 //            guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
 //
-//            vc.modalPresentationStyle = .fullScreen
-//
-//            self.present(vc, animated: true)
+//            self.navigationController?.pushViewController(vc, animated: true)
         }
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        mainLabel.text = "\(UserDefaults.standard.string(forKey: "nickName"))"
         
         decideBtn.isEnabled = false
         
@@ -135,15 +137,15 @@ class SetMailBoxNameViewController: UIViewController {
         navigationController?.isNavigationBarHidden = true
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = false
-    }
     
 }
 
 extension SetMailBoxNameViewController: UITextFieldDelegate{
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
+        descriptionLabel.text = "4글자 이내(특수문자 및 공백 제외)"
+        descriptionLabel.textColor = UIColor(hex: 0x6F6F6F)
+        descriptionLabel.isHidden = false
         isKeyboardAppear = true
         changeDecideBtnNonActive()
         textField.text = ""
@@ -151,6 +153,8 @@ extension SetMailBoxNameViewController: UITextFieldDelegate{
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
+        
+        descriptionLabel.isHidden = true
         
         bottomBorder.backgroundColor = UIColor.disabled.cgColor
         
@@ -189,15 +193,25 @@ extension SetMailBoxNameViewController{
         let mailBoxName = mailboxNameTextField.text
         let suffix = "함"
         
-        let result = mailBoxName?.replacingOccurrences(of: suffix, with: "") ?? ""
-        print(result) // Output: 우편
+        let mailBoxNameToCheck = mailBoxName?.replacingOccurrences(of: suffix, with: "") ?? ""
+        print(mailBoxNameToCheck) // Output: 우편
         
-        CoupleAPI.providerCouple.request( .checkMail(mailboxName: result)){ result in
+        CoupleAPI.providerCouple.request( .checkMail(mailboxName: mailBoxNameToCheck)){ result in
             switch result {
             case .success(let data):
                 do{
                     let response = try data.map(CheckMailResponse.self)
-                    print(response)
+                    
+                    if response.isSuccess == true{
+                        //중복 아니라는 뜻 -> 바로 설정 api 쏴버리장
+                        if response.result == false{
+                            self.setMailBoxName(mailBoxNameToCheck)
+                        }
+                        else{
+                            self.descriptionLabel.text = "중복되는 우편함 이름이야! 다른 걸로 변경해줘"
+                            self.descriptionLabel.textColor = .error
+                        }
+                    }
                     
                 } catch {
                     print(error)
@@ -210,20 +224,29 @@ extension SetMailBoxNameViewController{
     }
 
     
-    func setMailBoxName(){
-        CoupleAPI.providerCouple.request( .setMailBoxName(mailboxName: mailboxNameTextField.text ?? "")){ result in
+    func setMailBoxName(_ mailBoxName: String){
+        CoupleAPI.providerCouple.request( .setMailBoxName(mailboxName: mailBoxName)){ result in
             switch result {
             case .success(let data):
                 do{
-                    let response = try data.map(InputPartnerCodeResponse.self)
-                    
+                    let response = try data.map(SetMailBoxNameResponse.self)
+                    print(response)
+                    if response.isSuccess == true{
+                        if response.code == 1000 {
+                            let storyboard = UIStoryboard(name: "Diary", bundle: nil)
+                
+                            guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
+                
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
                     
                 } catch {
                     print(error)
                 }
                 
             case .failure(let error):
-                print("DEBUG>> signUpFromU Error : \(error.localizedDescription)")
+                print("DEBUG>> setMailBoxName Error : \(error.localizedDescription)")
             }
         }
     }

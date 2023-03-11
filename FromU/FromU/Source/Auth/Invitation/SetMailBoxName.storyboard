@@ -82,7 +82,9 @@ cHJpbWFyeQhTZWNvbmQ
                     </view>
                     <connections>
                         <outlet property="decideBtn" destination="EN0-hw-KSH" id="1TJ-4k-2Y1"/>
+                        <outlet property="descriptionLabel" destination="eLS-Of-9eZ" id="IyW-dX-FoJ"/>
                         <outlet property="mailboxNameTextField" destination="IW8-Gs-Ypc" id="jgu-mL-Dva"/>
+                        <outlet property="mainLabel" destination="1jW-g9-UFI" id="Qdk-Y7-H3F"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LjA-UP-dGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

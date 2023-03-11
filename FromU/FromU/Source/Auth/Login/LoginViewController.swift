@@ -21,10 +21,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var kakoBtn: UIButton!
     @IBOutlet weak var appleBtn: UIButton!
     
+    var isAutoLogin = false
     
     @IBAction func didTapKakaoBtn(_ sender: Any) {
-        
-        
+    
         
 //        let storyboard = UIStoryboard(name: "Diary", bundle: nil)
 //
@@ -33,18 +33,18 @@ class LoginViewController: UIViewController {
 //        self.navigationController?.pushViewController(vc, animated: true)
         
         
-        let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
-
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else {return}
-
-        self.navigationController?.pushViewController(vc, animated: true)
+//        let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
+//
+//        guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else {return}
+//
+//        self.navigationController?.pushViewController(vc, animated: true)
         
 //        let storyboard = UIStoryboard(name: "SettingInfo", bundle: nil)
 //        guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingNickNameViewController") as? SettingNickNameViewController else {return}
 //
 //        self.navigationController?.pushViewController(vc, animated: true)
         
-        //loginWithKakao()
+        loginWithKakao()
         
     }
     
@@ -73,7 +73,13 @@ class LoginViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
 
-        self.navigationController?.isNavigationBarHidden = false
+        if isAutoLogin == true{
+            self.navigationController?.isNavigationBarHidden = true
+        }
+        else{
+            self.navigationController?.isNavigationBarHidden = false
+        }
+        
     }
     
     func isLoggedIn() -> Bool {
@@ -186,6 +192,9 @@ extension LoginViewController{
                                     self.navigationController?.pushViewController(vc, animated: true)
                                 }
                                 else{//우편함 이름까지 설정해준 상태! -> 메인 화면으로
+                                    
+                                    self.isAutoLogin = true
+                                    
                                     let storyboard = UIStoryboard(name: "Diary", bundle: nil)
                             
                                     guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}

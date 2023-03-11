@@ -25,8 +25,20 @@
                                 <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제리와 매칭이 되었어!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-kf-uu5">
-                                <rect key="frame" x="16" y="138" width="227" height="29"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은다," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-kf-uu5">
+                                <rect key="frame" x="16.000000000000004" y="138" width="52.333333333333343" height="29"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그리고 아라." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxm-ko-aMI">
+                                <rect key="frame" x="16" y="175" width="128" height="29"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프롬유에 온걸 환영해." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPv-yG-VlH">
+                                <rect key="frame" x="16" y="212" width="227" height="29"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -36,21 +48,26 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0yb-5Z-inT"/>
+                            <constraint firstItem="Sxm-ko-aMI" firstAttribute="top" secondItem="wxa-kf-uu5" secondAttribute="bottom" constant="8" id="BLH-Gm-afY"/>
+                            <constraint firstItem="Sxm-ko-aMI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="JD0-rq-TE6"/>
                             <constraint firstItem="wxa-kf-uu5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="138" id="KPm-3h-jzr"/>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="RQF-2L-fBu"/>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TGd-1s-9m7"/>
                             <constraint firstItem="wxa-kf-uu5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VDq-bQ-KtH"/>
+                            <constraint firstItem="IPv-yG-VlH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ujm-HR-Vjh"/>
+                            <constraint firstItem="IPv-yG-VlH" firstAttribute="top" secondItem="Sxm-ko-aMI" secondAttribute="bottom" constant="8" id="uph-dM-93I"/>
                             <constraint firstAttribute="bottom" secondItem="h2n-FP-bcy" secondAttribute="bottom" id="vcp-nb-H5Z"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="backgroundView" destination="h2n-FP-bcy" id="GkN-KO-aGP"/>
-                        <outlet property="matchingLabel" destination="wxa-kf-uu5" id="Q8P-Vo-1Kr"/>
+                        <outlet property="firstNickNameLabel" destination="wxa-kf-uu5" id="Zz1-Hf-55f"/>
+                        <outlet property="secondNickNameLabel" destination="Sxm-ko-aMI" id="POZ-b2-baR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140" y="-2"/>
+            <point key="canvasLocation" x="139.69465648854961" y="-2.1126760563380285"/>
         </scene>
     </scenes>
     <resources>

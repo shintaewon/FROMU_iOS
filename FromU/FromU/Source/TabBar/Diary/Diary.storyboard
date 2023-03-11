@@ -11,6 +11,9 @@
         <array key="Cafe24SsurroundAir.ttf">
             <string>Cafe24Ssurroundair</string>
         </array>
+        <array key="Pretendard-Regular.otf">
+            <string>Pretendard-Regular</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Diary View Controller-->
@@ -42,6 +45,12 @@
 하나 추가해 볼까?</string>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                 <color key="textColor" name="text-disabled"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내게로 일기가 오고 있어" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IxY-Hs-YBo">
+                                <rect key="frame" x="113.33333333333333" y="256" width="166.33333333333337" height="19"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="d27-lI-qns">
@@ -94,15 +103,70 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_toolip" translatesAutoresizingMaskIntoConstraints="NO" id="uV3-fh-Aib">
-                                <rect key="frame" x="28" y="168" width="183" height="54"/>
+                                <rect key="frame" x="28" y="153" width="195" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="5Lk-JE-Cbv"/>
-                                    <constraint firstAttribute="width" constant="183" id="FAd-wq-FsP"/>
+                                    <constraint firstAttribute="width" constant="195" id="FAd-wq-FsP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음 만날 날을 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-BE-r7M">
-                                <rect key="frame" x="43" y="191" width="151" height="14.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음 만난 날을 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-BE-r7M">
+                                <rect key="frame" x="50" y="177" width="151" height="14.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-VW-VnY">
+                                <rect key="frame" x="16" y="689" width="361" height="56"/>
+                                <color key="backgroundColor" red="0.8860861659" green="0.86039632560000001" blue="0.99910837409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="tkg-9R-uZU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="일기장 전송하기">
+                                    <color key="titleColor">
+                                        <string key="name" base64-UTF8="YES">
+cHJpbWFyeQhTZWNvbmQ
+</string>
+                                    </color>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-JG-C1T">
+                                <rect key="frame" x="151" y="561" width="91" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="Hdo-kp-kbc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="띵동! 벨 울리기">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="띵동! 벨 울리기">
+                                            <attributes>
+                                                <font key="NSFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <color key="titleColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-Gp-f9i">
+                                <rect key="frame" x="66" y="241" width="261" height="378"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-eM-P2T">
+                                <rect key="frame" x="108.33333333333333" y="392.66666666666669" width="176.33333333333337" height="33.333333333333314"/>
+                                <string key="text">지금은 나에게 일기장이 없어 
+은다에게 벨을 울려볼까?</string>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                <color key="textColor" name="text-disabled"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추억기록장" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Jn-Ttd">
+                                <rect key="frame" x="128" y="277" width="176" height="48"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="3qT-ga-5rW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -111,28 +175,53 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="QMr-MK-Icl" firstAttribute="top" secondItem="hIz-hx-RwA" secondAttribute="bottom" constant="-14" id="0D4-PD-1TQ"/>
+                            <constraint firstItem="WOS-VW-VnY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="0lo-8z-9re"/>
+                            <constraint firstItem="lbL-eM-P2T" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="2F1-UF-0OF"/>
+                            <constraint firstItem="leO-Jn-Ttd" firstAttribute="leading" secondItem="GxT-Gp-f9i" secondAttribute="leading" constant="62" id="5XN-6g-ofe"/>
+                            <constraint firstItem="WOS-VW-VnY" firstAttribute="top" secondItem="Qcb-JG-C1T" secondAttribute="bottom" constant="106" id="7L4-fE-GOJ"/>
                             <constraint firstAttribute="bottom" secondItem="1HK-SL-qXK" secondAttribute="bottom" id="AKk-Sq-k77"/>
+                            <constraint firstItem="IxY-Hs-YBo" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="bottom" constant="49" id="Bcz-wn-jsK"/>
                             <constraint firstItem="ppQ-RQ-M5O" firstAttribute="top" secondItem="d27-lI-qns" secondAttribute="bottom" constant="4" id="CpU-YJ-aid"/>
-                            <constraint firstItem="uV3-fh-Aib" firstAttribute="top" secondItem="ppQ-RQ-M5O" secondAttribute="bottom" constant="8" id="I3I-2b-n9H"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="WOS-VW-VnY" secondAttribute="bottom" constant="24" id="GiI-Ya-nfC"/>
+                            <constraint firstItem="uV3-fh-Aib" firstAttribute="top" secondItem="ppQ-RQ-M5O" secondAttribute="bottom" constant="-7" id="I3I-2b-n9H"/>
                             <constraint firstItem="hIz-hx-RwA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="333" id="JGh-lY-8jP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GxT-Gp-f9i" secondAttribute="trailing" constant="66" id="K1p-UD-IWZ"/>
+                            <constraint firstItem="GxT-Gp-f9i" firstAttribute="trailing" secondItem="leO-Jn-Ttd" secondAttribute="trailing" constant="23" id="Ora-Wt-a3z"/>
                             <constraint firstItem="QMr-MK-Icl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="128" id="Vya-zZ-VpE"/>
-                            <constraint firstItem="vyJ-BE-r7M" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="top" constant="23" id="WZ8-Dt-cw3"/>
+                            <constraint firstItem="vyJ-BE-r7M" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="top" constant="24" id="WZ8-Dt-cw3"/>
                             <constraint firstItem="d27-lI-qns" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="XbF-ez-JU7"/>
+                            <constraint firstItem="leO-Jn-Ttd" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="top" constant="36" id="XlJ-9n-bvg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QMr-MK-Icl" secondAttribute="trailing" constant="128" id="Z12-fE-RDU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WOS-VW-VnY" secondAttribute="trailing" constant="16" id="ZEx-Wl-XFO"/>
                             <constraint firstItem="1HK-SL-qXK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZFq-fc-QrB"/>
+                            <constraint firstItem="WOS-VW-VnY" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="bottom" constant="70" id="Zge-Vh-Buz"/>
                             <constraint firstItem="uV3-fh-Aib" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="28" id="bhL-32-AsP"/>
-                            <constraint firstItem="uV3-fh-Aib" firstAttribute="trailing" secondItem="vyJ-BE-r7M" secondAttribute="trailing" constant="17" id="faR-0p-gL4"/>
+                            <constraint firstItem="uV3-fh-Aib" firstAttribute="trailing" secondItem="vyJ-BE-r7M" secondAttribute="trailing" constant="22" id="faR-0p-gL4"/>
+                            <constraint firstItem="GxT-Gp-f9i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="66" id="kQw-PV-C2m"/>
+                            <constraint firstItem="GxT-Gp-f9i" firstAttribute="top" secondItem="ppQ-RQ-M5O" secondAttribute="bottom" constant="81" id="nMJ-E4-6mp"/>
                             <constraint firstItem="ppQ-RQ-M5O" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="tEd-Xf-g36"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="lbL-eM-P2T" secondAttribute="bottom" constant="343" id="urf-dL-mbW"/>
                             <constraint firstItem="d27-lI-qns" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="vyV-Bq-JWV"/>
+                            <constraint firstItem="Qcb-JG-C1T" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="wuL-1S-h6E"/>
                             <constraint firstItem="1HK-SL-qXK" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="wvD-O6-5Ik"/>
                             <constraint firstItem="hIz-hx-RwA" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="xO6-cT-Wg0"/>
+                            <constraint firstItem="IxY-Hs-YBo" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="zS9-9V-oLl"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="MVU-Se-AWS"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="anniDayLabel" destination="x8n-X7-Y2Z" id="f5X-Bn-dZw"/>
-                        <outlet property="setFirstDayImgView" destination="vyJ-BE-r7M" id="kpI-QA-JPS"/>
+                        <outlet property="askPokeLabel" destination="lbL-eM-P2T" id="dpF-Q9-4YA"/>
+                        <outlet property="diaryLocationLabel" destination="IxY-Hs-YBo" id="pEN-gX-u8z"/>
+                        <outlet property="diaryNameLabel" destination="leO-Jn-Ttd" id="BRu-eO-8Mn"/>
+                        <outlet property="mainDiaryImageView" destination="GxT-Gp-f9i" id="GtZ-mK-beL"/>
+                        <outlet property="plusDiaryBookBtn" destination="hIz-hx-RwA" id="7KJ-NL-EWu"/>
+                        <outlet property="plusDiaryLabel" destination="QMr-MK-Icl" id="OSl-vY-idm"/>
+                        <outlet property="pokeBtn" destination="Qcb-JG-C1T" id="bbf-mZ-7HT"/>
+                        <outlet property="sendBtn" destination="WOS-VW-VnY" id="8rN-kW-d5v"/>
+                        <outlet property="setFirstDayImgView" destination="uV3-fh-Aib" id="w7D-PG-1X2"/>
                         <outlet property="shadowView" destination="1HK-SL-qXK" id="EDj-je-oYN"/>
                     </connections>
                 </viewController>

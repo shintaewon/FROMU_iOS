@@ -6,13 +6,26 @@
 //
 
 import UIKit
+import FSCalendar
 
-class CalendarViewController: UIViewController {
+class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDataSource, FSCalendarDelegateAppearance {
 
+    @IBOutlet weak var calendarView: FSCalendar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        calendarView.delegate = self
+        calendarView.dataSource = self
+  
+        calendarView.appearance.headerTitleFont = UIFont.Cafe24SsurroundAir(.Cafe24SsurroundAir, size: 14)
+        calendarView.appearance.headerTitleColor = .black
+        calendarView.appearance.headerDateFormat = "MMMM YYYY"
+        calendarView.appearance.headerMinimumDissolvedAlpha = 0.0
+        
+        calendarView.appearance.titleFont = UIFont.Cafe24SsurroundAir(.Cafe24SsurroundAir, size: 14)
+        
+        calendarView.appearance.weekdayTextColor = .white
+        calendarView.placeholderType = .none
     }
     
 

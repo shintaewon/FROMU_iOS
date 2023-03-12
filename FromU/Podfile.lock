@@ -1,5 +1,6 @@
 PODS:
   - Alamofire (5.6.2)
+  - FSCalendar (2.8.4)
   - KakaoSDK (2.11.1):
     - KakaoSDKAuth (= 2.11.1)
     - KakaoSDKCommon (= 2.11.1)
@@ -42,6 +43,7 @@ PODS:
   - SwiftKeychainWrapper (4.0.1)
 
 DEPENDENCIES:
+  - FSCalendar
   - KakaoSDK
   - Moya
   - SwiftKeychainWrapper
@@ -49,6 +51,7 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - FSCalendar
     - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
@@ -64,6 +67,7 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
   KakaoSDK: ab3e070e19afb7218d6897b53c4b44d65a574005
   KakaoSDKAuth: bb2dfa7be30daa8403c9cfc8001aa6fde7a5b779
   KakaoSDKCommon: 555e1bb46595b842ded01cf7888cc17bbae4e113
@@ -77,6 +81,6 @@ SPEC CHECKSUMS:
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 7e0bccf23d712e11d4e29b3791a9c3db16cd5a93
+PODFILE CHECKSUM: 1067ce7e87cdf59c3b052fbb566b78e1c45b6f7c
 
 COCOAPODS: 1.11.3

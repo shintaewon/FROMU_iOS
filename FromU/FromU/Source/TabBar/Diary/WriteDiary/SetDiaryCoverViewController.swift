@@ -28,6 +28,9 @@ class SetDiaryCoverViewController: UIViewController {
     
     @IBAction func didTapBtn(_ sender: Any) {
         
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDiaryViewController") as? ReviewDiaryViewController else {return}
+        
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     var diaryName = ""

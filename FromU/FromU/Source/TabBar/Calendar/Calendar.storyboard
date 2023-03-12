@@ -15,12 +15,27 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz4-WU-ISn" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="146" width="361" height="355"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Zz4-WU-ISn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="UkC-IV-8Oh"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zz4-WU-ISn" secondAttribute="bottom" constant="268" id="arE-1o-6aU"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zz4-WU-ISn" secondAttribute="trailing" constant="16" id="eB1-as-PwL"/>
+                            <constraint firstItem="Zz4-WU-ISn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="gvZ-rK-D8M"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="달력" image="icn_calendar" selectedImage="icn_calendar" id="IHG-Ab-QHI"/>
                     <navigationItem key="navigationItem" id="41o-t4-Pmo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="calendarView" destination="Zz4-WU-ISn" id="93h-r4-n0v"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

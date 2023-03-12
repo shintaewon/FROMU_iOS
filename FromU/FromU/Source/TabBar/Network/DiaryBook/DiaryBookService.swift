@@ -13,6 +13,8 @@ enum DiaryBookService{
     case registerDiaryBook(coverNum: Int,
                            name: String)
     
+    case registerDiaryCover
+    
 }
 
 extension DiaryBookService: TargetType{

@@ -29,6 +29,8 @@
 		5E1EA0CA29BA0D5400542780 /* WriteDiary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E1EA0C929BA0D5400542780 /* WriteDiary.storyboard */; };
 		5E1EA0D229BC6FB900542780 /* ChangeCoverAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA0D129BC6FB900542780 /* ChangeCoverAlertViewController.swift */; };
 		5E1EA0D429BC882400542780 /* WriteDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA0D329BC882400542780 /* WriteDiaryViewController.swift */; };
+		5E1EA0D729BDA03C00542780 /* ReviewDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA0D629BDA03C00542780 /* ReviewDiaryViewController.swift */; };
+		5E1EA0DA29BDAA7500542780 /* DiaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E1EA0D929BDAA7500542780 /* DiaryCollectionViewCell.swift */; };
 		5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E38900629AC864A004EB7A6 /* InputCode.storyboard */; };
 		5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */; };
 		5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900C29ACFE5B004EB7A6 /* UIFont.swift */; };
@@ -129,6 +131,8 @@
 		5E1EA0C929BA0D5400542780 /* WriteDiary.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WriteDiary.storyboard; sourceTree = "<group>"; };
 		5E1EA0D129BC6FB900542780 /* ChangeCoverAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCoverAlertViewController.swift; sourceTree = "<group>"; };
 		5E1EA0D329BC882400542780 /* WriteDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteDiaryViewController.swift; sourceTree = "<group>"; };
+		5E1EA0D629BDA03C00542780 /* ReviewDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDiaryViewController.swift; sourceTree = "<group>"; };
+		5E1EA0D929BDAA7500542780 /* DiaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		5E38900629AC864A004EB7A6 /* InputCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputCode.storyboard; sourceTree = "<group>"; };
 		5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeViewController.swift; sourceTree = "<group>"; };
 		5E38900C29ACFE5B004EB7A6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -296,6 +300,14 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		5E1EA0D829BDAA5000542780 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5E1EA0D929BDAA7500542780 /* DiaryCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		5E84C67D29A50D7F00F5BA81 = {
 			isa = PBXGroup;
 			children = (
@@ -414,7 +426,6 @@
 				5E94128629AEF9D3003ADFF5 /* MainTabBarController.swift */,
 				5E94128829AF2B8E003ADFF5 /* DiaryViewController.swift */,
 				5EF130A429B8D175002E791B /* WriteDiary */,
-				5E0B47D129B2123A00B0B3CF /* AddDiaryBook */,
 				5EC4355D29B0E06600835D51 /* SettingFirstDay */,
 			);
 			path = Diary;
@@ -552,10 +563,13 @@
 		5EF130A429B8D175002E791B /* WriteDiary */ = {
 			isa = PBXGroup;
 			children = (
+				5E1EA0D829BDAA5000542780 /* Cell */,
 				5EF130A529B8D365002E791B /* SetDiaryCoverViewController.swift */,
 				5E1EA0D129BC6FB900542780 /* ChangeCoverAlertViewController.swift */,
 				5E1EA0D329BC882400542780 /* WriteDiaryViewController.swift */,
+				5E1EA0D629BDA03C00542780 /* ReviewDiaryViewController.swift */,
 				5E1EA0C929BA0D5400542780 /* WriteDiary.storyboard */,
+				5E0B47D129B2123A00B0B3CF /* AddDiaryBook */,
 			);
 			path = WriteDiary;
 			sourceTree = "<group>";
@@ -846,6 +860,7 @@
 				5EF1309929B76C34002E791B /* RegisterDiaryBookResponse.swift in Sources */,
 				5E1EA0D429BC882400542780 /* WriteDiaryViewController.swift in Sources */,
 				5EF1309D29B76C92002E791B /* DiaryBookAPI.swift in Sources */,
+				5E1EA0D729BDA03C00542780 /* ReviewDiaryViewController.swift in Sources */,
 				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
 				5E94128D29AF2C3D003ADFF5 /* MailboxViewController.swift in Sources */,
 				5E94129129AF49B7003ADFF5 /* UIImage.swift in Sources */,
@@ -875,6 +890,7 @@
 				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
 				5EF1309B29B76C85002E791B /* DiaryBookService.swift in Sources */,
 				5E0B47F829B4B7D400B0B3CF /* SetMailBoxNameResponse.swift in Sources */,
+				5E1EA0DA29BDAA7500542780 /* DiaryCollectionViewCell.swift in Sources */,
 				5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */,
 				5E0B47ED29B48DA800B0B3CF /* RefreshResponse.swift in Sources */,
 			);

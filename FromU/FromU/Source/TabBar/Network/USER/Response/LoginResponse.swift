@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - SignupResponse
 struct LoginResponse: Codable {
-    let code: Int
-    let isSuccess: Bool
+    let code: Int?
+    let isSuccess: Bool?
     let message: String
     let result: LoginResult?
 }

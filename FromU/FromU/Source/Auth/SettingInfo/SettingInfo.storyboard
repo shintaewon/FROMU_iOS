@@ -233,13 +233,13 @@ cHJpbWFyeQhTZWNvbmQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="너의 성별을 알려줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIY-K3-HJK">
-                                <rect key="frame" x="16" y="138" width="155" height="23.333333333333343"/>
+                                <rect key="frame" x="16" y="138" width="169.66666666666666" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LXG-PM-iCc">
-                                <rect key="frame" x="16" y="201.33333333333337" width="175" height="130"/>
+                                <rect key="frame" x="16" y="201.66666666666663" width="175" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="aPD-pI-bq9">
                                         <rect key="frame" x="63.666666666666671" y="28" width="48" height="74"/>
@@ -252,7 +252,7 @@ cHJpbWFyeQhTZWNvbmQ
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="여성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAO-ki-aa8">
-                                                <rect key="frame" x="0.0" y="47.999999999999972" width="48" height="26"/>
+                                                <rect key="frame" x="0.0" y="48.000000000000028" width="48" height="26"/>
                                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -272,7 +272,7 @@ cHJpbWFyeQhTZWNvbmQ
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssq-el-qTL">
-                                <rect key="frame" x="202" y="201.33333333333337" width="175" height="128"/>
+                                <rect key="frame" x="202" y="201.66666666666663" width="175" height="128"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JDC-MJ-qcz">
                                         <rect key="frame" x="63.666666666666686" y="27" width="48" height="74"/>
@@ -285,7 +285,7 @@ cHJpbWFyeQhTZWNvbmQ
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="남성" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hB-CE-hnk">
-                                                <rect key="frame" x="0.0" y="47.999999999999972" width="48" height="26"/>
+                                                <rect key="frame" x="0.0" y="48.000000000000028" width="48" height="26"/>
                                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -357,13 +357,13 @@ cHJpbWFyeQhTZWNvbmQ
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아라," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TMH-Sc-Nmq">
-                                <rect key="frame" x="16" y="143" width="65.666666666666671" height="35.666666666666657"/>
+                                <rect key="frame" x="16" y="143" width="65.666666666666671" height="35"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TuV-Cl-2Fl">
-                                <rect key="frame" x="16" y="186.66666666666666" width="57" height="35.666666666666657"/>
+                                <rect key="frame" x="16" y="186" width="57" height="35"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -420,6 +420,9 @@ cHJpbWFyeQhTZWNvbmQ
                                 <state key="normal" title="(필수)개인 정보 수집/이용 동의">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapSubsBtn2:" destination="qga-Dw-9OH" eventType="touchUpInside" id="hs2-1H-jlg"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HUk-OR-jPu">
                                 <rect key="frame" x="48" y="608" width="91" height="20"/>
@@ -431,6 +434,9 @@ cHJpbWFyeQhTZWNvbmQ
                                 <state key="normal" title="(필수)이용약관">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="didTapSubsBtn1:" destination="qga-Dw-9OH" eventType="touchUpInside" id="Z9E-X8-Z7n"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="pgD-3t-9bY"/>
@@ -471,7 +477,7 @@ cHJpbWFyeQhTZWNvbmQ
     </scenes>
     <resources>
         <image name="icn_checkBox_false" width="24" height="24"/>
-        <image name="undraw_female_avatar_efig 1" width="48" height="48"/>
+        <image name="undraw_female_avatar_efig 1" width="48" height="49"/>
         <image name="undraw_male_avatar_g98d 1" width="48" height="48"/>
         <namedColor name="disabled">
             <color red="0.87058823529411766" green="0.87058823529411766" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Withdrawl Service View Controller-->
+        <scene sceneID="rtU-sJ-XXN">
+            <objects>
+                <viewController storyboardIdentifier="WithdrawlServiceViewController" id="BQy-g0-gLn" customClass="WithdrawlServiceViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="v1M-6C-GSp">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프롬유를 탈퇴하려고?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wlG-cW-A04">
+                                <rect key="frame" x="16" y="138" width="207.66666666666666" height="26"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadImogi" translatesAutoresizingMaskIntoConstraints="NO" id="zSB-sg-dod">
+                                <rect key="frame" x="57" y="336" width="279" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="lju-Yh-1bK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cEn-bJ-zfE">
+                                <rect key="frame" x="60" y="627" width="273" height="38"/>
+                                <string key="text">탈퇴하면 모든 내역이 삭제 돼...
+우리와 계속 함께하지 않겠어?</string>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="JYF-A0-5JL">
+                                <rect key="frame" x="16" y="738" width="361" height="56"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Sf-HF-S5J">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="UvV-q6-BLD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="탈퇴하기">
+                                            <color key="titleColor" name="primaryFirst"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapWithdrawlBtn:" destination="BQy-g0-gLn" eventType="touchUpInside" id="F18-xy-bBD"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyy-wh-P9x">
+                                        <rect key="frame" x="120" y="0.0" width="241" height="56"/>
+                                        <color key="backgroundColor" name="primaryFirst"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="함께하기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapContinueBtn:" destination="BQy-g0-gLn" eventType="touchUpInside" id="DDM-M9-bCD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="f7N-wj-AZA"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="5la-KO-kyS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cEn-bJ-zfE" firstAttribute="top" secondItem="zSB-sg-dod" secondAttribute="bottom" constant="105" id="5Z6-o7-pqa"/>
+                            <constraint firstItem="wlG-cW-A04" firstAttribute="leading" secondItem="5la-KO-kyS" secondAttribute="leading" constant="16" id="JAC-h9-dlr"/>
+                            <constraint firstItem="zSB-sg-dod" firstAttribute="leading" secondItem="5la-KO-kyS" secondAttribute="leading" constant="57" id="NAQ-Eo-dGL"/>
+                            <constraint firstItem="wlG-cW-A04" firstAttribute="top" secondItem="v1M-6C-GSp" secondAttribute="top" constant="138" id="QM1-PC-xE1"/>
+                            <constraint firstItem="5la-KO-kyS" firstAttribute="trailing" secondItem="cEn-bJ-zfE" secondAttribute="trailing" constant="60" id="Re3-eP-ZtZ"/>
+                            <constraint firstItem="cEn-bJ-zfE" firstAttribute="leading" secondItem="5la-KO-kyS" secondAttribute="leading" constant="60" id="V78-EW-s7O"/>
+                            <constraint firstItem="5la-KO-kyS" firstAttribute="trailing" secondItem="zSB-sg-dod" secondAttribute="trailing" constant="57" id="WBA-Z0-QOu"/>
+                            <constraint firstItem="5la-KO-kyS" firstAttribute="trailing" secondItem="JYF-A0-5JL" secondAttribute="trailing" constant="16" id="a7d-5Z-YKF"/>
+                            <constraint firstItem="zSB-sg-dod" firstAttribute="top" secondItem="wlG-cW-A04" secondAttribute="bottom" constant="172" id="a9h-CB-XGY"/>
+                            <constraint firstAttribute="bottom" secondItem="JYF-A0-5JL" secondAttribute="bottom" constant="58" id="b5f-Zq-Rop"/>
+                            <constraint firstItem="JYF-A0-5JL" firstAttribute="leading" secondItem="5la-KO-kyS" secondAttribute="leading" constant="16" id="lgI-Ns-rED"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueBtn" destination="qyy-wh-P9x" id="CwB-0J-JfN"/>
+                        <outlet property="withdrawlBtn" destination="4Sf-HF-S5J" id="bNs-hi-UI8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ciH-Pp-qMp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
+        </scene>
+        <!--Alert Withdrawl View Controller-->
+        <scene sceneID="FdK-l4-PmM">
+            <objects>
+                <viewController storyboardIdentifier="AlertWithdrawlViewController" id="gB7-9a-NqH" customClass="AlertWithdrawlViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MAv-Q2-3zC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAj-qE-lWO">
+                                <rect key="frame" x="28" y="308" width="337" height="159"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정말 우리를 떠날거야...?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z9n-H4-MQj">
+                                        <rect key="frame" x="24" y="30" width="289" height="21.333333333333329"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MCo-Vv-ekq">
+                                        <rect key="frame" x="24" y="81" width="289" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D5P-pL-IFY">
+                                                <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="48"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="7AQ-kl-nhq"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="탈퇴하기">
+                                                    <color key="titleColor" name="primaryFirst"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapContinueBtn:" destination="gB7-9a-NqH" eventType="touchUpInside" id="ICX-Z8-NbW"/>
+                                                    <action selector="didTapWithdrawlBtn:" destination="gB7-9a-NqH" eventType="touchUpInside" id="Oi7-qP-IOt"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpH-qd-wPl">
+                                                <rect key="frame" x="148.66666666666663" y="0.0" width="140.33333333333337" height="48"/>
+                                                <color key="backgroundColor" name="primaryFirst"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="FFD-Km-5zE"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="함께하기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="MCo-Vv-ekq" secondAttribute="trailing" constant="24" id="0ef-g0-Fgy"/>
+                                    <constraint firstAttribute="height" constant="159" id="4EP-1J-Jc1"/>
+                                    <constraint firstAttribute="trailing" secondItem="z9n-H4-MQj" secondAttribute="trailing" constant="24" id="Kla-cw-uQm"/>
+                                    <constraint firstAttribute="bottom" secondItem="MCo-Vv-ekq" secondAttribute="bottom" constant="30" id="Vn7-Rp-jyg"/>
+                                    <constraint firstItem="z9n-H4-MQj" firstAttribute="top" secondItem="XAj-qE-lWO" secondAttribute="top" constant="30" id="kJe-Ty-PLm"/>
+                                    <constraint firstItem="z9n-H4-MQj" firstAttribute="leading" secondItem="XAj-qE-lWO" secondAttribute="leading" constant="24" id="ncA-rw-7BJ"/>
+                                    <constraint firstItem="MCo-Vv-ekq" firstAttribute="leading" secondItem="XAj-qE-lWO" secondAttribute="leading" constant="24" id="r0O-Aw-UfA"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="wQv-La-Ew6"/>
+                        <color key="backgroundColor" red="0.15303424869999999" green="0.15303424869999999" blue="0.15303424869999999" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XAj-qE-lWO" firstAttribute="leading" secondItem="wQv-La-Ew6" secondAttribute="leading" constant="28" id="H0g-ZT-aNm"/>
+                            <constraint firstItem="XAj-qE-lWO" firstAttribute="top" secondItem="MAv-Q2-3zC" secondAttribute="top" constant="308" id="Hd4-s9-aXf"/>
+                            <constraint firstItem="wQv-La-Ew6" firstAttribute="trailing" secondItem="XAj-qE-lWO" secondAttribute="trailing" constant="28" id="psL-CE-n8y"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBGview" destination="XAj-qE-lWO" id="GVB-Aw-1zr"/>
+                        <outlet property="continueBtn" destination="fpH-qd-wPl" id="JzY-0N-dNB"/>
+                        <outlet property="withdrawlBtn" destination="D5P-pL-IFY" id="ZgK-G5-JWs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LAN-Rs-cVY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sadImogi" width="260" height="186"/>
+        <namedColor name="primaryFirst">
+            <color red="0.78823529411764703" green="0.51372549019607838" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

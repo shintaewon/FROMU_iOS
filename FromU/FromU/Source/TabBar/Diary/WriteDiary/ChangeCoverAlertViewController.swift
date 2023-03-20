@@ -31,7 +31,8 @@ class ChangeCoverAlertViewController: UIViewController {
     }
     
     @objc func viewTapped(_ sender: UITapGestureRecognizer) {
-        if sender.view != alertBGview {
+        let tapLocation = sender.location(in: view)
+        if !alertBGview.frame.contains(tapLocation) {
             self.dismiss(animated: false)
         }
     }

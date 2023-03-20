@@ -7,7 +7,10 @@
 
 import UIKit
 
+import Alamofire
 import Photos
+import Kingfisher
+import SwiftKeychainWrapper
 
 class SetDiaryCoverViewController: UIViewController {
 
@@ -22,15 +25,17 @@ class SetDiaryCoverViewController: UIViewController {
     
     var tapGestureRecognizer = UITapGestureRecognizer()
     
+    private var interactivePopGestureRecognizerEnabled = true
+    private var shouldPushViewController = false
+    var diaryBookID = 0
+    
     @objc func okAction(){
         print("hi")
     }
     
     @IBAction func didTapBtn(_ sender: Any) {
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDiaryViewController") as? ReviewDiaryViewController else {return}
-        
-        self.navigationController?.pushViewController(vc, animated: true)
+        getDiaryList()
         
     }
     var diaryName = ""
@@ -68,8 +73,9 @@ class SetDiaryCoverViewController: UIViewController {
     // Handle btn1 tap event
     @objc func btn1Tapped() {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "WriteDiaryViewController") as? WriteDiaryViewController else {return}
-        
+        vc.delegate = self
         self.navigationController?.pushViewController(vc, animated: true)
+
     }
 
     // Handle btn2 tap event
@@ -77,11 +83,55 @@ class SetDiaryCoverViewController: UIViewController {
         print("2")
     }
 
-   
+    @objc func handlePanGesture(_ gesture: UIPanGestureRecognizer) {
+        let translation = gesture.translation(in: view)
+
+        switch gesture.state {
+        case .began:
+            if translation.x < 0 {
+                self.navigationController?.interactivePopGestureRecognizer?.isEnabled = true
+            }
+        case .changed:
+            if translation.x < -100 {
+                shouldPushViewController = true
+            } else if translation.x > 100 {
+                // Trigger pop action for left-to-right gesture
+                self.navigationController?.popViewController(animated: true)
+            }
+        case .ended:
+            if shouldPushViewController {
+                if let secondViewController = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDiaryViewController") as? ReviewDiaryViewController {
+                    self.navigationController?.pushViewController(secondViewController, animated: true)
+                }
+                shouldPushViewController = true
+            }
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = interactivePopGestureRecognizerEnabled
+        case .cancelled:
+            self.navigationController?.interactivePopGestureRecognizer?.isEnabled = interactivePopGestureRecognizerEnabled
+        default:
+            break
+        }
+    }
+    
+    
+    func navigationController(_ navigationController: UINavigationController, animationControllerFor operation: UINavigationController.Operation, from fromVC: UIViewController, to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if operation == .push {
+            return SlideLeftPushAnimator()
+        }
+        return nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getDiaryCover()
         PHPhotoLibrary.requestAuthorization( { status in })
         configureNavigationItems()
+        
+        self.navigationController?.delegate = self
+        self.interactivePopGestureRecognizerEnabled = self.navigationController?.interactivePopGestureRecognizer?.isEnabled ?? true
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+        view.addGestureRecognizer(panGestureRecognizer)
         
         let titleString = "마지막 페이지로"
         
@@ -103,8 +153,10 @@ class SetDiaryCoverViewController: UIViewController {
         
         diaryNameLabel.text = diaryName
 
+        diaryNameLabel.sizeToFit()
+        
         let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: -6, y: diaryNameLabel.frame.size.height - 1, width: diaryNameLabel.frame.size.width + 12, height: 2)
+        bottomBorder.frame = CGRect(x: 0, y: diaryNameLabel.frame.size.height + 4, width: diaryNameLabel.frame.size.width, height: 2)
         bottomBorder.backgroundColor = UIColor.gray06.cgColor
         
         diaryNameLabel.layer.addSublayer(bottomBorder)
@@ -124,20 +176,22 @@ extension SetDiaryCoverViewController{
     
     func configureNavigationItems(){
         print("실행은 됨?")
-        
+
         
         let btn1 = UIImageView(image: UIImage(named: "icn_edit"))
         btn1.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
         let item1 = UIBarButtonItem()
         item1.customView = btn1
 
-        let btn2 = UIImageView(image: UIImage(named: "icn_list"))
-        btn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
-        let item2 = UIBarButtonItem()
-        item2.customView = btn2
-
-    
-        self.navigationItem.rightBarButtonItems = [item2, item1]
+//        let btn2 = UIImageView(image: UIImage(named: "icn_list"))
+//        btn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+//        let item2 = UIBarButtonItem()
+//        item2.customView = btn2
+//
+//
+//        self.navigationItem.rightBarButtonItems = [item2, item1]
+        
+        self.navigationItem.rightBarButtonItems = [item1]
         
         // Add tap gesture recognizer to btn1
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(btn1Tapped))
@@ -145,9 +199,9 @@ extension SetDiaryCoverViewController{
         btn1.addGestureRecognizer(tapGesture1)
 
         // Add tap gesture recognizer to btn2
-        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(btn2Tapped))
-        btn2.isUserInteractionEnabled = true
-        btn2.addGestureRecognizer(tapGesture2)
+//        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(btn2Tapped))
+//        btn2.isUserInteractionEnabled = true
+//        btn2.addGestureRecognizer(tapGesture2)
 
 
     }
@@ -168,6 +222,7 @@ extension SetDiaryCoverViewController: UIImagePickerControllerDelegate, UINaviga
         self.diaryCoverImageView.image = newImage // 받아온 이미지를 update (imageView는 화면에 띄워 줄 UIImageView를 의미)
         
         self.addPhotoImageView.isHidden = true
+        postCoverImg()
         picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
         
     }
@@ -199,4 +254,168 @@ extension SetDiaryCoverViewController: ChangeCoverAlertDelegate{
     }
     
     
+}
+
+extension SetDiaryCoverViewController{
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width // 새 이미지 확대/축소 비율
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.draw(in: CGRectMake(0, 0, newWidth, newHeight))
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func postCoverImg(){
+        
+        let url = "\(Constant.BASE_URL)/diarybooks/image"
+        
+        let resizedImage = resizeImage(image: diaryCoverImageView.image ?? UIImage(), newWidth: 345)
+        
+        let imageData = resizedImage.jpegData(compressionQuality: 0.7)
+        
+        AF.upload(
+            multipartFormData: {multipartFormData in
+                
+                if((imageData) != nil){
+                    
+                    multipartFormData.append(imageData!, withName: "imageFile", fileName: "imageFile.jpeg", mimeType: "image/jpeg")
+                }
+            }, to: "\(url)", usingThreshold: UInt64.init(), method: .patch, headers: [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]).responseDecodable(of :RegisterDiaryCoverResponse.self) {
+                response in
+                
+                switch response.result {
+                    
+                case .success(let response):
+                    print("Success>> postCoverImg \(response) ")
+                    
+                case .failure(let error):
+                    print("DEBUG>> postCoverImg Error : \(error.localizedDescription)")
+                    
+                }
+            }
+    }
+    
+    func getDiaryCover(){
+        DiaryBookAPI.providerDiaryBook.request( .getDiaryCover){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(GetDiaryCoverResponse.self)
+                    
+                    self.diaryBookID = response.result.diarybookID
+                    
+                    print(response)
+                    
+                    if response.isSuccess == true {
+                        if response.code == 1000{
+                            self.addPhotoImageView.isHidden = true
+                            
+                            UserDefaults.standard.set(response.result.diarybookID, forKey: "diaryBookID")
+                        }
+                    }
+                    
+                    let url = URL(string: response.result.imageURL)
+                    
+                    self.diaryCoverImageView.kf.setImage(with: url)
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> setMailBoxName Error : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func getDiaryList(){
+       
+        DiaryAPI.providerDiary.request( .getDiaryList){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(GetDiaryListResponse.self)
+                    
+                    print(response)
+                    
+                    if response.isSuccess == true {
+                        if response.code == 1000 {
+                           
+                            if response.result?.isEmpty == true {
+                                self.showToast(message: "아직 작성한 일기가 없어!", font: UIFont.Pretendard(.regular, size: 14))
+                            }
+                            else{
+
+                                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReviewDiaryViewController") as? ReviewDiaryViewController else {return}
+                                vc.isFromLastBtn = true
+                                self.navigationController?.pushViewController(vc, animated: true)
+                            }
+
+                        }
+                    }
+
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> setMailBoxName Error : \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension SetDiaryCoverViewController: WriteDiaryDelegate{
+    func goToLastPage() {
+        goToLastPageBtn.sendActions(for: .touchUpInside)
+    }
+}
+
+extension SetDiaryCoverViewController{
+    
+    func showToast(message : String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: diaryCoverImageView.layer.frame.origin.x, y: view.bounds.size.height - 145, width: self.view.frame.width - diaryCoverImageView.layer.frame.origin.x * 2 , height: 52))
+        toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut,animations: {
+            toastLabel.alpha = 0.0
+            }, completion: {(isCompleted) in
+                toastLabel.removeFromSuperview()
+            })
+        }
+    
+}
+
+class SlideLeftPushAnimator: NSObject, UIViewControllerAnimatedTransitioning {
+    
+    func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
+        return 0.3
+    }
+    
+    func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
+        guard let toViewController = transitionContext.viewController(forKey: .to),
+              let fromViewController = transitionContext.viewController(forKey: .from) else { return }
+        
+        let containerView = transitionContext.containerView
+        
+        containerView.addSubview(toViewController.view)
+        toViewController.view.frame.origin.x = containerView.frame.size.width
+        
+        UIView.animate(withDuration: transitionDuration(using: transitionContext), animations: {
+            fromViewController.view.frame.origin.x = -containerView.frame.size.width
+            toViewController.view.frame.origin.x = 0
+        }) { _ in
+            transitionContext.completeTransition(!transitionContext.transitionWasCancelled)
+        }
+    }
 }

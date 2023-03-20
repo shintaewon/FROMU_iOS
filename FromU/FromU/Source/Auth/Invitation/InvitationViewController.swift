@@ -20,14 +20,15 @@ class InvitationViewController: UIViewController {
     
     @IBAction func didTapInvitationBtn(_ sender: Any) {
         var objectsToShare = [String]()
-        if let text = invitationCodeLabel.text {
+        if invitationCodeLabel.text != nil {
             let textToShare : String = """
-                당신의 연인 ‘아라'로부터
-                FROMU 초대장이 도착했어.
-                링크를 눌러 우리와 함께 할래?
-                커플코드: \(invitationCodeLabel.text ?? "")
+                당신의 연인 ‘\(UserDefaults.standard.string(forKey: "nickName") ?? "")'로부터
+                초대장이 도착했어.
+                커플코드를 입력하고 우리와 함께 할래?
+                
+                커플코드:
+                \(invitationCodeLabel.text ?? "")
                 """
-            
             objectsToShare.append(textToShare)
             print("[INFO] textField's Text : ", textToShare)
         }
@@ -69,6 +70,8 @@ class InvitationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        invitationCodeLabel.text = "\(UserDefaults.standard.string(forKey: "userCode") ?? "")"
+        
         navigationController?.navigationBar.isHidden = true
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)

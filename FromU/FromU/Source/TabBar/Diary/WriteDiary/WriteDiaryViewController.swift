@@ -4,8 +4,15 @@
 //
 //  Created by 신태원 on 2023/03/11.
 //
-
 import UIKit
+
+import Alamofire
+import SwiftKeychainWrapper
+
+protocol WriteDiaryDelegate: AnyObject{
+    
+    func goToLastPage()
+}
 
 class WriteDiaryViewController: UIViewController {
 
@@ -35,6 +42,10 @@ class WriteDiaryViewController: UIViewController {
     @IBOutlet weak var redCircle_rain: UIImageView!
     
     @IBOutlet weak var countLabel: UILabel!
+    
+    weak var delegate: WriteDiaryDelegate?
+    
+    var emotionWeather = ""
     
     @objc func presentImagePicker() {
         
@@ -70,8 +81,7 @@ class WriteDiaryViewController: UIViewController {
             navigationItem.rightBarButtonItem?.isEnabled = false
         }
         else{
-            navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: 0xA735FF)
-            navigationItem.rightBarButtonItem?.isEnabled = true
+            updateRightBarButtonItemColor()
         }
     }
     
@@ -113,29 +123,46 @@ class WriteDiaryViewController: UIViewController {
         redCircle_sun.isHidden = false
         redCircle_spark.isHidden = true
         redCircle_rain.isHidden = true
+        emotionWeather = "SUNNY"
+        updateRightBarButtonItemColor()
     }
     
     @objc func didTapSpark(){
         redCircle_sun.isHidden = true
         redCircle_spark.isHidden = false
         redCircle_rain.isHidden = true
+        emotionWeather = "CLOUD"
+        updateRightBarButtonItemColor()
     }
     
     @objc func didTapRain(){
         redCircle_sun.isHidden = true
         redCircle_spark.isHidden = true
         redCircle_rain.isHidden = false
+        emotionWeather = "RAINY"
+        updateRightBarButtonItemColor()
     }
     
     @objc func doneTapped() {
         // Handle the "완료" button tap
         print("완료 button tapped")
+        let image = diaryImageView.image ?? UIImage()
+        
+        sendRequest(image: image, content: textView.text, weather: emotionWeather)
+        
     }
 
-
-    @objc func imageViewDidChange(_ notification: Notification) {
-        // Update the color of the doneButton to purple
-        navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: 0xA735FF)
+    func updateRightBarButtonItemColor() {
+        // Check if the text view and image view are not empty, and if the button is pressed at least once
+        if textView.textColor != UIColor.placeholderText && diaryImageView.image != nil && emotionWeather != "" {
+            // Set the tintColor of the right bar button item to a custom color
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: 0xA735FF)
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        } else {
+            // Reset the tintColor of the right bar button item to the default color
+            navigationItem.rightBarButtonItem?.tintColor = UIColor(hex: 0x999999)
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }
     }
     
     override func viewDidLoad() {
@@ -222,8 +249,6 @@ class WriteDiaryViewController: UIViewController {
         // Set the rightBarButtonItem of the navigationItem to the doneButton
         navigationItem.rightBarButtonItem = doneButton
    
-        // Observe notifications for changes in a UIImageView
-        NotificationCenter.default.addObserver(self, selector: #selector(imageViewDidChange(_:)), name: NSNotification.Name(rawValue: "ImageDidChangeNotification"), object: nil)
     }
 }
 
@@ -240,7 +265,7 @@ extension WriteDiaryViewController: UIImagePickerControllerDelegate, UINavigatio
         }
         
         self.diaryImageView.image = newImage // 받아온 이미지를 update (imageView는 화면에 띄워 줄 UIImageView를 의미)
-        
+        updateRightBarButtonItemColor()
         self.addPhotoImageView.isHidden = true
         picker.dismiss(animated: true, completion: nil) // picker를 닫아줌
         
@@ -287,4 +312,67 @@ extension WriteDiaryViewController: UITextViewDelegate{
           textView.textColor = UIColor.placeholderText
       }
     }
+}
+
+extension WriteDiaryViewController{
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        let scale = newWidth / image.size.width // 새 이미지 확대/축소 비율
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.draw(in: CGRectMake(0, 0, newWidth, newHeight))
+        guard let newImage = UIGraphicsGetImageFromCurrentImageContext() else { return UIImage() }
+        UIGraphicsEndImageContext()
+        
+        return newImage
+    }
+    
+    func sendRequest(image: UIImage, content: String, weather: String) {
+        let url = "\(Constant.BASE_URL)/diaries" // Replace with your server's URL
+        let postDiaryReq: [String: String] = [
+            "content": content,
+            "weather": weather
+        ]
+        let header : HTTPHeaders = [
+            "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? ""
+        ]
+     
+        let imageData = image.jpegData(compressionQuality: 0.7)
+        
+        AF.upload(multipartFormData: { multipartFormData in
+            // Append the image data
+            if let imageData = imageData {
+                multipartFormData.append(imageData, withName: "imageFile", fileName: "image.jpeg", mimeType: "image/jpeg")
+            }
+            
+            // Append the postDiaryReq object as JSON string
+            if let postData = try? JSONSerialization.data(withJSONObject: postDiaryReq, options: []) {
+                multipartFormData.append(postData, withName: "postDiaryReq", mimeType: "application/json")
+            }
+            
+        }, to: "\(url)", method: .post, headers: header).responseDecodable(of :WriteDirayResponse.self) {
+            response in
+            
+            switch response.result {
+                
+            case .success(let response):
+                print("Success>> postCoverImg \(response) ")
+                
+                if response.isSuccess == true{
+                    if response.code == 1000 { //제대로 업로드 완료
+                        self.navigationController?.popViewController(animated: true)
+                        self.delegate?.goToLastPage()
+                    }
+                    else if response.code == 2032{
+                        //나중에 처리 -> 이미 편지 썼는데 또 쓰는거..
+                    }
+                }
+                
+                
+            case .failure(let error):
+                print("DEBUG>> sendRequest Error : \(error.localizedDescription)")
+                
+            }
+        }
+}
 }

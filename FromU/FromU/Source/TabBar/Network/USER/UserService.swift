@@ -17,6 +17,12 @@ enum UserService{
                 gender: String,
                 nickname: String)
     
+    case logout
+    
+    case withdrawal
+    
+    case appleLogin
+    
 }
 
 extension UserService: TargetType{
@@ -34,6 +40,14 @@ extension UserService: TargetType{
         case .signUpFromU:
             return ""
 
+        case .logout:
+            return "/logout"
+            
+        case .withdrawal:
+            return "/d"
+            
+        case .appleLogin:
+            return "/apple"
         }
         
     }
@@ -46,6 +60,14 @@ extension UserService: TargetType{
         case .signUpFromU:
             return .post
             
+        case .logout:
+            return .patch
+            
+        case .withdrawal:
+            return .patch
+            
+        case .appleLogin:
+            return .post
         }
         
     }
@@ -57,7 +79,14 @@ extension UserService: TargetType{
             
         case .signUpFromU(let birthday, let email, let gender, let nickname):
             return .requestParameters(parameters: ["birthday": birthday, "email": email, "gender": gender, "nickname": nickname], encoding: JSONEncoding.default)
+        case .logout:
+            return Task.requestPlain
             
+        case .withdrawal:
+            return Task.requestPlain
+            
+        case .appleLogin:
+            return Task.requestPlain
         }
         
     }
@@ -65,14 +94,19 @@ extension UserService: TargetType{
     var headers: [String : String]? {
         switch self{
         case .kakaoLogin:
-            
-            print(KeychainWrapper.standard.string(forKey: "kakaoAccessToken") ?? "")
-            
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "kakaoAccessToken") ?? "" ]
             
         case .signUpFromU:
             return nil
 
+        case .logout:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .withdrawal:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+        
+        case .appleLogin:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "appleAccessToken") ?? "" ]
         }
     }
 }

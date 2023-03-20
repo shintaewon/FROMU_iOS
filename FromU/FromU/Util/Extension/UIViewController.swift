@@ -26,4 +26,27 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         self.view.endEditing(false)
     }
+    
+    // MARK: 인디케이터 표시
+    func showIndicator() {
+        IndicatorView.shared.show()
+        IndicatorView.shared.showIndicator()
+    }
+    
+    // MARK: 인디케이터 숨김
+    @objc func dismissIndicator() {
+        IndicatorView.shared.dismiss()
+    }
+    
+    // MARK: - 우측에서 좌측으로 슬라이드되며 self.dismiss
+    
+    func disMissLeftToRight() {
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.reveal
+        transition.subtype = CATransitionSubtype.fromLeft
+        self.view.window!.layer.add(transition, forKey: nil)
+        self.dismiss(animated: false, completion: nil)
+    }
 }

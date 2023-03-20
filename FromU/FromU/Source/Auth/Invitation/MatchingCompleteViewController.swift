@@ -7,6 +7,8 @@
 
 import UIKit
 
+import Lottie
+
 class MatchingCompleteViewController: UIViewController {
 
     @IBOutlet weak var backgroundView: UIView!
@@ -16,6 +18,7 @@ class MatchingCompleteViewController: UIViewController {
     
     @IBOutlet weak var secondNickNameLabel: UILabel!
     
+    @IBOutlet weak var splashLottieView: LottieAnimationView!
     
     func goToSetMailBoxNamePage(){
         let storyboard = UIStoryboard(name: "SetMailBoxName", bundle: nil)
@@ -33,6 +36,13 @@ class MatchingCompleteViewController: UIViewController {
         secondNickNameLabel.text = "그리고 \(UserDefaults.standard.string(forKey: "partnerNickName") ?? "")."
         
         backgroundView.setGradient(color1: UIColor(red: 0.396, green: 0.667, blue: 1, alpha: 1), color2: UIColor(red: 0.786, green: 0.514, blue: 1, alpha: 1))
+        
+        let animation = LottieAnimationView(name: "matching")
+        splashLottieView.addSubview(animation)
+        animation.frame = splashLottieView.bounds
+        animation.contentMode = .scaleToFill
+        animation.loopMode = .loop
+        animation.play()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
             self.goToSetMailBoxNamePage()

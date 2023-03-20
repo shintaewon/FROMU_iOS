@@ -16,25 +16,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zz4-WU-ISn" customClass="FSCalendar">
-                                <rect key="frame" x="16" y="146" width="361" height="355"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dt-2u-O1v" customClass="FSCalendar">
+                                <rect key="frame" x="16" y="180" width="361" height="280"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="suT-YD-J8i">
+                                <rect key="frame" x="0.0" y="767.66666666666663" width="393" height="84.333333333333371"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84.5" id="LX3-kB-kxX"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Zz4-WU-ISn" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="43" id="UkC-IV-8Oh"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="Zz4-WU-ISn" secondAttribute="bottom" constant="268" id="arE-1o-6aU"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Zz4-WU-ISn" secondAttribute="trailing" constant="16" id="eB1-as-PwL"/>
-                            <constraint firstItem="Zz4-WU-ISn" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="gvZ-rK-D8M"/>
+                            <constraint firstItem="5dt-2u-O1v" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="180" id="0Ij-az-xMT"/>
+                            <constraint firstItem="suT-YD-J8i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="AqT-z1-3TZ"/>
+                            <constraint firstItem="5dt-2u-O1v" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="O8L-X6-r0p"/>
+                            <constraint firstAttribute="bottom" secondItem="suT-YD-J8i" secondAttribute="bottom" id="QWb-Tp-nPc"/>
+                            <constraint firstAttribute="trailing" secondItem="suT-YD-J8i" secondAttribute="trailing" id="TjF-uA-FWn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="5dt-2u-O1v" secondAttribute="bottom" constant="309" id="hMx-0m-Kbz"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5dt-2u-O1v" secondAttribute="trailing" constant="16" id="xJ0-Ua-umr"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="달력" image="icn_calendar" selectedImage="icn_calendar" id="IHG-Ab-QHI"/>
                     <navigationItem key="navigationItem" id="41o-t4-Pmo"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="calendarView" destination="Zz4-WU-ISn" id="93h-r4-n0v"/>
+                        <outlet property="calendarView" destination="5dt-2u-O1v" id="2zJ-Cd-L93"/>
+                        <outlet property="shadowView" destination="suT-YD-J8i" id="w0w-it-uIm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

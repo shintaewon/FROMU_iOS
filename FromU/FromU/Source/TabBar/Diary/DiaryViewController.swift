@@ -8,6 +8,7 @@
 import UIKit
 
 import Moya
+import Lottie
 
 class DiaryViewController: UIViewController {
 
@@ -17,8 +18,7 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet weak var setFirstDayImgView: UIImageView!
     
-    
-    @IBOutlet weak var diaryLocationLabel: UILabel!
+    @IBOutlet weak var setFirstDayLabel: UILabel!
     
     @IBOutlet weak var plusDiaryBookBtn: UIButton!
     
@@ -32,8 +32,33 @@ class DiaryViewController: UIViewController {
     
     @IBOutlet weak var sendBtn: UIButton!
     
-    
     @IBOutlet weak var diaryNameLabel: UILabel!
+    
+    @IBOutlet weak var myNickNameLabel: UILabel!
+    
+    @IBOutlet weak var partnerNickNameLabel: UILabel!
+    
+    @IBOutlet weak var partnerHasDiaryPic: UIImageView!
+    
+    @IBOutlet weak var fingerLottieView: LottieAnimationView!
+    
+    @IBOutlet weak var locationLottieView: LottieAnimationView!
+    
+    let animationFinger = LottieAnimationView(name: "hand")
+    let animationGoing = LottieAnimationView(name: "goingdiary")
+    let animationComing = LottieAnimationView(name: "coingdiary")
+    
+    //현재 내가 일기를 썼는지 안썼는지 알려주는 flag
+    var writeFlag = true
+    
+    //    * 일기장이 생성되지 않았으면 0
+    //    * 일기장이 나에게 있으면 1
+    //    * 일기장이 오는 중이면 2
+    //    * 일기장이 가는 중이면 3
+    //    * 일기장이 상대한테 있으면 4
+    var diarybookStatus = 5
+    
+    var btn2 = UILabel()
     
     @objc func diaryImageTapped(){
         
@@ -47,10 +72,9 @@ class DiaryViewController: UIViewController {
     }
     
     @objc func setFirstDayImageViewTapped() {
+        print("눌림?")
         
-        let storyboard = UIStoryboard(name: "SettingFirstDay", bundle: nil)
-        
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingFirstDayViewController") as? SettingFirstDayViewController else {return}
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingFirstDayViewController") as? SettingFirstDayViewController else {return}
         
         self.navigationController?.pushViewController(vc, animated: true)
     }
@@ -64,8 +88,48 @@ class DiaryViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    
+    @IBAction func didTapSendBtn(_ sender: Any) {
+        //일기장도 나한테 있는데, 일기까지 썼을때 -> 일기 전송하고 리로드 시켜야됨
+        if diarybookStatus == 1 && writeFlag == true {
+            sendDiaryBook()
+        }
+        //일기장은 나한테 있지만, 아직 일기를 쓰지 않았을때 -> Alert 띄워줘야됨
+        else if diarybookStatus == 1 && writeFlag == false {
+            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CanNotSendAlertViewController") as? CanNotSendAlertViewController else {return}
+            
+            vc.modalPresentationStyle = .overCurrentContext
+            present(vc, animated: false, completion: nil)
+        }
+    }
+    
+    private let loadingIndicator: UIActivityIndicatorView = {
+           let indicator = UIActivityIndicatorView(style: .medium)
+           indicator.hidesWhenStopped = true
+           return indicator
+       }()
+    
+    func reloadContent() {
+        
+        // Start the loading indicator
+        loadingIndicator.startAnimating()
+        
+        // Refresh the UI elements and fetch new data here
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) { [weak self] in
+            self?.getMainViewInfo()
+            
+            self?.loadingIndicator.stopAnimating()
+        }
+    }
+
+    
+    @IBAction func didTapPokeBtn(_ sender: Any) {
+        showToast(message: "띵동! 연인에게 벨을 울렸어!", font: UIFont.Pretendard(.regular, size: 14))
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         configureNavigationItems()
         
@@ -86,12 +150,6 @@ class DiaryViewController: UIViewController {
 
         pokeBtn.setAttributedTitle(attributedString, for: .normal)
         
-        
-        let bottomBorder = CALayer()
-        bottomBorder.frame = CGRect(x: 0, y: anniDayLabel.frame.size.height - 2, width: anniDayLabel.frame.size.width, height: 1)
-        bottomBorder.backgroundColor = UIColor.primaryLight.cgColor
-        anniDayLabel.layer.addSublayer(bottomBorder)
-        
         let tapGestureRecognizer1 = UITapGestureRecognizer(target: self, action: #selector(setFirstDayImageViewTapped))
         
         setFirstDayImgView.addGestureRecognizer(tapGestureRecognizer1)
@@ -99,11 +157,24 @@ class DiaryViewController: UIViewController {
         let tapGestureRecognizer2 = UITapGestureRecognizer(target: self, action: #selector(diaryImageTapped))
         
         mainDiaryImageView.addGestureRecognizer(tapGestureRecognizer2)
+        
+        fingerLottieView.addSubview(animationFinger)
+        animationFinger.frame = fingerLottieView.bounds
+        animationFinger.contentMode = .scaleToFill
+        animationFinger.loopMode = .loop
+        
+        locationLottieView.addSubview(animationComing)
+        locationLottieView.addSubview(animationGoing)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         tabBarController?.tabBar.isHidden = false
-        getMainViewInfo()
+
+        self.getMainViewInfo()
+        self.getFromCount()
+        
     }
 
 }
@@ -113,21 +184,33 @@ extension DiaryViewController{
     func configureNavigationItems(){
         print("실행은 됨?")
         
+        plusDiaryBookBtn.isHidden = true
+        plusDiaryLabel.isHidden = true
+        mainDiaryImageView.isHidden = true
+        pokeBtn.isHidden = true
+        askPokeLabel.isHidden = true
+        diaryNameLabel.isHidden = true
+        sendBtn.isHidden = true
+        partnerHasDiaryPic.isHidden = true
+        fingerLottieView.isHidden = true
+        locationLottieView.isHidden = true
+        
+        
         sendBtn.layer.cornerRadius = 8
         
         navigationItem.hidesBackButton = true
         
-        let btn1 = UIImageView(image: UIImage(named: "icn_bell"))
-        btn1.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        let item1 = UIBarButtonItem()
-        item1.customView = btn1
+//        let btn1 = UIImageView(image: UIImage(named: "icn_bell"))
+//        btn1.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+//        let item1 = UIBarButtonItem()
+//        item1.customView = btn1
 
-        let btn2 = UILabel()
+        btn2 = UILabel()
         btn2.backgroundColor = .primaryLight
         btn2.layer.cornerRadius = 10
         btn2.clipsToBounds = true
         btn2.font = UIFont.Pretendard(.regular, size: 12)
-        btn2.text = "10"
+        btn2.text = "    "
         btn2.textColor = .primary02
         btn2.textAlignment = .center
         let size = btn2.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
@@ -147,20 +230,21 @@ extension DiaryViewController{
         let spacer = UIBarButtonItem()
         spacer.customView = space
 
-        self.navigationItem.rightBarButtonItems = [item1, spacer, item2, item3]
+        self.navigationItem.rightBarButtonItems = [spacer, item2, item3]
+        
+        let leftItem = UIImageView(image: UIImage(named: "logotypo"))
+        leftItem.frame = CGRect(x: 0, y: 0, width: 65, height: 18)
+        
+        let imageButtonItem = UIBarButtonItem(customView: leftItem)
+                
+        // Set the UIBarButtonItem as the left navigation item of your view controller
+        navigationItem.leftBarButtonItem = imageButtonItem
     }
 }
 
 extension DiaryViewController{
     
     func getMainViewInfo(){
-        plusDiaryBookBtn.isHidden = true
-        plusDiaryLabel.isHidden = true
-        mainDiaryImageView.isHidden = true
-        diaryLocationLabel.isHidden = true
-        pokeBtn.isHidden = true
-        askPokeLabel.isHidden = true
-        diaryNameLabel.isHidden = true
         
         ViewAPI.providerView.request( .getMainViewInfo){ result in
             switch result {
@@ -174,29 +258,82 @@ extension DiaryViewController{
                     if response.isSuccess == true{
                         //dday가 0이 아니면 처음 만난 날 설정해준것이므로 날짜 띄워주면 됨
                         if response.result?.dday != 0 {
-                            self.setFirstDayImgView.removeFromSuperview()
-                            self.anniDayLabel.text = String(response.result?.dday ?? 0)
+                            UserDefaults.standard.set(response.result?.dday, forKey: "dDay")
+                            
+                            self.setFirstDayImgView.isHidden = true
+                            self.setFirstDayLabel.isHidden = true
+                            self.anniDayLabel.text = "\(response.result?.dday ?? 0)"
+                            self.anniDayLabel.sizeToFit()
+                            
+                            let bottomBorder = CALayer()
+                            bottomBorder.frame = CGRect(x: 0, y: self.anniDayLabel.frame.size.height - 2, width: self.anniDayLabel.frame.size.width, height: 1)
+                            bottomBorder.backgroundColor = UIColor.primaryLight.cgColor
+                            self.anniDayLabel.layer.addSublayer(bottomBorder)
                         }
                         else{//dday 0이면 처음 만난 날 아직 설정 안한겨
+                            self.setFirstDayImgView.isHidden = false
+                            self.setFirstDayLabel.isHidden = false
                             self.anniDayLabel.text = "    "
+                            self.anniDayLabel.sizeToFit()
+                            
+                            let bottomBorder = CALayer()
+                            bottomBorder.frame = CGRect(x: 0, y: self.anniDayLabel.frame.size.height - 2, width: self.anniDayLabel.frame.size.width, height: 1)
+                            bottomBorder.backgroundColor = UIColor.primaryLight.cgColor
+                            self.anniDayLabel.layer.addSublayer(bottomBorder)
                             
                         }
+                        
+                        self.myNickNameLabel.text = response.result?.nickname
+                        self.partnerNickNameLabel.text = response.result?.partnerNickname
+                        
+                        self.writeFlag = ((response.result?.diarybook?.writeFlag) != nil)
+                        
+                        print("writeFlag:", self.writeFlag)
+                        
+                        self.diarybookStatus = response.result?.diarybookStatus ?? 5
+                        
+                        UserDefaults.standard.setValue(response.result?.nickname, forKey: "myNickName")
+                        
+                        UserDefaults.standard.setValue(response.result?.partnerNickname, forKey: "partnerNickName")
+                        
+                        UserDefaults.standard.setValue(response.result?.dday, forKey: "dDay")
+                        
+                        print("diarybookStatus:", self.diarybookStatus)
                         
                         //    * 일기장이 생성되지 않았으면 0
                         //    * 일기장이 나에게 있으면 1
                         //    * 일기장이 오는 중이면 2
                         //    * 일기장이 가는 중이면 3
                         //    * 일기장이 상대한테 있으면 4
+                      
                         if response.result?.diarybookStatus == 0{
+                        
+                            self.pokeBtn.isHidden = true
+                            self.askPokeLabel.isHidden = true
+                            self.diaryNameLabel.isHidden = true
+                            self.sendBtn.isHidden = true
                             self.plusDiaryBookBtn.isHidden = false
                             self.plusDiaryLabel.isHidden = false
-                            self.mainDiaryImageView.isHidden = false
+                            self.mainDiaryImageView.isHidden = true
+                            self.partnerHasDiaryPic.isHidden = true
+                            self.fingerLottieView.isHidden = true
+                            self.locationLottieView.isHidden = true
                         }
                         else if response.result?.diarybookStatus == 1{
                             self.mainDiaryImageView.isHidden = false
                             self.diaryNameLabel.isHidden = false
-                            
+                            self.fingerLottieView.isHidden = true
+                            self.locationLottieView.isHidden = true
+                            self.plusDiaryBookBtn.isHidden = true
+                            self.plusDiaryLabel.isHidden = true
+                            self.pokeBtn.isHidden = true
+                            self.askPokeLabel.isHidden = true
+    
+                            self.sendBtn.isHidden = false
+                            self.partnerHasDiaryPic.isHidden = true
                             self.diaryNameLabel.text = response.result?.diarybook?.name
+                            
+                            UserDefaults.standard.set(response.result?.diarybook?.name, forKey: "diaryBookName")
                             let coverNum = "diaryImage" + "\(response.result?.diarybook?.coverNum ?? 0)"
                             
                             self.mainDiaryImageView.image = UIImage(named: coverNum)
@@ -211,15 +348,59 @@ extension DiaryViewController{
                             
                         }
                         else if response.result?.diarybookStatus == 2 {
-                            self.diaryLocationLabel.isHidden = false
+                            
+                            self.plusDiaryBookBtn.isHidden = true
+                            self.plusDiaryLabel.isHidden = true
+                            self.mainDiaryImageView.isHidden = true
+
+                            self.pokeBtn.isHidden = true
+                            self.askPokeLabel.isHidden = true
+                            self.diaryNameLabel.isHidden = true
+                            self.sendBtn.isHidden = true
+                            self.fingerLottieView.isHidden = true
+                            self.locationLottieView.isHidden = false
+                            self.partnerHasDiaryPic.isHidden = true
+                            
+                            self.animationComing.frame = self.locationLottieView.bounds
+                            self.animationComing.contentMode = .scaleToFill
+                            self.animationComing.loopMode = .loop
+                            self.animationComing.play()
+                            
                         }
                         else if response.result?.diarybookStatus == 3 {
-                            self.diaryLocationLabel.text = "연인에게로 일기가 가고 있어!"
-                            self.diaryLocationLabel.isHidden = false
+              
+                            self.plusDiaryBookBtn.isHidden = true
+                            self.plusDiaryLabel.isHidden = true
+                            self.mainDiaryImageView.isHidden = true
+
+                            self.pokeBtn.isHidden = true
+                            self.askPokeLabel.isHidden = true
+                            self.diaryNameLabel.isHidden = true
+                            self.sendBtn.isHidden = true
+                            self.fingerLottieView.isHidden = true
+                            self.locationLottieView.isHidden = false
+                            self.partnerHasDiaryPic.isHidden = true
+                            
+                            
+                            self.animationGoing.frame = self.locationLottieView.bounds
+                            self.animationGoing.contentMode = .scaleToFill
+                            self.animationGoing.loopMode = .loop
+                            self.animationGoing.play()
                         }
                         else{
+                            self.fingerLottieView.isHidden = false
+                            self.locationLottieView.isHidden = true
+                            self.plusDiaryBookBtn.isHidden = true
+                            self.plusDiaryLabel.isHidden = true
+                            self.mainDiaryImageView.isHidden = true
+                            self.diaryNameLabel.isHidden = true
+                            self.sendBtn.isHidden = true
+                            
                             self.pokeBtn.isHidden = false
                             self.askPokeLabel.isHidden = false
+                            self.partnerHasDiaryPic.isHidden = false
+            
+                            self.animationFinger.play()
                         }
                         
                     }
@@ -233,4 +414,77 @@ extension DiaryViewController{
             }
         }
     }
+    
+    func sendDiaryBook(){
+        
+        DiaryBookAPI.providerDiaryBook.request( .sendDiaryBook){ result in
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(SendDiaryBookResponse.self)
+                    print(response)
+                    if response.isSuccess == true{
+            
+                        self.reloadContent()
+                    }
+                    else{
+                        if response.code == 2071{
+                            guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "CanNotSendAlertViewController") as? CanNotSendAlertViewController else {return}
+                            
+                            vc.modalPresentationStyle = .overCurrentContext
+                            self.present(vc, animated: false, completion: nil)
+                        }
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> checkMailBoxName Error : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func getFromCount(){
+        
+        ViewAPI.providerView.request(.getFromCount){ result in
+            switch result{
+            case .success(let data):
+                do{
+                    let response = try data.map(FromCountResponse.self)
+                    self.btn2.text = "\(response.result)"
+                    print(response)
+                } catch{
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> getFromCount Error : \(error.localizedDescription)")
+                
+            }
+        }
+    }
+}
+
+extension DiaryViewController{
+    
+    func showToast(message : String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: sendBtn.layer.frame.origin.x, y: 50, width: self.view.frame.width - sendBtn.layer.frame.origin.x * 2 , height: 52))
+        toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut,animations: {
+            toastLabel.alpha = 0.0
+            }, completion: {(isCompleted) in
+                toastLabel.removeFromSuperview()
+            })
+        }
+    
 }

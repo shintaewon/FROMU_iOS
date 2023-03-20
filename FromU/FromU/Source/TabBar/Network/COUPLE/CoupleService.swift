@@ -17,6 +17,10 @@ enum CoupleService{
     case setMailBoxName(mailboxName: String)
     
     case checkMail(mailboxName: String)
+    
+    case setFirstMetDay(firstMetDay: String)
+    
+    case disConnect
 }
 
 extension CoupleService: TargetType{
@@ -39,8 +43,13 @@ extension CoupleService: TargetType{
             return "/mailbox"
 
         case .checkMail:
-        
             return "/mailbox"
+            
+        case .setFirstMetDay:
+            return "/firstMetDay"
+            
+        case .disConnect:
+            return "/d"
         }
         
     }
@@ -59,6 +68,12 @@ extension CoupleService: TargetType{
             
         case .checkMail:
             return .get
+            
+        case .setFirstMetDay:
+            return .patch
+            
+        case .disConnect:
+            return .patch
         }
         
     }
@@ -77,6 +92,12 @@ extension CoupleService: TargetType{
             
         case .checkMail(let mailboxName):
             return .requestParameters(parameters: ["mailboxName": mailboxName], encoding: URLEncoding.queryString)
+            
+        case .setFirstMetDay(let firstMetDay):
+            return .requestParameters(parameters: ["firstMetDay": firstMetDay], encoding: JSONEncoding.default)
+            
+        case .disConnect:
+            return Task.requestPlain
         }
     }
     
@@ -94,6 +115,12 @@ extension CoupleService: TargetType{
             
         case .checkMail:
             return nil
+            
+        case .setFirstMetDay:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .disConnect:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
             
         }
     }

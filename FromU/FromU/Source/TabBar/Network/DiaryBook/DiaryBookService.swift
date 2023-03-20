@@ -12,9 +12,9 @@ enum DiaryBookService{
     
     case registerDiaryBook(coverNum: Int,
                            name: String)
+    case getDiaryCover
     
-    case registerDiaryCover
-    
+    case sendDiaryBook
 }
 
 extension DiaryBookService: TargetType{
@@ -28,7 +28,12 @@ extension DiaryBookService: TargetType{
         switch self {
         case .registerDiaryBook:
             return "/diarybooks"
-
+            
+        case .getDiaryCover:
+            return "/diarybooks/firstPage"
+            
+        case .sendDiaryBook:
+            return "/diarybooks/pass"
         }
         
     }
@@ -37,7 +42,12 @@ extension DiaryBookService: TargetType{
         switch self {
         case .registerDiaryBook:
             return .post
+            
+        case .getDiaryCover:
+            return .get
         
+        case .sendDiaryBook:
+            return .patch
         }
         
     }
@@ -47,6 +57,11 @@ extension DiaryBookService: TargetType{
         case .registerDiaryBook(let coverNum, let name):
             return .requestParameters(parameters: ["coverNum": coverNum, "name": name], encoding: JSONEncoding.default)
         
+        case .getDiaryCover:
+            return Task.requestPlain
+            
+        case .sendDiaryBook:
+            return Task.requestPlain
         }
         
     }
@@ -57,6 +72,11 @@ extension DiaryBookService: TargetType{
 
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
 
+        case .getDiaryCover:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .sendDiaryBook:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }
 }

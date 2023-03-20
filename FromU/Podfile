@@ -8,6 +8,10 @@ pod 'KakaoSDK'
 pod 'Moya'
 pod 'SwiftKeychainWrapper'
 pod 'FSCalendar'
+pod 'Kingfisher'
+pod 'lottie-ios'
+pod 'AdvancedPageControl'
+
   # Pods for FromU
   target 'FromUTests' do
     inherit! :search_paths

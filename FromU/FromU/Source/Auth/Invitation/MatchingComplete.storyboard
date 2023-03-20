@@ -26,36 +26,46 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="은다," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxa-kf-uu5">
-                                <rect key="frame" x="16.000000000000004" y="138" width="52.333333333333343" height="29"/>
+                                <rect key="frame" x="16.000000000000004" y="120" width="52.333333333333343" height="28"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="그리고 아라." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sxm-ko-aMI">
-                                <rect key="frame" x="16" y="175" width="128" height="29"/>
+                                <rect key="frame" x="16" y="156" width="128" height="28"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프롬유에 온걸 환영해." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPv-yG-VlH">
-                                <rect key="frame" x="16" y="212" width="227" height="29"/>
+                                <rect key="frame" x="16.000000000000014" y="229" width="226.33333333333337" height="28"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Z0-FJ-Tpp" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="16" y="346" width="361" height="316"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="316" id="zVb-ee-O9P"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="0yb-5Z-inT"/>
+                            <constraint firstItem="3Z0-FJ-Tpp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="2v8-Sf-Mpn"/>
                             <constraint firstItem="Sxm-ko-aMI" firstAttribute="top" secondItem="wxa-kf-uu5" secondAttribute="bottom" constant="8" id="BLH-Gm-afY"/>
                             <constraint firstItem="Sxm-ko-aMI" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="JD0-rq-TE6"/>
-                            <constraint firstItem="wxa-kf-uu5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="138" id="KPm-3h-jzr"/>
+                            <constraint firstItem="wxa-kf-uu5" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="120" id="KPm-3h-jzr"/>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="RQF-2L-fBu"/>
                             <constraint firstItem="h2n-FP-bcy" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="TGd-1s-9m7"/>
                             <constraint firstItem="wxa-kf-uu5" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="VDq-bQ-KtH"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="3Z0-FJ-Tpp" secondAttribute="trailing" constant="16" id="cjT-ns-9JK"/>
+                            <constraint firstAttribute="bottom" secondItem="3Z0-FJ-Tpp" secondAttribute="bottom" constant="190" id="gFY-XG-9HI"/>
                             <constraint firstItem="IPv-yG-VlH" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="ujm-HR-Vjh"/>
-                            <constraint firstItem="IPv-yG-VlH" firstAttribute="top" secondItem="Sxm-ko-aMI" secondAttribute="bottom" constant="8" id="uph-dM-93I"/>
+                            <constraint firstItem="IPv-yG-VlH" firstAttribute="top" secondItem="Sxm-ko-aMI" secondAttribute="bottom" constant="45" id="uph-dM-93I"/>
                             <constraint firstAttribute="bottom" secondItem="h2n-FP-bcy" secondAttribute="bottom" id="vcp-nb-H5Z"/>
                         </constraints>
                     </view>
@@ -63,6 +73,7 @@
                         <outlet property="backgroundView" destination="h2n-FP-bcy" id="GkN-KO-aGP"/>
                         <outlet property="firstNickNameLabel" destination="wxa-kf-uu5" id="Zz1-Hf-55f"/>
                         <outlet property="secondNickNameLabel" destination="Sxm-ko-aMI" id="POZ-b2-baR"/>
+                        <outlet property="splashLottieView" destination="3Z0-FJ-Tpp" id="LZK-md-SfC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

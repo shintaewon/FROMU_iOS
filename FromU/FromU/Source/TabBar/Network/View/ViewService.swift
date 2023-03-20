@@ -12,6 +12,9 @@ enum ViewService{
     
     case getMainViewInfo
     
+    case getFromCount
+    
+    case getMailBoxViewInfo
 }
 
 extension ViewService: TargetType{
@@ -25,7 +28,12 @@ extension ViewService: TargetType{
         switch self {
         case .getMainViewInfo:
             return "/view/main"
-
+            
+        case .getFromCount:
+            return "/view/fromCount"
+            
+        case .getMailBoxViewInfo:
+            return "/view/mailbox"
         }
         
     }
@@ -34,7 +42,12 @@ extension ViewService: TargetType{
         switch self {
         case .getMainViewInfo:
             return .get
-        
+            
+        case .getFromCount:
+            return .get
+            
+        case .getMailBoxViewInfo:
+            return .get
         }
         
     }
@@ -43,7 +56,12 @@ extension ViewService: TargetType{
         switch self {
         case .getMainViewInfo:
             return Task.requestPlain
+            
+        case .getFromCount:
+            return Task.requestPlain
         
+        case .getMailBoxViewInfo:
+            return Task.requestPlain
         }
         
     }
@@ -53,7 +71,12 @@ extension ViewService: TargetType{
         case .getMainViewInfo:
         
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
-            //return [ "X-ACCESS-TOKEN" : "eyJ0eXBlIjoiand0IiwiYWxnIjoiSFMyNTYifQ.eyJ1c2VySWQiOjE2LCJpYXQiOjE2NzgxMTQ0MjQsImV4cCI6MTY3OTU4NTY1M30.gdYv1fF-wfDMxxr2H3eF_4WkBuNq2rz83k7y1mj-tA8" ]
+            
+        case .getFromCount:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .getMailBoxViewInfo:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }
 }

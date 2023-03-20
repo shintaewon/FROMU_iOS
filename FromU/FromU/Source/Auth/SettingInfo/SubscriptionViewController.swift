@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SwiftKeychainWrapper
+
 class SubscriptionViewController: UIViewController {
 
     
@@ -27,6 +29,28 @@ class SubscriptionViewController: UIViewController {
     
     var agreeSubs1 = false
     var agreeSubs2 = false
+    
+    @IBAction func didTapSubsBtn1(_ sender: Any) {
+        let appURL = URL(string: "www.notion.so/760bcb4d71c9423d9b751a49882984a4?pvs=4")!
+        let webURL = URL(string: "https://www.notion.so/760bcb4d71c9423d9b751a49882984a4?pvs=4")!
+
+        if UIApplication.shared.canOpenURL(appURL) {
+            UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func didTapSubsBtn2(_ sender: Any) {
+        let appURL = URL(string: "www.notion.so/bbcd9f741538474893adba60c3c8ee75?pvs=4")!
+        let webURL = URL(string: "https://www.notion.so/bbcd9f741538474893adba60c3c8ee75?pvs=4")!
+
+        if UIApplication.shared.canOpenURL(appURL) {
+            UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.open(webURL, options: [:], completionHandler: nil)
+        }
+    }
     
     //시작하기 버튼 활성화시켜주는 함수
     func changeStartBtnActive() {
@@ -78,11 +102,6 @@ class SubscriptionViewController: UIViewController {
     
     @IBAction func didTapStartBtn(_ sender: Any) {
         signUpFromU()
-//        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
-//
-//        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
-//
-//        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
@@ -139,10 +158,18 @@ class SubscriptionViewController: UIViewController {
 extension SubscriptionViewController{
     
     func signUpFromU(){
+        var email = ""
         
         let birthday = UserDefaults.standard.string(forKey: "birthDay") ?? ""
         
-        let email = UserDefaults.standard.string(forKey: "email") ?? ""
+        if UserDefaults.standard.bool(forKey: "isFromKakao") == true{
+            UserDefaults.standard.set(false, forKey: "isFromKakao")
+            email = UserDefaults.standard.string(forKey: "email") ?? ""
+        }
+        else{
+            email = KeychainWrapper.standard.string(forKey: "appleEmail") ?? ""
+        }
+        
         
         let gender = UserDefaults.standard.string(forKey: "gender") ?? ""
         
@@ -158,7 +185,20 @@ extension SubscriptionViewController{
             case .success(let data):
                 do{
                     let response = try data.map(SignupResponse.self)
-            
+                    print(response)
+                    if response.isSuccess == true{
+                        if response.code == 1000 {
+                            
+                            UserDefaults.standard.set(response.result.userCode, forKey: "userCode")
+                            
+                            let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
+                    
+                            guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
+                    
+                            self.navigationController?.pushViewController(vc, animated: true)
+                        }
+                    }
+                    
                 } catch {
                     print(error)
                 }

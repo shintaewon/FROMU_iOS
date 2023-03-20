@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests-frameworks.sh
+${BUILT_PRODUCTS_DIR}/AdvancedPageControl/AdvancedPageControl.framework
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/FSCalendar/FSCalendar.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKAuth/KakaoSDKAuth.framework
@@ -9,6 +10,8 @@ ${BUILT_PRODUCTS_DIR}/KakaoSDKStory/KakaoSDKStory.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKTalk/KakaoSDKTalk.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKTemplate/KakaoSDKTemplate.framework
 ${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework
 ${BUILT_PRODUCTS_DIR}/Moya/Moya.framework
 ${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework
+${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework
 ${PODS_XCFRAMEWORKS_BUILD_DIR}/KakaoSDKFriend/KakaoSDKFriend.framework/KakaoSDKFriend

@@ -97,7 +97,7 @@ class SetMailBoxNameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        mainLabel.text = "\(UserDefaults.standard.string(forKey: "nickName"))"
+        mainLabel.text = "둘만의 우편함 이름을 정해줄래?"
         
         decideBtn.isEnabled = false
         
@@ -202,16 +202,20 @@ extension SetMailBoxNameViewController{
                 do{
                     let response = try data.map(CheckMailResponse.self)
                     
+                    print(response)
                     if response.isSuccess == true{
                         //중복 아니라는 뜻 -> 바로 설정 api 쏴버리장
                         if response.result == false{
                             self.setMailBoxName(mailBoxNameToCheck)
                         }
                         else{
+                            self.descriptionLabel.isHidden = false
                             self.descriptionLabel.text = "중복되는 우편함 이름이야! 다른 걸로 변경해줘"
                             self.descriptionLabel.textColor = .error
+                            self.bottomBorder.backgroundColor = UIColor.error.cgColor
                         }
                     }
+                    
                     
                 } catch {
                     print(error)
@@ -225,7 +229,7 @@ extension SetMailBoxNameViewController{
 
     
     func setMailBoxName(_ mailBoxName: String){
-        CoupleAPI.providerCouple.request( .setMailBoxName(mailboxName: mailBoxName)){ result in
+        CoupleAPI.providerCouple.request( .setMailBoxName(mailboxName: "\(mailBoxName)함")){ result in
             switch result {
             case .success(let data):
                 do{

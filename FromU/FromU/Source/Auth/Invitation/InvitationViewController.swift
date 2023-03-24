@@ -58,7 +58,7 @@ class InvitationViewController: UIViewController {
     
     @IBAction func didTapCloseBtn(_ sender: Any) {
         descriptionView.isHidden = true
-        navigationController?.navigationBar.isHidden = false
+        self.navigationController?.isNavigationBarHidden = false
         
     }
     
@@ -72,7 +72,7 @@ class InvitationViewController: UIViewController {
 
         invitationCodeLabel.text = "\(UserDefaults.standard.string(forKey: "userCode") ?? "")"
         
-        navigationController?.navigationBar.isHidden = true
+        self.navigationController?.isNavigationBarHidden = true
         
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 

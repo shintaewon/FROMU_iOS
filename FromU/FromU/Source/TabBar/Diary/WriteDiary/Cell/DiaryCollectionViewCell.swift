@@ -11,7 +11,9 @@ import Kingfisher
 
 class DiaryCollectionViewCell: UICollectionViewCell {
     
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weekdayLabel: UILabel!
     
     @IBOutlet weak var dateView: UIView!
     
@@ -61,11 +63,10 @@ class DiaryCollectionViewCell: UICollectionViewCell {
         let inputDateString = data.result?.date ?? ""
         let month = String(inputDateString.prefix(6)).suffix(2)
         let day = String(inputDateString.suffix(2))
-
-        let outputDateString = "\(Int(month) ?? 0)월   \(Int(day) ?? 0)일   \(dayOfWeekString)"
-        print(outputDateString) // Output: "3월 14일 월요일"
         
-        dateLabel.text = outputDateString
+        monthLabel.text = "\(Int(month) ?? 0)월"
+        dayLabel.text = "\(Int(day) ?? 0)일"
+        weekdayLabel.text = "\(dayOfWeekString)"
         
         if data.result?.weather == "sunny"{
             redcircleSun.isHidden = false

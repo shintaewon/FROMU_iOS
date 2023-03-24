@@ -104,7 +104,7 @@ extension LoginViewController: ASAuthorizationControllerPresentationContextProvi
             }
             
             KeychainWrapper.standard.set(tokeStr ?? " ", forKey: "appleAccessToken")
-
+            
             sendAppleAccessToken()
          
         default:
@@ -136,7 +136,7 @@ extension LoginViewController{
                     let xToken = oauthToken?.accessToken ?? ""
                     
                     KeychainWrapper.standard.set(xToken, forKey: "kakaoAccessToken")
-         
+                    
                     self.sendKakaoAccessToken()
                     
                     
@@ -147,11 +147,37 @@ extension LoginViewController{
                             
                             UserDefaults.standard.set(user?.kakaoAccount?.email, forKey: "email")
                         }
-                        
                     }
-                            
-                            
+                }
+            }
+        }
+        else{
+            // 카톡 없으면 -> 계정으로 로그인
+            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                }
+                else {
+                    print("loginWithKakaoTalk() success.")
                     
+                    //do something
+                    _ = oauthToken
+                    
+                    let xToken = oauthToken?.accessToken ?? ""
+                    
+                    KeychainWrapper.standard.set(xToken, forKey: "kakaoAccessToken")
+                    
+                    self.sendKakaoAccessToken()
+                    
+                    
+                    UserApi.shared.me { [self] user, error in
+                        if let error = error {
+                            print(error)
+                        } else {
+                            
+                            UserDefaults.standard.set(user?.kakaoAccount?.email, forKey: "email")
+                        }
+                    }
                 }
             }
         }
@@ -163,7 +189,7 @@ extension LoginViewController{
     func sendKakaoAccessToken(){
  
         UserDefaults.standard.set(true, forKey: "isFromKakao")
-        
+        print("카카오톡 토큰 보냄")
         UserAPI.providerUser.request( .kakaoLogin){
             result in
             switch result {
@@ -188,7 +214,6 @@ extension LoginViewController{
                         else{//멤버 일 때! -> 어디까지 정보를 입력했나 확인 필요
                             
                             KeychainWrapper.standard.set(response.result?.userInfo?.jwt ?? " ", forKey: "X-ACCESS-TOKEN")
-                            
                             
                             //매칭은 아직 안했을때! -> 매칭 코드 입력 부분으로 이동하자
                             if response.result?.userInfo?.match == false{
@@ -234,8 +259,9 @@ extension LoginViewController{
     }
     
     func sendAppleAccessToken(){
- 
-        UserAPI.providerUser.request( .kakaoLogin){
+        UserDefaults.standard.set(false, forKey: "isFromKakao")
+        print("애플토큰 보냄")
+        UserAPI.providerUser.request( .appleLogin){
             result in
             switch result {
             case .success(let data):

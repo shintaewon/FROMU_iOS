@@ -29,6 +29,8 @@ class SetDiaryCoverViewController: UIViewController {
     private var shouldPushViewController = false
     var diaryBookID = 0
     
+    var isDiaryEmpty = false
+    
     @objc func okAction(){
         print("hi")
     }
@@ -130,8 +132,10 @@ class SetDiaryCoverViewController: UIViewController {
         self.navigationController?.delegate = self
         self.interactivePopGestureRecognizerEnabled = self.navigationController?.interactivePopGestureRecognizer?.isEnabled ?? true
         
-        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
-        view.addGestureRecognizer(panGestureRecognizer)
+        if isDiaryEmpty == false {
+            let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGesture(_:)))
+            view.addGestureRecognizer(panGestureRecognizer)
+        }
         
         let titleString = "마지막 페이지로"
         
@@ -343,8 +347,9 @@ extension SetDiaryCoverViewController{
                     
                     if response.isSuccess == true {
                         if response.code == 1000 {
-                           
+                            
                             if response.result?.isEmpty == true {
+                                self.isDiaryEmpty = true
                                 self.showToast(message: "아직 작성한 일기가 없어!", font: UIFont.Pretendard(.regular, size: 14))
                             }
                             else{

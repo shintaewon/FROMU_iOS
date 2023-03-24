@@ -8,6 +8,7 @@
 import UIKit
 
 import Lottie
+import SwiftKeychainWrapper
 
 class SplashScreenViewController: UIViewController {
 
@@ -21,7 +22,7 @@ class SplashScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.navigationController?.navigationBar.isHidden = true
         
         //배경색 지정

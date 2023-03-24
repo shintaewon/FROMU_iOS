@@ -163,10 +163,12 @@ extension SubscriptionViewController{
         let birthday = UserDefaults.standard.string(forKey: "birthDay") ?? ""
         
         if UserDefaults.standard.bool(forKey: "isFromKakao") == true{
-            UserDefaults.standard.set(false, forKey: "isFromKakao")
+            print("카카오로 로그인 진행중")
+ 
             email = UserDefaults.standard.string(forKey: "email") ?? ""
         }
         else{
+            print("애플로 로그인 진행중")
             email = KeychainWrapper.standard.string(forKey: "appleEmail") ?? ""
         }
         

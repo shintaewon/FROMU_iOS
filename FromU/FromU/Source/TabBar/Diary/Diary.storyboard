@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dmE-gJ-Nfg">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -41,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-MK-Icl">
-                                <rect key="frame" x="128" y="429" width="137" height="38"/>
+                                <rect key="frame" x="128" y="429" width="136" height="38"/>
                                 <string key="text">아직 일기장이 없어!
 하나 추가해 볼까?</string>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
@@ -218,7 +219,6 @@ cHJpbWFyeQhTZWNvbmQ
                             <constraint firstItem="vyJ-BE-r7M" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="top" constant="24" id="WZ8-Dt-cw3"/>
                             <constraint firstItem="d27-lI-qns" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="XbF-ez-JU7"/>
                             <constraint firstItem="leO-Jn-Ttd" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="top" constant="36" id="XlJ-9n-bvg"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="QMr-MK-Icl" secondAttribute="trailing" constant="128" id="Z12-fE-RDU"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WOS-VW-VnY" secondAttribute="trailing" constant="16" id="ZEx-Wl-XFO"/>
                             <constraint firstItem="1HK-SL-qXK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZFq-fc-QrB"/>
                             <constraint firstItem="WOS-VW-VnY" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="bottom" constant="70" id="Zge-Vh-Buz"/>
@@ -527,6 +527,10 @@ cHJpbWFyeQhTZWNvbmQ
             <point key="canvasLocation" x="3717" y="750"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Sgz-hT-K82"/>
+        <designable name="VYa-Gv-VQl"/>
+    </designables>
     <resources>
         <image name="Frame 2608812" width="248" height="188"/>
         <image name="_toolip" width="180" height="60"/>

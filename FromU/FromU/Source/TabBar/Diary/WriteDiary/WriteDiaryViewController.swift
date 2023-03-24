@@ -26,8 +26,9 @@ class WriteDiaryViewController: UIViewController {
     
     @IBOutlet weak var dateView: UIView!
     
-    @IBOutlet weak var dateLabel: UILabel!
-    
+    @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
+    @IBOutlet weak var weekdayLabel: UILabel!
     
     @IBOutlet weak var imageViewSun: UIImageView!
     
@@ -172,8 +173,6 @@ class WriteDiaryViewController: UIViewController {
         redCircle_spark.isHidden = true
         redCircle_rain.isHidden = true
         
-        
-        
         dismissKeyboardWhenTappedAround()
         
         textView.delegate = self
@@ -209,20 +208,16 @@ class WriteDiaryViewController: UIViewController {
         dateFormatter.locale = Locale(identifier: "ko_KR")
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMddEEEE")
         
-        // Get current date and format it
         let currentDate = Date()
         let dateString = dateFormatter.string(from: currentDate)
         
         let components = dateString.components(separatedBy: " ")
-        let spacedComponents = components.map { $0 + "   " }
-
-        let spacedString = spacedComponents.joined()
         
-
-        print(spacedString)
-        // Set label text to formatted date
-        dateLabel.text = spacedString
-        
+        // Set UILabel text properties
+        monthLabel.text = components[0]
+        dayLabel.text = components[1]
+        weekdayLabel.text = components[2]
+    
         let tapGestureSun = UITapGestureRecognizer(target: self, action: #selector(didTapSun))
         
         imageViewSun.addGestureRecognizer(tapGestureSun)
@@ -235,7 +230,6 @@ class WriteDiaryViewController: UIViewController {
         
         imageViewRain.addGestureRecognizer(tapGestureRain)
         
-    
         // Create a UIBarButtonItem with the "완료" title and the "done" action
         let doneButton = UIBarButtonItem(title: "완료", style: .done, target: self, action: #selector(doneTapped))
         
@@ -244,8 +238,6 @@ class WriteDiaryViewController: UIViewController {
         
         doneButton.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.Cafe24SsurroundAir(.Cafe24SsurroundAir, size: 13)], for: [.normal, .disabled, .selected])
 
-
-        
         // Set the rightBarButtonItem of the navigationItem to the doneButton
         navigationItem.rightBarButtonItem = doneButton
    

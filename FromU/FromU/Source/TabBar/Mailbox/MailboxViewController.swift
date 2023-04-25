@@ -22,24 +22,27 @@ class MailboxViewController: UIViewController {
     
     @IBOutlet weak var mainBoxImageView: UIImageView!
     
+    @IBOutlet weak var tooltipImageView: UIImageView!
+    @IBOutlet weak var tooltipLabel: UILabel!
+    
     let btn2 = UILabel()
     
     @IBAction func didTapStampBtn(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProhibitAlertViewController") as? ProhibitAlertViewController else {return}
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
         
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
     }
     
     @IBAction func didTapWritingBtn(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProhibitAlertViewController") as? ProhibitAlertViewController else {return}
-        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
+        vc.delegate = self
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
     }
     
     @objc func didTapMailBox(){
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "ProhibitAlertViewController") as? ProhibitAlertViewController else {return}
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
         
         vc.modalPresentationStyle = .overCurrentContext
         present(vc, animated: false, completion: nil)
@@ -139,6 +142,28 @@ extension MailboxViewController{
     }
 }
 
+extension MailboxViewController: AskingWritingLetterViewControllerDelegate, OnboardingWrittingLetterViewControllerDelegate{
+    
+    
+    func goToSelectStampView() {
+        
+        let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else {return}
+        vc.hidesBottomBarWhenPushed = true
+        self.navigationController?.pushViewController(vc, animated: true)
+        
+    }
+    
+    func goToWritingView() {
+        let storyboard = UIStoryboard(name: "WritingLetter", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingWrittingLetterViewController") as? OnboardingWrittingLetterViewController else {return}
+        vc.hidesBottomBarWhenPushed = true
+        vc.delegate = self
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+
+}
+
 extension MailboxViewController{
     
     func getMailboxView(){
@@ -163,6 +188,16 @@ extension MailboxViewController{
                     self.mailboxNameLabel.text = response.result.mailboxName
                     print(response)
                     
+                    //편지 온거 있을때!
+                    if response.result.newLetterID != 0 {
+                        self.mainBoxImageView.image = UIImage(named: "mainBox_Mail")
+                        self.tooltipImageView.isHidden = false
+                        self.tooltipLabel.isHidden = false
+                    } else{
+                        self.mainBoxImageView.image = UIImage(named: "mainBox_Empty")
+                        self.tooltipImageView.isHidden = true
+                        self.tooltipLabel.isHidden = true
+                    }
                     
                 } catch{
                     print(error)
@@ -174,11 +209,8 @@ extension MailboxViewController{
             }
         }
     }
-}
-
-extension MailboxViewController{
+    
     func getFromCount(){
-        
         ViewAPI.providerView.request(.getFromCount){ result in
             switch result{
             case .success(let data):
@@ -197,3 +229,4 @@ extension MailboxViewController{
         }
     }
 }
+

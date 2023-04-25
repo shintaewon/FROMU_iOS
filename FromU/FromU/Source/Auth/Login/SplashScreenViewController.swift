@@ -33,7 +33,7 @@ class SplashScreenViewController: UIViewController {
     func isLoggedIn() -> Bool {
         // Check if the user is already logged in
         // Return true if they are, false otherwise
-        return false
+        return true
     }
     
     func showLogin() {
@@ -45,9 +45,9 @@ class SplashScreenViewController: UIViewController {
         // Load the storyboards for each tab
         let storyboard = UIStoryboard(name: "Diary", bundle: nil)
         
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "DiaryViewController") as? DiaryViewController else { return }
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else { return }
         
-        self.present(vc, animated: true)
+        self.navigationController?.pushViewController(vc, animated: true)
         
     }
     
@@ -73,7 +73,11 @@ class SplashScreenViewController: UIViewController {
             //자동로그인되어있으면 바로 홈으로
             if self?.isLoggedIn() == true {
                 
-                self?.showHomeVC()
+                let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
+                guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else { return }
+                self?.navigationController?.pushViewController(vc, animated: true)
+                
+//                self?.showHomeVC()
             }
             //안되어있으면 온보딩 혹은 로그인
             else{

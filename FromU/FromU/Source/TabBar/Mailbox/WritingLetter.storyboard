@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Onboarding Writting Letter View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="OnboardingWrittingLetterViewController" id="Y6W-OH-hqX" customClass="OnboardingWrittingLetterViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mDz-OV-blA">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEw-CH-N41">
+                                <rect key="frame" x="16" y="138" width="297.33333333333331" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="81" id="Uf7-F2-sN7"/>
+                                </constraints>
+                                <string key="text">편지를 작성해보자!
+우리의 이야기를 자랑해도 좋고,
+고민을 털어놔도 좋아 :)</string>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="writing" translatesAutoresizingMaskIntoConstraints="NO" id="0po-G5-L9s">
+                                <rect key="frame" x="33" y="376" width="323" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="6f4-3O-YCZ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lEw-CH-N41" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="138" id="0jX-mu-g0o"/>
+                            <constraint firstItem="lEw-CH-N41" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="28v-7T-gLf"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="mDz-OV-blA" secondAttribute="trailing" id="5D8-au-Yzx"/>
+                            <constraint firstItem="mDz-OV-blA" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="KUW-7n-wlp"/>
+                            <constraint firstItem="0po-G5-L9s" firstAttribute="top" secondItem="lEw-CH-N41" secondAttribute="bottom" constant="157" id="Kh3-Rk-KMT"/>
+                            <constraint firstItem="mDz-OV-blA" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="MIO-JI-8wO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="0po-G5-L9s" secondAttribute="trailing" constant="37" id="X8w-gB-kYd"/>
+                            <constraint firstItem="0po-G5-L9s" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="a2B-j5-vO6"/>
+                            <constraint firstAttribute="bottom" secondItem="mDz-OV-blA" secondAttribute="bottom" id="hSS-RW-LYV"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="mDz-OV-blA" id="DBo-zi-kMH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="64.885496183206101" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="writing" width="305" height="244"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

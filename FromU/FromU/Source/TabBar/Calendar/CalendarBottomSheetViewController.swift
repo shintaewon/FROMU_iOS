@@ -11,8 +11,10 @@ class CalendarBottomSheetViewController: UIViewController {
     
     // MARK: - Properties
     // 바텀 시트 높이
-    let bottomHeight: CGFloat = 320
+    let bottomHeight: CGFloat = 300
     
+    lazy var maxBottomSheetHeight: CGFloat = view.frame.height - 44
+
     var selectedDate: Date?
     var data: [GetCalendarSchedulesResult] = []
     
@@ -51,6 +53,17 @@ class CalendarBottomSheetViewController: UIViewController {
         let tv = UITableView()
         tv.translatesAutoresizingMaskIntoConstraints = false
         return tv
+    }()
+    
+    private lazy var addButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("일정 추가하기 ", for: .normal) // 여기에 스페이스를 추가해서 텍스트와 이미지 사이에 간격을 줍니다.
+        button.setImage(UIImage(named: "icn_plus_calendar"), for: .normal)
+        button.setTitleColor(.black, for: .normal) // 색상은 원하는 대로 설정하세요
+        button.titleLabel?.font = UIFont.BalsamTint(.size16) // 글꼴 크기 및 스타일 설정
+        button.addTarget(self, action: #selector(addScheduleButtonTapped), for: .touchUpInside) // 액션 연결
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
     }()
     
     // MARK: - View Life Cycle
@@ -170,12 +183,16 @@ class CalendarBottomSheetViewController: UIViewController {
         tableView.register(CalendarEventCell.self, forCellReuseIdentifier: "CalendarEventCell")
         view.addSubview(tableView)
         
+        // 여기서 버튼을 테이블뷰의 footer로 설정
+        tableView.tableFooterView = createAddScheduleButton()
+        
         NSLayoutConstraint.activate([
-            tableView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 44),
+            tableView.topAnchor.constraint(equalTo: bottomSheetView.topAnchor, constant: 32),
             tableView.bottomAnchor.constraint(equalTo: bottomSheetView.bottomAnchor),
             tableView.leadingAnchor.constraint(equalTo: bottomSheetView.leadingAnchor, constant: 16),
             tableView.trailingAnchor.constraint(equalTo: bottomSheetView.trailingAnchor, constant: -16)
         ])
+        
     }
     
     
@@ -188,29 +205,50 @@ class CalendarBottomSheetViewController: UIViewController {
     // UISwipeGestureRecognizer 연결 함수 부분
     @objc func handlePanGesture(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.view)
-        let safeAreaHeight = view.safeAreaLayoutGuide.layoutFrame.height
-        let bottomPadding = view.safeAreaInsets.bottom
-        
-        if bottomSheetViewTopConstraint.constant + translation.y >= (safeAreaHeight + bottomPadding) - bottomHeight {
-            bottomSheetViewTopConstraint.constant += translation.y
+        let velocity = recognizer.velocity(in: self.view)
+        switch recognizer.state {
+        case .began, .changed:
+            let newY = bottomSheetViewTopConstraint.constant + translation.y
+            if newY <= view.frame.height - bottomHeight && newY >= view.frame.height - maxBottomSheetHeight {
+                bottomSheetViewTopConstraint.constant = newY
+            } else if newY > view.frame.height - bottomHeight {
+                bottomSheetViewTopConstraint.constant = newY
+            }
             recognizer.setTranslation(CGPoint.zero, in: self.view)
-        }
-
-        if recognizer.state == .ended {
-            let velocity = recognizer.velocity(in: self.view)
-            let midPoint = (safeAreaHeight + bottomPadding) - (bottomHeight / 2)
             
-            if velocity.y >= 1500 {
-                hideBottomSheetAndGoBack()
-                return
-            }
-            
-            if bottomSheetViewTopConstraint.constant > midPoint {
-                hideBottomSheetAndGoBack()
+        case .ended:
+            if velocity.y > 1000 {
+                if bottomSheetViewTopConstraint.constant <= view.frame.height - maxBottomSheetHeight {
+                    // 현재 바텀시트가 maxBottomSheetHeight 경우
+                    showBottomSheet()
+                } else {
+                    // 현재 바텀 시트가 bottomHeight 경우
+                    hideBottomSheetAndGoBack()
+                }
+            } else if velocity.y < -1000 {
+                expandBottomSheet()
             } else {
-                showBottomSheet()
+                let middlePoint = (bottomHeight + maxBottomSheetHeight) / 2
+                
+                if bottomSheetViewTopConstraint.constant > view.frame.height - bottomHeight {
+                    hideBottomSheetAndGoBack()
+                } else if bottomSheetViewTopConstraint.constant <= view.frame.height - bottomHeight && bottomSheetViewTopConstraint.constant > view.frame.height - middlePoint {
+                    showBottomSheet()
+                } else {
+                    expandBottomSheet()
+                }
             }
+
+        default:
+            break
         }
+    }
+    
+    private func expandBottomSheet() {
+        bottomSheetViewTopConstraint.constant = view.frame.height - maxBottomSheetHeight
+        UIView.animate(withDuration: 0.25, delay: 0, options: .curveEaseIn, animations: {
+            self.view.layoutIfNeeded()
+        }, completion: nil)
     }
     
     @objc func handleEditButtonTap() {
@@ -220,6 +258,29 @@ class CalendarBottomSheetViewController: UIViewController {
     @objc func handleDeleteButtonTap() {
         print("Delete button tapped!")
     }
+    
+    private func createAddScheduleButton() -> UIButton {
+        let button = UIButton(type: .custom)
+        button.setTitle("일정 추가하기", for: .normal)
+        button.setTitleColor(.black, for: .normal) // 원하는 색상으로 설정하세요.
+        button.backgroundColor = .white
+        
+        let image = UIImage(named: "icn_plus_calendar") // "plus_icon"는 프로젝트에 있는 이미지 파일명이어야 합니다.
+        button.setImage(image, for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 0, left: -10, bottom: 0, right: 0)
+        
+        button.addTarget(self, action: #selector(addScheduleButtonTapped), for: .touchUpInside)
+        
+        button.frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 50)
+        
+        return button
+    }
+    
+    @objc private func addScheduleButtonTapped() {
+        // 여기에서 일정 추가 로직을 구현하세요.
+        print("일정 추가하기 버튼이 탭되었습니다.")
+    }
+
 }
 
 extension CalendarBottomSheetViewController: UITableViewDataSource, UITableViewDelegate{
@@ -242,7 +303,7 @@ extension CalendarBottomSheetViewController: UITableViewDataSource, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 64.0
+        return 53.0
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

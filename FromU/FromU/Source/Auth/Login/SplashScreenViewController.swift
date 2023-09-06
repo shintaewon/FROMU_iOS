@@ -11,7 +11,7 @@ import Lottie
 import SwiftKeychainWrapper
 
 class SplashScreenViewController: UIViewController {
-
+    
     
     @IBOutlet weak var explainLabel: UILabel!
     
@@ -23,7 +23,7 @@ class SplashScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationController?.navigationBar.isHidden = true
+        //self.navigationController?.navigationBar.isHidden = true
         
         //배경색 지정
         bgView.setGradient(color1: UIColor(red: 0.396, green: 0.667, blue: 1, alpha: 1), color2: UIColor(red: 0.786, green: 0.514, blue: 1, alpha: 1))
@@ -31,9 +31,13 @@ class SplashScreenViewController: UIViewController {
     }
     
     func isLoggedIn() -> Bool {
-        // Check if the user is already logged in
-        // Return true if they are, false otherwise
-        return true
+        
+        if UserDefaults.standard.bool(forKey: "isAutoLoginValidation") == true {
+            return true
+        } else{
+            return false
+        }
+        
     }
     
     func showLogin() {
@@ -60,24 +64,23 @@ class SplashScreenViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN"))
+        
+        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "RefreshToken"))
+        
         inputAnimation()
-        let animation = LottieAnimationView(name: "splash")
-        splashLottieView.addSubview(animation)
-        animation.frame = splashLottieView.bounds
-        animation.contentMode = .scaleToFill
-        animation.loopMode = .loop
-        animation.play()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
             
             //자동로그인되어있으면 바로 홈으로
             if self?.isLoggedIn() == true {
                 
-                let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
-                guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else { return }
-                self?.navigationController?.pushViewController(vc, animated: true)
+                //                let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
+                //                guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else { return }
+                //                self?.navigationController?.pushViewController(vc, animated: true)
                 
-//                self?.showHomeVC()
+                self?.showHomeVC()
             }
             //안되어있으면 온보딩 혹은 로그인
             else{
@@ -94,7 +97,7 @@ class SplashScreenViewController: UIViewController {
     func inputAnimation() {
         let explainString = "당신으로부터,"
         var index = 0
-
+        
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
             if index < explainString.count {
                 let char = explainString[explainString.index(explainString.startIndex, offsetBy: index)]
@@ -104,5 +107,12 @@ class SplashScreenViewController: UIViewController {
                 timer.invalidate()
             }
         }
+        
+        let animation = LottieAnimationView(name: "splash")
+        splashLottieView.addSubview(animation)
+        animation.frame = splashLottieView.bounds
+        animation.contentMode = .scaleToFill
+        animation.loopMode = .loop
+        animation.play()
     }
 }

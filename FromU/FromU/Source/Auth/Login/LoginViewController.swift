@@ -214,6 +214,7 @@ extension LoginViewController{
                         else{//멤버 일 때! -> 어디까지 정보를 입력했나 확인 필요
                             
                             KeychainWrapper.standard.set(response.result?.userInfo?.jwt ?? " ", forKey: "X-ACCESS-TOKEN")
+                            KeychainWrapper.standard.set(response.result?.userInfo?.refreshToken ?? " ", forKey: "RefreshToken")
                             
                             //매칭은 아직 안했을때! -> 매칭 코드 입력 부분으로 이동하자
                             if response.result?.userInfo?.match == false{
@@ -239,6 +240,8 @@ extension LoginViewController{
                             
                                     guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
                             
+                                    UserDefaults.standard.setValue(true, forKey: "isAutoLoginValidation")
+                                    
                                     self.navigationController?.pushViewController(vc, animated: true)
                                             
                                 }
@@ -285,6 +288,7 @@ extension LoginViewController{
                         else{//멤버 일 때! -> 어디까지 정보를 입력했나 확인 필요
                             
                             KeychainWrapper.standard.set(response.result?.userInfo?.jwt ?? " ", forKey: "X-ACCESS-TOKEN")
+                            KeychainWrapper.standard.set(response.result?.userInfo?.refreshToken ?? " ", forKey: "RefreshToken")
                             
                             
                             //매칭은 아직 안했을때! -> 매칭 코드 입력 부분으로 이동하자
@@ -311,6 +315,8 @@ extension LoginViewController{
                             
                                     guard let vc = storyboard.instantiateViewController(withIdentifier: "MainTabBarController") as? MainTabBarController else {return}
                             
+                                    UserDefaults.standard.setValue(true, forKey: "isAutoLoginValidation")
+                                    
                                     self.navigationController?.pushViewController(vc, animated: true)
                                             
                                 }

@@ -55,7 +55,12 @@ class SelectStampViewController: UIViewController {
     
     @objc private func nextBtnTapped() {
         
+        guard let selectedCellIndexPath = selectedCellIndexPath else {
+            return
+        }
+        
         let vc = WrittingLetterViewController()
+        vc.bgLetterNum = selectedCellIndexPath.row + 1 
         navigationController?.pushViewController(vc, animated: true)
 
     }

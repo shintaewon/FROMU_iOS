@@ -1,5 +1,5 @@
 //
-//  SignupResponse.swift
+//  LoginResponse.swift
 //  FromU
 //
 //  Created by 신태원 on 2023/03/04.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - SignupResponse
+// MARK: - LoginResponse
 struct LoginResponse: Codable {
     let code: Int?
     let isSuccess: Bool?
@@ -15,13 +15,13 @@ struct LoginResponse: Codable {
     let result: LoginResult?
 }
 
-// MARK: - SignupResult
+// MARK: - LoginResult
 struct LoginResult: Codable {
     let member: Bool
     let userInfo: LoginUserInfo?
 }
 
-// MARK: - UserInfo
+// MARK: - LoginUserInfo
 struct LoginUserInfo: Codable {
     let email, jwt: String
     let match: Bool

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHw-uf-zGB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JHw-uf-zGB">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -23,15 +23,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mailBoxBG" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-MM-Qet">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="767.66666666666663"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSS-OE-0UN">
-                                <rect key="frame" x="16" y="119.00000000000001" width="291" height="42.666666666666671"/>
-                                <string key="text">아라은다함의 이야기를
-다른 우편함으로 전송해볼까?</string>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PSS-OE-0UN">
+                                <rect key="frame" x="16" y="119" width="291" height="0.0"/>
+                                <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MailBoxBG_Pic" translatesAutoresizingMaskIntoConstraints="NO" id="p7Q-zt-VCa">
@@ -53,42 +47,16 @@
                                     <constraint firstAttribute="height" constant="84.5" id="eIJ-04-ODK"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아라은다함" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FZ-Ud-RmO">
+                            <label opaque="NO" clipsSubviews="YES" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FZ-Ud-RmO">
                                 <rect key="frame" x="137" y="477" width="113" height="18"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="FFA-kO-JxP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="13"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ego-b0-gmE">
-                                <rect key="frame" x="95" y="205.66666666666666" width="72" height="72.999999999999972"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="72" id="v2u-26-2jF"/>
-                                    <constraint firstAttribute="height" constant="73" id="xCK-M3-pAJ"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icn_stamp"/>
-                                <connections>
-                                    <action selector="didTapStampBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7y3-jb-pLR"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSu-TH-FAf">
-                                <rect key="frame" x="225" y="205.66666666666666" width="72" height="72.999999999999972"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="73" id="4yx-FC-QNG"/>
-                                    <constraint firstAttribute="width" constant="72" id="muj-j2-p3C"/>
-                                </constraints>
-                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="icn_writing"/>
-                                <connections>
-                                    <action selector="didTapWritingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JS3-Kb-Svw"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="letterboxtooltip" translatesAutoresizingMaskIntoConstraints="NO" id="hr6-7K-64n">
                                 <rect key="frame" x="94.666666666666686" y="362" width="204" height="50"/>
                                 <constraints>
@@ -97,21 +65,53 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우편함을 눌러 편지를 확인해봐!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqL-aE-OAd">
-                                <rect key="frame" x="115.33333333333333" y="370" width="162.33333333333337" height="14"/>
+                                <rect key="frame" x="115.33333333333333" y="370" width="162.33333333333337" height="14.333333333333314"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="Z8T-tS-mUf">
+                                <rect key="frame" x="96.666666666666686" y="215.66666666666666" width="200" height="79.999999999999972"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ego-b0-gmE">
+                                        <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="v2u-26-2jF"/>
+                                            <constraint firstAttribute="height" constant="80" id="xCK-M3-pAJ"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icn_stamp"/>
+                                        <connections>
+                                            <action selector="didTapStampBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7y3-jb-pLR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fSu-TH-FAf">
+                                        <rect key="frame" x="120" y="0.0" width="80" height="80"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="4yx-FC-QNG"/>
+                                            <constraint firstAttribute="width" constant="80" id="muj-j2-p3C"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" image="icn_writing"/>
+                                        <connections>
+                                            <action selector="didTapWritingBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="JS3-Kb-Svw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mailBoxBG" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-MM-Qet">
+                                <rect key="frame" x="0.0" y="1" width="393" height="767.66666666666663"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" red="0.91058439020000004" green="0.8886575699" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fSu-TH-FAf" secondAttribute="trailing" constant="96" id="45A-2Y-GiR"/>
                             <constraint firstItem="9FZ-Ud-RmO" firstAttribute="leading" secondItem="fzz-Rz-ZGt" secondAttribute="leading" constant="50" id="4nD-PQ-smt"/>
+                            <constraint firstItem="Z8T-tS-mUf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="D3o-no-0jx"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="p7Q-zt-VCa" secondAttribute="trailing" id="Fxk-MN-OVF"/>
                             <constraint firstItem="fzz-Rz-ZGt" firstAttribute="trailing" secondItem="9FZ-Ud-RmO" secondAttribute="trailing" constant="98" id="He0-Hb-oBK"/>
-                            <constraint firstItem="ego-b0-gmE" firstAttribute="top" secondItem="PSS-OE-0UN" secondAttribute="bottom" constant="44" id="Hz4-Ai-Fra"/>
-                            <constraint firstItem="fSu-TH-FAf" firstAttribute="top" secondItem="PSS-OE-0UN" secondAttribute="bottom" constant="44" id="ICe-6D-XYN"/>
                             <constraint firstItem="J0G-hu-WIQ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JGa-XW-6va"/>
                             <constraint firstItem="J0G-hu-WIQ" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="JYf-ZM-PBx"/>
                             <constraint firstAttribute="bottom" secondItem="J0G-hu-WIQ" secondAttribute="bottom" id="MBz-8H-M55"/>
@@ -122,7 +122,6 @@
                             <constraint firstItem="PSS-OE-0UN" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="VHY-ik-z25"/>
                             <constraint firstItem="9FZ-Ud-RmO" firstAttribute="top" secondItem="fzz-Rz-ZGt" secondAttribute="top" constant="52" id="YSF-Nh-I1a"/>
                             <constraint firstItem="J0G-hu-WIQ" firstAttribute="top" secondItem="Nma-MM-Qet" secondAttribute="bottom" id="Yak-Xg-wz4"/>
-                            <constraint firstItem="ego-b0-gmE" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="95" id="gfG-A9-ZCg"/>
                             <constraint firstItem="aqL-aE-OAd" firstAttribute="top" secondItem="hr6-7K-64n" secondAttribute="top" constant="8" id="h3X-So-mXp"/>
                             <constraint firstItem="Nma-MM-Qet" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="iDe-wq-MMO"/>
                             <constraint firstItem="hr6-7K-64n" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="jax-Sq-pSb"/>
@@ -133,6 +132,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="PSS-OE-0UN" secondAttribute="trailing" constant="86" id="v7h-Qr-5vg"/>
                             <constraint firstAttribute="bottom" secondItem="fzz-Rz-ZGt" secondAttribute="bottom" constant="78" id="vsp-TU-nj1"/>
                             <constraint firstItem="Nma-MM-Qet" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="xET-Td-KIQ"/>
+                            <constraint firstItem="fzz-Rz-ZGt" firstAttribute="top" secondItem="Z8T-tS-mUf" secondAttribute="bottom" constant="129.33333333333337" id="xOE-Vq-GxD"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="우편함" image="icn_letter" selectedImage="icn_letter" id="e0Z-ev-b2s"/>

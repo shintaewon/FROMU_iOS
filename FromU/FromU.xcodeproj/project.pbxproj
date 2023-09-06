@@ -44,13 +44,42 @@
 		5E38900729AC864A004EB7A6 /* InputCode.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E38900629AC864A004EB7A6 /* InputCode.storyboard */; };
 		5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */; };
 		5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E38900C29ACFE5B004EB7A6 /* UIFont.swift */; };
+		5E3D1DED2A85437300D02B21 /* SentLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D1DEC2A85437300D02B21 /* SentLetterViewController.swift */; };
+		5E3D1DF12A85538400D02B21 /* Balsam_Tint.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5E3D1DF02A85538300D02B21 /* Balsam_Tint.otf */; };
+		5E3D1DF32A85609C00D02B21 /* ReadReplyLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D1DF22A85609C00D02B21 /* ReadReplyLetterViewController.swift */; };
+		5E3D1DF52A85632200D02B21 /* ReadLetterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D1DF42A85632200D02B21 /* ReadLetterResponse.swift */; };
+		5E3D1DF72A861EFE00D02B21 /* ReadLetterLottieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D1DF62A861EFE00D02B21 /* ReadLetterLottieViewController.swift */; };
+		5E3D1DF92A8C965D00D02B21 /* ReadRandomLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E3D1DF82A8C965D00D02B21 /* ReadRandomLetterViewController.swift */; };
+		5E4633542A947CBD00E5CAA8 /* ReportLetterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4633532A947CBD00E5CAA8 /* ReportLetterResponse.swift */; };
+		5E4633562A947EC300E5CAA8 /* ReportLetterCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4633552A947EC300E5CAA8 /* ReportLetterCompleteViewController.swift */; };
+		5E46335A2A94950800E5CAA8 /* StarReviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4633592A94950800E5CAA8 /* StarReviewViewController.swift */; };
+		5E46335C2A94CD8200E5CAA8 /* ConfirmSendReviewAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E46335B2A94CD8200E5CAA8 /* ConfirmSendReviewAlertViewController.swift */; };
 		5E4D892129ED7BE3000814A1 /* LetterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D892029ED7BE3000814A1 /* LetterService.swift */; };
 		5E4D892329ED7BEB000814A1 /* LetterAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D892229ED7BEB000814A1 /* LetterAPI.swift */; };
 		5E4D892529ED93BD000814A1 /* WritingLetter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4D892429ED93BD000814A1 /* WritingLetter.storyboard */; };
-		5E4D892729ED944D000814A1 /* WritingLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D892629ED944D000814A1 /* WritingLetterViewController.swift */; };
+		5E4D892729ED944D000814A1 /* OnboardingWrittingLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D892629ED944D000814A1 /* OnboardingWrittingLetterViewController.swift */; };
 		5E4D892929F038DB000814A1 /* SelectStamp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4D892829F038DB000814A1 /* SelectStamp.storyboard */; };
 		5E4D892B29F038EB000814A1 /* SelectStampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4D892A29F038EB000814A1 /* SelectStampViewController.swift */; };
+		5E4DB1FE2A013C71001EDA9B /* CompleteSendLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DB1FD2A013C71001EDA9B /* CompleteSendLetterViewController.swift */; };
+		5E4DB2022A014FA1001EDA9B /* CompleteSendLetter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5E4DB2012A014FA1001EDA9B /* CompleteSendLetter.storyboard */; };
+		5E4DB2052A01591D001EDA9B /* SendLetterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DB2042A01591D001EDA9B /* SendLetterResponse.swift */; };
+		5E4DB2072A0161B7001EDA9B /* MailboxLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DB2062A0161B7001EDA9B /* MailboxLetterViewController.swift */; };
+		5E4DB2092A0161FE001EDA9B /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4DB2082A0161FE001EDA9B /* CustomSegmentedControl.swift */; };
 		5E5DCBF329F831D600283595 /* WrittingLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5DCBF229F831D600283595 /* WrittingLetterViewController.swift */; };
+		5E65F8C02AA38613008547BA /* BuyStampResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8BF2AA38613008547BA /* BuyStampResponse.swift */; };
+		5E65F8C32AA3A408008547BA /* ScheduleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8C22AA3A408008547BA /* ScheduleService.swift */; };
+		5E65F8C52AA3A40F008547BA /* ScheduleAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8C42AA3A40F008547BA /* ScheduleAPI.swift */; };
+		5E65F8C72AA47C0A008547BA /* CalendarBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8C62AA47C0A008547BA /* CalendarBottomSheetViewController.swift */; };
+		5E65F8CA2AA480F1008547BA /* GetCalendarSchedulesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */; };
+		5E65F8CD2AA841BE008547BA /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8CC2AA841BE008547BA /* CalendarEventCell.swift */; };
+		5E6864F32A9CEF4B00B05DE6 /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F22A9CEF4B00B05DE6 /* RefreshTokenResponse.swift */; };
+		5E6864F52A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F42A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift */; };
+		5E6864F72A9D993200B05DE6 /* WritingReplyLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F62A9D993200B05DE6 /* WritingReplyLetterViewController.swift */; };
+		5E6864FA2A9EE58400B05DE6 /* StampBoxViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F92A9EE58400B05DE6 /* StampBoxViewController.swift */; };
+		5E6864FC2A9F001F00B05DE6 /* StampListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864FB2A9F001F00B05DE6 /* StampListResponse.swift */; };
+		5E6864FE2A9F132300B05DE6 /* BuyStampViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864FD2A9F132300B05DE6 /* BuyStampViewController.swift */; };
+		5E6865002A9F1D4C00B05DE6 /* ModalStampExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864FF2A9F1D4C00B05DE6 /* ModalStampExplainViewController.swift */; };
+		5E6865022A9F227200B05DE6 /* ConventionTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6865012A9F227200B05DE6 /* ConventionTemplateViewController.swift */; };
 		5E73136E29C6FB6F0013465A /* splash.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E73136729C6FB6E0013465A /* splash.json */; };
 		5E73136F29C6FB6F0013465A /* hand.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E73136829C6FB6E0013465A /* hand.json */; };
 		5E73137029C6FB6F0013465A /* goingdiary.json in Resources */ = {isa = PBXBuildFile; fileRef = 5E73136929C6FB6E0013465A /* goingdiary.json */; };
@@ -62,6 +91,7 @@
 		5E73137829C6FF200013465A /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73137729C6FF200013465A /* OnboardingViewController.swift */; };
 		5E73137A29C702590013465A /* UIPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73137929C702590013465A /* UIPageControl.swift */; };
 		5E73137D29C708680013465A /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E73137C29C708680013465A /* OnboardingCollectionViewCell.swift */; };
+		5E784D912A09480100F057FA /* ReceivedLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E784D902A09480100F057FA /* ReceivedLetterViewController.swift */; };
 		5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */; };
 		5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */; };
 		5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E84C68D29A50D7F00F5BA81 /* LoginViewController.swift */; };
@@ -105,6 +135,7 @@
 		5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */; };
 		5EB3CA8129A9C6EF004DF5AA /* Invitation.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */; };
 		5EBEC2DD29A6540300CB809E /* SettingInfo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */; };
+		5EC2215C2A80E55400F09E96 /* GetLetterListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EC2215B2A80E55400F09E96 /* GetLetterListResponse.swift */; };
 		5ED3CA1B29C8A34E00C2A5DB /* SplashScreenNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5ED3CA1A29C8A34E00C2A5DB /* SplashScreenNavigationController.swift */; };
 		5EEA6F4029C473A700F1CBA4 /* MailboxViewResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEA6F3F29C473A700F1CBA4 /* MailboxViewResponse.swift */; };
 		5EEA6F4229C48B8000F1CBA4 /* FirstMetDayResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EEA6F4129C48B8000F1CBA4 /* FirstMetDayResponse.swift */; };
@@ -131,6 +162,7 @@
 		5EF1309B29B76C85002E791B /* DiaryBookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1309A29B76C85002E791B /* DiaryBookService.swift */; };
 		5EF1309D29B76C92002E791B /* DiaryBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF1309C29B76C92002E791B /* DiaryBookAPI.swift */; };
 		5EF130A629B8D365002E791B /* SetDiaryCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF130A529B8D365002E791B /* SetDiaryCoverViewController.swift */; };
+		5EF3A4092A8F68D7004BD553 /* ReportLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EF3A4082A8F68D7004BD553 /* ReportLetterViewController.swift */; };
 		889059C238B5448A4402FF92 /* Pods_FromUTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3CEA270B9A3C1EDCD88FA646 /* Pods_FromUTests.framework */; };
 		8C3225FD65C8F6386A8AA8A0 /* Pods_FromU.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 891A2042572B9CF7B069BE6B /* Pods_FromU.framework */; };
 /* End PBXBuildFile section */
@@ -193,13 +225,42 @@
 		5E38900629AC864A004EB7A6 /* InputCode.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = InputCode.storyboard; sourceTree = "<group>"; };
 		5E38900829AC865B004EB7A6 /* InputCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputCodeViewController.swift; sourceTree = "<group>"; };
 		5E38900C29ACFE5B004EB7A6 /* UIFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
+		5E3D1DEC2A85437300D02B21 /* SentLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SentLetterViewController.swift; sourceTree = "<group>"; };
+		5E3D1DF02A85538300D02B21 /* Balsam_Tint.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Balsam_Tint.otf; sourceTree = "<group>"; };
+		5E3D1DF22A85609C00D02B21 /* ReadReplyLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadReplyLetterViewController.swift; sourceTree = "<group>"; };
+		5E3D1DF42A85632200D02B21 /* ReadLetterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLetterResponse.swift; sourceTree = "<group>"; };
+		5E3D1DF62A861EFE00D02B21 /* ReadLetterLottieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadLetterLottieViewController.swift; sourceTree = "<group>"; };
+		5E3D1DF82A8C965D00D02B21 /* ReadRandomLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadRandomLetterViewController.swift; sourceTree = "<group>"; };
+		5E4633532A947CBD00E5CAA8 /* ReportLetterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLetterResponse.swift; sourceTree = "<group>"; };
+		5E4633552A947EC300E5CAA8 /* ReportLetterCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLetterCompleteViewController.swift; sourceTree = "<group>"; };
+		5E4633592A94950800E5CAA8 /* StarReviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarReviewViewController.swift; sourceTree = "<group>"; };
+		5E46335B2A94CD8200E5CAA8 /* ConfirmSendReviewAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmSendReviewAlertViewController.swift; sourceTree = "<group>"; };
 		5E4D892029ED7BE3000814A1 /* LetterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterService.swift; sourceTree = "<group>"; };
 		5E4D892229ED7BEB000814A1 /* LetterAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LetterAPI.swift; sourceTree = "<group>"; };
 		5E4D892429ED93BD000814A1 /* WritingLetter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WritingLetter.storyboard; sourceTree = "<group>"; };
-		5E4D892629ED944D000814A1 /* WritingLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingLetterViewController.swift; sourceTree = "<group>"; };
+		5E4D892629ED944D000814A1 /* OnboardingWrittingLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingWrittingLetterViewController.swift; sourceTree = "<group>"; };
 		5E4D892829F038DB000814A1 /* SelectStamp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SelectStamp.storyboard; sourceTree = "<group>"; };
 		5E4D892A29F038EB000814A1 /* SelectStampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectStampViewController.swift; sourceTree = "<group>"; };
+		5E4DB1FD2A013C71001EDA9B /* CompleteSendLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompleteSendLetterViewController.swift; sourceTree = "<group>"; };
+		5E4DB2012A014FA1001EDA9B /* CompleteSendLetter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CompleteSendLetter.storyboard; sourceTree = "<group>"; };
+		5E4DB2042A01591D001EDA9B /* SendLetterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendLetterResponse.swift; sourceTree = "<group>"; };
+		5E4DB2062A0161B7001EDA9B /* MailboxLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxLetterViewController.swift; sourceTree = "<group>"; };
+		5E4DB2082A0161FE001EDA9B /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		5E5DCBF229F831D600283595 /* WrittingLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrittingLetterViewController.swift; sourceTree = "<group>"; };
+		5E65F8BF2AA38613008547BA /* BuyStampResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyStampResponse.swift; sourceTree = "<group>"; };
+		5E65F8C22AA3A408008547BA /* ScheduleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleService.swift; sourceTree = "<group>"; };
+		5E65F8C42AA3A40F008547BA /* ScheduleAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleAPI.swift; sourceTree = "<group>"; };
+		5E65F8C62AA47C0A008547BA /* CalendarBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarBottomSheetViewController.swift; sourceTree = "<group>"; };
+		5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCalendarSchedulesResponse.swift; sourceTree = "<group>"; };
+		5E65F8CC2AA841BE008547BA /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
+		5E6864F22A9CEF4B00B05DE6 /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
+		5E6864F42A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReplyLetterViewController.swift; sourceTree = "<group>"; };
+		5E6864F62A9D993200B05DE6 /* WritingReplyLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingReplyLetterViewController.swift; sourceTree = "<group>"; };
+		5E6864F92A9EE58400B05DE6 /* StampBoxViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampBoxViewController.swift; sourceTree = "<group>"; };
+		5E6864FB2A9F001F00B05DE6 /* StampListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StampListResponse.swift; sourceTree = "<group>"; };
+		5E6864FD2A9F132300B05DE6 /* BuyStampViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyStampViewController.swift; sourceTree = "<group>"; };
+		5E6864FF2A9F1D4C00B05DE6 /* ModalStampExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalStampExplainViewController.swift; sourceTree = "<group>"; };
+		5E6865012A9F227200B05DE6 /* ConventionTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConventionTemplateViewController.swift; sourceTree = "<group>"; };
 		5E73136729C6FB6E0013465A /* splash.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = splash.json; sourceTree = "<group>"; };
 		5E73136829C6FB6E0013465A /* hand.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = hand.json; sourceTree = "<group>"; };
 		5E73136929C6FB6E0013465A /* goingdiary.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = goingdiary.json; sourceTree = "<group>"; };
@@ -211,6 +272,7 @@
 		5E73137729C6FF200013465A /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		5E73137929C702590013465A /* UIPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPageControl.swift; sourceTree = "<group>"; };
 		5E73137C29C708680013465A /* OnboardingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCollectionViewCell.swift; sourceTree = "<group>"; };
+		5E784D902A09480100F057FA /* ReceivedLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivedLetterViewController.swift; sourceTree = "<group>"; };
 		5E84C68629A50D7F00F5BA81 /* FromU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FromU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E84C68929A50D7F00F5BA81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5E84C68B29A50D7F00F5BA81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -258,6 +320,7 @@
 		5EB3CA7C29A9C6D6004DF5AA /* InvitationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvitationViewController.swift; sourceTree = "<group>"; };
 		5EB3CA8029A9C6EF004DF5AA /* Invitation.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Invitation.storyboard; sourceTree = "<group>"; };
 		5EBEC2DC29A6540300CB809E /* SettingInfo.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingInfo.storyboard; sourceTree = "<group>"; };
+		5EC2215B2A80E55400F09E96 /* GetLetterListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetLetterListResponse.swift; sourceTree = "<group>"; };
 		5ED3CA1A29C8A34E00C2A5DB /* SplashScreenNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenNavigationController.swift; sourceTree = "<group>"; };
 		5EEA6F3F29C473A700F1CBA4 /* MailboxViewResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailboxViewResponse.swift; sourceTree = "<group>"; };
 		5EEA6F4129C48B8000F1CBA4 /* FirstMetDayResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstMetDayResponse.swift; sourceTree = "<group>"; };
@@ -285,6 +348,7 @@
 		5EF1309A29B76C85002E791B /* DiaryBookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBookService.swift; sourceTree = "<group>"; };
 		5EF1309C29B76C92002E791B /* DiaryBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryBookAPI.swift; sourceTree = "<group>"; };
 		5EF130A529B8D365002E791B /* SetDiaryCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetDiaryCoverViewController.swift; sourceTree = "<group>"; };
+		5EF3A4082A8F68D7004BD553 /* ReportLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportLetterViewController.swift; sourceTree = "<group>"; };
 		68731997A8EA0D7C8FD2FB65 /* Pods-FromU-FromUUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU-FromUUITests.release.xcconfig"; path = "Target Support Files/Pods-FromU-FromUUITests/Pods-FromU-FromUUITests.release.xcconfig"; sourceTree = "<group>"; };
 		891A2042572B9CF7B069BE6B /* Pods_FromU.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FromU.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A991ACB7CE4E4F7F0F13BB81 /* Pods-FromU.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FromU.release.xcconfig"; path = "Target Support Files/Pods-FromU/Pods-FromU.release.xcconfig"; sourceTree = "<group>"; };
@@ -352,6 +416,7 @@
 				5EF1308E29B62CC2002E791B /* View */,
 				5E4D891F29ED7BC8000814A1 /* Letter */,
 				5E0B47EE29B49DD400B0B3CF /* USER */,
+				5E65F8C12AA3A3CA008547BA /* SCHEDULE */,
 				5E0B47EF29B49DEC00B0B3CF /* COUPLE */,
 			);
 			path = Network;
@@ -364,6 +429,7 @@
 				5E0B47E929B4853800B0B3CF /* SignupResponse.swift */,
 				5EEA6F4F29C5F29700F1CBA4 /* WithdrawlResponse.swift */,
 				5EEA6F5929C5FE0100F1CBA4 /* LogoutResponse.swift */,
+				5E6864F22A9CEF4B00B05DE6 /* RefreshTokenResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -392,6 +458,7 @@
 			isa = PBXGroup;
 			children = (
 				5E0B47EC29B48DA800B0B3CF /* RefreshResponse.swift */,
+				5E65F8BF2AA38613008547BA /* BuyStampResponse.swift */,
 				5E0B47F529B4A16D00B0B3CF /* InputPartnerCodeResponse.swift */,
 				5E0B47F729B4B7D400B0B3CF /* SetMailBoxNameResponse.swift */,
 				5E0B47F929B4B91400B0B3CF /* CheckMailResponse.swift */,
@@ -428,13 +495,78 @@
 			path = Response;
 			sourceTree = "<group>";
 		};
+		5E4633572A948DD300E5CAA8 /* ReceivedLetter */ = {
+			isa = PBXGroup;
+			children = (
+				5E784D902A09480100F057FA /* ReceivedLetterViewController.swift */,
+				5E3D1DF62A861EFE00D02B21 /* ReadLetterLottieViewController.swift */,
+				5EF3A4082A8F68D7004BD553 /* ReportLetterViewController.swift */,
+				5E3D1DF22A85609C00D02B21 /* ReadReplyLetterViewController.swift */,
+				5E3D1DF82A8C965D00D02B21 /* ReadRandomLetterViewController.swift */,
+				5E4633552A947EC300E5CAA8 /* ReportLetterCompleteViewController.swift */,
+				5E4633592A94950800E5CAA8 /* StarReviewViewController.swift */,
+				5E46335B2A94CD8200E5CAA8 /* ConfirmSendReviewAlertViewController.swift */,
+				5E6864F62A9D993200B05DE6 /* WritingReplyLetterViewController.swift */,
+				5E6864F42A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift */,
+			);
+			path = ReceivedLetter;
+			sourceTree = "<group>";
+		};
 		5E4D891F29ED7BC8000814A1 /* Letter */ = {
 			isa = PBXGroup;
 			children = (
+				5E4DB2032A015906001EDA9B /* Response */,
 				5E4D892029ED7BE3000814A1 /* LetterService.swift */,
 				5E4D892229ED7BEB000814A1 /* LetterAPI.swift */,
 			);
 			path = Letter;
+			sourceTree = "<group>";
+		};
+		5E4DB2032A015906001EDA9B /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5E4DB2042A01591D001EDA9B /* SendLetterResponse.swift */,
+				5E3D1DF42A85632200D02B21 /* ReadLetterResponse.swift */,
+				5EC2215B2A80E55400F09E96 /* GetLetterListResponse.swift */,
+				5E4633532A947CBD00E5CAA8 /* ReportLetterResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		5E65F8C12AA3A3CA008547BA /* SCHEDULE */ = {
+			isa = PBXGroup;
+			children = (
+				5E65F8C82AA480B7008547BA /* Response */,
+				5E65F8C22AA3A408008547BA /* ScheduleService.swift */,
+				5E65F8C42AA3A40F008547BA /* ScheduleAPI.swift */,
+			);
+			path = SCHEDULE;
+			sourceTree = "<group>";
+		};
+		5E65F8C82AA480B7008547BA /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		5E65F8CB2AA841AD008547BA /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				5E65F8CC2AA841BE008547BA /* CalendarEventCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		5E6864F82A9EE54200B05DE6 /* StampBox */ = {
+			isa = PBXGroup;
+			children = (
+				5E6864F92A9EE58400B05DE6 /* StampBoxViewController.swift */,
+				5E6864FF2A9F1D4C00B05DE6 /* ModalStampExplainViewController.swift */,
+				5E6864FD2A9F132300B05DE6 /* BuyStampViewController.swift */,
+			);
+			path = StampBox;
 			sourceTree = "<group>";
 		};
 		5E73137B29C7084C0013465A /* Cell */ = {
@@ -587,8 +719,10 @@
 		5E84C6FC29A636F500F5BA81 /* Calendar */ = {
 			isa = PBXGroup;
 			children = (
+				5E65F8CB2AA841AD008547BA /* Cell */,
 				5E84C70729A6383200F5BA81 /* Calendar.storyboard */,
 				5E94128A29AF2B9E003ADFF5 /* CalendarViewController.swift */,
+				5E65F8C62AA47C0A008547BA /* CalendarBottomSheetViewController.swift */,
 			);
 			path = Calendar;
 			sourceTree = "<group>";
@@ -599,11 +733,18 @@
 				5E84C70329A6381900F5BA81 /* Mailbox.storyboard */,
 				5E94128C29AF2C3D003ADFF5 /* MailboxViewController.swift */,
 				5E2CF52429C3541200BCAFFC /* AskingWritingLetterViewController.swift */,
+				5E4DB2062A0161B7001EDA9B /* MailboxLetterViewController.swift */,
+				5E4633572A948DD300E5CAA8 /* ReceivedLetter */,
+				5E3D1DEC2A85437300D02B21 /* SentLetterViewController.swift */,
 				5E4D892429ED93BD000814A1 /* WritingLetter.storyboard */,
-				5E4D892629ED944D000814A1 /* WritingLetterViewController.swift */,
+				5E4D892629ED944D000814A1 /* OnboardingWrittingLetterViewController.swift */,
 				5E4D892829F038DB000814A1 /* SelectStamp.storyboard */,
 				5E4D892A29F038EB000814A1 /* SelectStampViewController.swift */,
 				5E5DCBF229F831D600283595 /* WrittingLetterViewController.swift */,
+				5E4DB2012A014FA1001EDA9B /* CompleteSendLetter.storyboard */,
+				5E4DB1FD2A013C71001EDA9B /* CompleteSendLetterViewController.swift */,
+				5E6864F82A9EE54200B05DE6 /* StampBox */,
+				5E6865012A9F227200B05DE6 /* ConventionTemplateViewController.swift */,
 			);
 			path = Mailbox;
 			sourceTree = "<group>";
@@ -636,6 +777,7 @@
 				5E38900C29ACFE5B004EB7A6 /* UIFont.swift */,
 				5E94129029AF49B7003ADFF5 /* UIImage.swift */,
 				5E2CF52629C360E000BCAFFC /* IndicatorView.swift */,
+				5E4DB2082A0161FE001EDA9B /* CustomSegmentedControl.swift */,
 				5E73137929C702590013465A /* UIPageControl.swift */,
 			);
 			path = Extension;
@@ -646,6 +788,7 @@
 			children = (
 				5E0B47E629B46C4600B0B3CF /* Cafe24SsurroundAir.ttf */,
 				5EB3CA6629A8C084004DF5AA /* Pretendard-Black.otf */,
+				5E3D1DF02A85538300D02B21 /* Balsam_Tint.otf */,
 				5EB3CA6329A8C07A004DF5AA /* Pretendard-Bold.otf */,
 				5EB3CA6529A8C07B004DF5AA /* Pretendard-ExtraBold.otf */,
 				5EB3CA6129A8C07A004DF5AA /* Pretendard-ExtraLight.otf */,
@@ -701,6 +844,7 @@
 			children = (
 				5EF1309429B62ECE002E791B /* MainViewResponse.swift */,
 				5E2CF52829C3649400BCAFFC /* FromCountResponse.swift */,
+				5E6864FB2A9F001F00B05DE6 /* StampListResponse.swift */,
 				5EEA6F3F29C473A700F1CBA4 /* MailboxViewResponse.swift */,
 			);
 			path = Response;
@@ -891,8 +1035,10 @@
 				5E0B47E829B4710600B0B3CF /* Cafe24SsurroundAir.ttf in Resources */,
 				5E84C69129A50D7F00F5BA81 /* Main.storyboard in Resources */,
 				5E84C70029A637F000F5BA81 /* MySpace.storyboard in Resources */,
+				5E4DB2022A014FA1001EDA9B /* CompleteSendLetter.storyboard in Resources */,
 				5E4D892529ED93BD000814A1 /* WritingLetter.storyboard in Resources */,
 				5E73136E29C6FB6F0013465A /* splash.json in Resources */,
+				5E3D1DF12A85538400D02B21 /* Balsam_Tint.otf in Resources */,
 				5E0B47D329B2127800B0B3CF /* AddDiaryBook.storyboard in Resources */,
 				5E84C70429A6381900F5BA81 /* Mailbox.storyboard in Resources */,
 				5E4D892929F038DB000814A1 /* SelectStamp.storyboard in Resources */,
@@ -1030,80 +1176,110 @@
 				5E0B47D529B212BD00B0B3CF /* SelectCoverViewController.swift in Sources */,
 				5EEA6F6329C6F14000F1CBA4 /* SplashScreenViewController.swift in Sources */,
 				5EEA6F4429C4A15900F1CBA4 /* SettingTableViewController.swift in Sources */,
+				5E6864F72A9D993200B05DE6 /* WritingReplyLetterViewController.swift in Sources */,
 				5E2CF51729BF7C6F00BCAFFC /* GetDiaryResponse.swift in Sources */,
 				5E0B47DC29B2E50900B0B3CF /* UserService.swift in Sources */,
+				5E65F8C52AA3A40F008547BA /* ScheduleAPI.swift in Sources */,
+				5E6864FE2A9F132300B05DE6 /* BuyStampViewController.swift in Sources */,
 				5E94128B29AF2B9E003ADFF5 /* CalendarViewController.swift in Sources */,
+				5E784D912A09480100F057FA /* ReceivedLetterViewController.swift in Sources */,
 				5E2CF52529C3541200BCAFFC /* AskingWritingLetterViewController.swift in Sources */,
+				5E65F8C02AA38613008547BA /* BuyStampResponse.swift in Sources */,
+				5E65F8C72AA47C0A008547BA /* CalendarBottomSheetViewController.swift in Sources */,
 				5E0B47DE29B2E51500B0B3CF /* UserAPI.swift in Sources */,
 				5EEA6F4829C4A37E00F1CBA4 /* AppInformationViewController.swift in Sources */,
 				5E84C71329A6498400F5BA81 /* UIView.swift in Sources */,
 				5E2CF51529BF78A100BCAFFC /* GetDiaryListResponse.swift in Sources */,
 				5E2CF51B29C2058600BCAFFC /* SendDiaryBookResponse.swift in Sources */,
+				5E4DB2072A0161B7001EDA9B /* MailboxLetterViewController.swift in Sources */,
 				5EEA6F5229C5F4DE00F1CBA4 /* AlertDisconnectCoupleViewController.swift in Sources */,
 				5EB3CA7429A8C651004DF5AA /* UIColor.swift in Sources */,
 				5E5DCBF329F831D600283595 /* WrittingLetterViewController.swift in Sources */,
 				5E94128729AEF9D3003ADFF5 /* MainTabBarController.swift in Sources */,
+				5E6865022A9F227200B05DE6 /* ConventionTemplateViewController.swift in Sources */,
 				5E1EA0D229BC6FB900542780 /* ChangeCoverAlertViewController.swift in Sources */,
 				5E2CF52929C3649400BCAFFC /* FromCountResponse.swift in Sources */,
 				5E0B47F129B49E0C00B0B3CF /* CoupleService.swift in Sources */,
+				5E3D1DF32A85609C00D02B21 /* ReadReplyLetterViewController.swift in Sources */,
 				5E0B47F329B49E1800B0B3CF /* CoupleAPI.swift in Sources */,
 				5E0B47F629B4A16D00B0B3CF /* InputPartnerCodeResponse.swift in Sources */,
+				5EF3A4092A8F68D7004BD553 /* ReportLetterViewController.swift in Sources */,
 				5EF1309929B76C34002E791B /* RegisterDiaryBookResponse.swift in Sources */,
+				5E4DB1FE2A013C71001EDA9B /* CompleteSendLetterViewController.swift in Sources */,
 				5E73137A29C702590013465A /* UIPageControl.swift in Sources */,
 				5EEA6F4029C473A700F1CBA4 /* MailboxViewResponse.swift in Sources */,
+				5E4DB2052A01591D001EDA9B /* SendLetterResponse.swift in Sources */,
 				5EEA6F4A29C5A5D600F1CBA4 /* AlertLogoutViewController.swift in Sources */,
 				5E1EA0D429BC882400542780 /* WriteDiaryViewController.swift in Sources */,
 				5E2CF51F29C225CD00BCAFFC /* CanNotSendAlertViewController.swift in Sources */,
+				5E6864F32A9CEF4B00B05DE6 /* RefreshTokenResponse.swift in Sources */,
 				5EF1309D29B76C92002E791B /* DiaryBookAPI.swift in Sources */,
 				5ED3CA1B29C8A34E00C2A5DB /* SplashScreenNavigationController.swift in Sources */,
 				5E2CF52729C360E000BCAFFC /* IndicatorView.swift in Sources */,
 				5E1EA0D729BDA03C00542780 /* ReviewDiaryViewController.swift in Sources */,
 				5EB3CA7229A8C4B3004DF5AA /* UIViewController.swift in Sources */,
 				5EEA6F5629C5F76F00F1CBA4 /* WithdrawlServiceViewController.swift in Sources */,
+				5E46335C2A94CD8200E5CAA8 /* ConfirmSendReviewAlertViewController.swift in Sources */,
 				5E94128D29AF2C3D003ADFF5 /* MailboxViewController.swift in Sources */,
+				5E3D1DF72A861EFE00D02B21 /* ReadLetterLottieViewController.swift in Sources */,
 				5E94129129AF49B7003ADFF5 /* UIImage.swift in Sources */,
 				5E94128529AE2353003ADFF5 /* SetMailBoxNameViewController.swift in Sources */,
 				5E84C68E29A50D7F00F5BA81 /* LoginViewController.swift in Sources */,
 				5EEA6F5A29C5FE0100F1CBA4 /* LogoutResponse.swift in Sources */,
 				5E0B47E529B324B000B0B3CF /* SubscriptionViewController.swift in Sources */,
+				5E4DB2092A0161FE001EDA9B /* CustomSegmentedControl.swift in Sources */,
+				5E3D1DF92A8C965D00D02B21 /* ReadRandomLetterViewController.swift in Sources */,
 				5EB3CA7A29A9C33C004DF5AA /* SettingFirstDayViewController.swift in Sources */,
 				5E38900D29ACFE5B004EB7A6 /* UIFont.swift in Sources */,
+				5E3D1DF52A85632200D02B21 /* ReadLetterResponse.swift in Sources */,
+				5E6864FA2A9EE58400B05DE6 /* StampBoxViewController.swift in Sources */,
 				5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */,
 				5E0B47D729B2133300B0B3CF /* SettingDiaryNameViewController.swift in Sources */,
 				5E0B47FA29B4B91400B0B3CF /* CheckMailResponse.swift in Sources */,
+				5E6864F52A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift in Sources */,
 				5E94128F29AF2C52003ADFF5 /* MySpaceViewController.swift in Sources */,
+				5E65F8CD2AA841BE008547BA /* CalendarEventCell.swift in Sources */,
 				5E2CF51229BF72BC00BCAFFC /* DiaryAPI.swift in Sources */,
 				5E84C68A29A50D7F00F5BA81 /* AppDelegate.swift in Sources */,
-				5E4D892729ED944D000814A1 /* WritingLetterViewController.swift in Sources */,
+				5E4D892729ED944D000814A1 /* OnboardingWrittingLetterViewController.swift in Sources */,
 				5EEA6F5029C5F29700F1CBA4 /* WithdrawlResponse.swift in Sources */,
 				5EF1309229B62CED002E791B /* ViewAPI.swift in Sources */,
 				5EF1309529B62ECE002E791B /* MainViewResponse.swift in Sources */,
 				5EEA6F5C29C61D4600F1CBA4 /* WriteDirayResponse.swift in Sources */,
+				5E3D1DED2A85437300D02B21 /* SentLetterViewController.swift in Sources */,
 				5E2CF50B29BF691300BCAFFC /* RegisterDiaryCoverResponse.swift in Sources */,
 				5E4D892129ED7BE3000814A1 /* LetterService.swift in Sources */,
 				5EB3CA7829A9A8CB004DF5AA /* SettingGenderViewController.swift in Sources */,
 				5E4D892329ED7BEB000814A1 /* LetterAPI.swift in Sources */,
+				5E65F8CA2AA480F1008547BA /* GetCalendarSchedulesResponse.swift in Sources */,
+				5E46335A2A94950800E5CAA8 /* StarReviewViewController.swift in Sources */,
 				5E2CF50D29BF6A9800BCAFFC /* GetDiaryCoverResponse.swift in Sources */,
 				5E2CF51029BF72AC00BCAFFC /* DiaryService.swift in Sources */,
 				5E84C68C29A50D7F00F5BA81 /* SceneDelegate.swift in Sources */,
 				5E73137829C6FF200013465A /* OnboardingViewController.swift in Sources */,
+				5E65F8C32AA3A408008547BA /* ScheduleService.swift in Sources */,
 				5E0B47E029B2E62B00B0B3CF /* Constant.swift in Sources */,
 				5EEA6F4E29C5E82A00F1CBA4 /* DisconnectCoupleViewController.swift in Sources */,
 				5EF130A629B8D365002E791B /* SetDiaryCoverViewController.swift in Sources */,
+				5EC2215C2A80E55400F09E96 /* GetLetterListResponse.swift in Sources */,
 				5EF1309029B62CDE002E791B /* ViewService.swift in Sources */,
 				5EEA6F5829C5F77C00F1CBA4 /* AlertWithdrawlViewController.swift in Sources */,
+				5E6864FC2A9F001F00B05DE6 /* StampListResponse.swift in Sources */,
 				5E0B47D929B2139000B0B3CF /* CompleteDiarySettingViewController.swift in Sources */,
 				5E73137D29C708680013465A /* OnboardingCollectionViewCell.swift in Sources */,
 				5EB3CA5B29A8BE94004DF5AA /* SettingInfoViewController.swift in Sources */,
 				5E0B47EA29B4853800B0B3CF /* SignupResponse.swift in Sources */,
 				5E94128129AE200B003ADFF5 /* MatchingCompleteViewController.swift in Sources */,
 				5EEA6F4229C48B8000F1CBA4 /* FirstMetDayResponse.swift in Sources */,
+				5E4633542A947CBD00E5CAA8 /* ReportLetterResponse.swift in Sources */,
 				5E0B47E329B2EA6300B0B3CF /* LoginResponse.swift in Sources */,
 				5E94128929AF2B8E003ADFF5 /* DiaryViewController.swift in Sources */,
 				5EB3CA7629A8EFB2004DF5AA /* SettingBirthDayViewController.swift in Sources */,
 				5EF1309B29B76C85002E791B /* DiaryBookService.swift in Sources */,
 				5E0B47F829B4B7D400B0B3CF /* SetMailBoxNameResponse.swift in Sources */,
+				5E6865002A9F1D4C00B05DE6 /* ModalStampExplainViewController.swift in Sources */,
 				5E1EA0DA29BDAA7500542780 /* DiaryCollectionViewCell.swift in Sources */,
+				5E4633562A947EC300E5CAA8 /* ReportLetterCompleteViewController.swift in Sources */,
 				5EB3CA7D29A9C6D6004DF5AA /* InvitationViewController.swift in Sources */,
 				5E4D892B29F038EB000814A1 /* SelectStampViewController.swift in Sources */,
 				5E0B47ED29B48DA800B0B3CF /* RefreshResponse.swift in Sources */,
@@ -1288,6 +1464,8 @@
 				DEVELOPMENT_TEAM = GQ32Z7HX7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FromU/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"FromU\"가 다이어리 내 사진 업로드 기능을 위해 카메라 사용 접근 권한을 요청합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"FromU\"가 다이어리 내 사진 업로드 기능을 위해 갤러리 접근 권한을 요청합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -1323,6 +1501,8 @@
 				DEVELOPMENT_TEAM = GQ32Z7HX7N;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = FromU/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "\"FromU\"가 다이어리 내 사진 업로드 기능을 위해 카메라 사용 접근 권한을 요청합니다.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "\"FromU\"가 다이어리 내 사진 업로드 기능을 위해 갤러리 접근 권한을 요청합니다.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

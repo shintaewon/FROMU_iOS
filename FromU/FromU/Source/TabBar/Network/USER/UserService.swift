@@ -23,6 +23,8 @@ enum UserService{
     
     case appleLogin
     
+    case refreshToken
+    
 }
 
 extension UserService: TargetType{
@@ -48,6 +50,10 @@ extension UserService: TargetType{
             
         case .appleLogin:
             return "/apple"
+            
+        case .refreshToken:
+            return "/refreshToken"
+
         }
         
     }
@@ -68,6 +74,9 @@ extension UserService: TargetType{
             
         case .appleLogin:
             return .post
+            
+        case .refreshToken:
+            return .post
         }
         
     }
@@ -87,6 +96,10 @@ extension UserService: TargetType{
             
         case .appleLogin:
             return Task.requestPlain
+            
+        case .refreshToken:
+            return Task.requestPlain
+
         }
         
     }
@@ -107,6 +120,9 @@ extension UserService: TargetType{
         
         case .appleLogin:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "appleAccessToken") ?? "" ]
+            
+        case .refreshToken:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "RefreshToken") ?? "" ]
         }
     }
 }

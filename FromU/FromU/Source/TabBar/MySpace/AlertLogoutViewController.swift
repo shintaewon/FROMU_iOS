@@ -81,6 +81,9 @@ extension AlertLogoutViewController{
 
                             //키체인에 RefreshToken 삭제
                             KeychainWrapper.standard.removeObject(forKey: "RefreshToken")
+                            
+                            //오토로그인 false로 설정
+                            UserDefaults.standard.setValue(false, forKey: "isAutoLoginValidation")
                         }
                     }
                 } catch {

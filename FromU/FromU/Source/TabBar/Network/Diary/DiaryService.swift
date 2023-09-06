@@ -26,7 +26,6 @@ extension DiaryService: TargetType{
         switch self {
         case .getDiaryList:
             
-            print("diaryId:", UserDefaults.standard.integer(forKey: "diaryBookID"))
             return "/all/\(UserDefaults.standard.integer(forKey: "diaryBookID") )"
             
         case .getDiaryInfo:

@@ -14,7 +14,7 @@ extension UIFont {
         case extraBold = "ExtraBold"
         case extraLight = "ExtraLight"
         case light = "Light"
-        case medeium = "Medeium"
+        case medium = "Medium"
         case regular = "Regular"
         case semiBold = "SemiBold"
         case thin = "Thin"
@@ -38,6 +38,18 @@ extension UIFont {
     
     static func Cafe24SsurroundAir(_ type: Cafe24SsurroundAirType, size: CGFloat) -> UIFont {
         return UIFont(name: "\(type.rawValue)", size: size)!
+    }
+    
+    public enum BalsamTintSize: CGFloat {
+        case size14 = 14
+        case size16 = 16
+        case size18 = 18
+        case size20 = 20
+        case size22 = 22
+    }
+
+    static func BalsamTint(_ size: BalsamTintSize) -> UIFont {
+        return UIFont(name: "777Balsamtint", size: size.rawValue)!
     }
     
     

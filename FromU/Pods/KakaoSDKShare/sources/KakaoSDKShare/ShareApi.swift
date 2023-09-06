@@ -35,6 +35,8 @@ public class ShareApi {
         return false
     }
     
+    /// 카카오톡 앱을 통한 공유 가능 여부 확인
+    @available(iOSApplicationExtension, unavailable)
     public static func isKakaoTalkSharingAvailable() -> Bool {
         return UIApplication.shared.canOpenURL(URL(string:Urls.compose(.TalkLink, path:Paths.talkLink))!)
     }
@@ -173,7 +175,8 @@ extension ShareApi {
     
     // MARK: Using KakaoTalk
     
-    func shareDefault(templateObjectJsonString:String?,
+    /// 기본 템플릿을 카카오톡으로 공유합니다.
+    public func shareDefault(templateObjectJsonString:String?,
                      serverCallbackArgs:[String:String]? = nil,
                      completion:@escaping (SharingResult?, Error?) -> Void ) {
         return API.responseData(.post,

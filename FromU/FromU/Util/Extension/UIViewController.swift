@@ -49,4 +49,18 @@ extension UIViewController {
         self.view.window!.layer.add(transition, forKey: nil)
         self.dismiss(animated: false, completion: nil)
     }
+    
+    func convertDate(from originalString: String) -> String? {
+        let inputFormatter = DateFormatter()
+        inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        inputFormatter.locale = Locale(identifier: "en_US_POSIX")  // 서버로부터 받은 날짜 형식이 고정되어 있다면 이 Locale을 설정합니다.
+
+        if let date = inputFormatter.date(from: originalString) {
+            let outputFormatter = DateFormatter()
+            outputFormatter.dateFormat = "yyyy. MM. dd a h:mm"
+            return outputFormatter.string(from: date)
+        }
+        
+        return nil
+    }
 }

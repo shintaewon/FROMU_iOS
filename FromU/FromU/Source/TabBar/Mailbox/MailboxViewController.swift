@@ -28,10 +28,11 @@ class MailboxViewController: UIViewController {
     let btn2 = UILabel()
     
     @IBAction func didTapStampBtn(_ sender: Any) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
         
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
+        let vc = StampBoxViewController()
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     
     @IBAction func didTapWritingBtn(_ sender: Any) {
@@ -42,16 +43,25 @@ class MailboxViewController: UIViewController {
     }
     
     @objc func didTapMailBox(){
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
+//        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AskingWritingLetterViewController") as? AskingWritingLetterViewController else {return}
+//
+//        vc.modalPresentationStyle = .overCurrentContext
+//        present(vc, animated: false, completion: nil)
+        let vc = MailboxLetterViewController()
         
-        vc.modalPresentationStyle = .overCurrentContext
-        present(vc, animated: false, completion: nil)
+        self.navigationController?.navigationBar.isHidden = false
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configureNavigationItems()
+        
+        self.tooltipImageView.isHidden = true
+        self.tooltipLabel.isHidden = true
+        
         
         shadowView.layer.shadowColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.1).cgColor
         shadowView.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -97,12 +107,6 @@ class MailboxViewController: UIViewController {
 extension MailboxViewController{
     
     func configureNavigationItems(){
-
-//        let btn1 = UIImageView(image: UIImage(named: "icn_bell"))
-//        btn1.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-//        let item1 = UIBarButtonItem()
-//        item1.customView = btn1
-
         btn2.backgroundColor = .primaryLight
         btn2.layer.cornerRadius = 10
         btn2.clipsToBounds = true
@@ -176,17 +180,20 @@ extension MailboxViewController{
                     
                     self.explainLabel.lineBreakMode = .byWordWrapping
 
-                    var paragraphStyle = NSMutableParagraphStyle()
+                    let paragraphStyle = NSMutableParagraphStyle()
 
                     paragraphStyle.lineHeightMultiple = 1.27
 
                     self.explainLabel.attributedText = NSMutableAttributedString(string: """
                         \(response.result.mailboxName)의 이야기를
                         다른 우편함으로 전송해볼까?
-                        """, attributes: [NSAttributedString.Key.paragraphStyle: paragraphStyle])
+                        """, attributes: [
+                            .font: UIFont.BalsamTint(.size22),
+                            NSAttributedString.Key.paragraphStyle: paragraphStyle])
                     
                     self.mailboxNameLabel.text = response.result.mailboxName
-                    print(response)
+                    self.mailboxNameLabel.font = UIFont.BalsamTint(.size14)
+                    self.mailboxNameLabel.textAlignment = .center
                     
                     //편지 온거 있을때!
                     if response.result.newLetterID != 0 {

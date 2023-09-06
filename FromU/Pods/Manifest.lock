@@ -1,44 +1,32 @@
 PODS:
   - AdvancedPageControl (0.9.0)
-  - Alamofire (5.6.2)
+  - Alamofire (5.6.4)
   - FSCalendar (2.8.4)
-  - KakaoSDK (2.11.1):
-    - KakaoSDKAuth (= 2.11.1)
-    - KakaoSDKCommon (= 2.11.1)
-    - KakaoSDKFriend (= 2.11.1)
-    - KakaoSDKNavi (= 2.11.1)
-    - KakaoSDKShare (= 2.11.1)
-    - KakaoSDKStory (= 2.11.1)
-    - KakaoSDKTalk (= 2.11.1)
-    - KakaoSDKTemplate (= 2.11.1)
-    - KakaoSDKUser (= 2.11.1)
-  - KakaoSDKAuth (2.11.1):
-    - KakaoSDKCommon (= 2.11.1)
-  - KakaoSDKCommon (2.11.1):
-    - KakaoSDKCommon/Common (= 2.11.1)
-    - KakaoSDKCommon/Network (= 2.11.1)
-  - KakaoSDKCommon/Common (2.11.1)
-  - KakaoSDKCommon/Network (2.11.1):
+  - KakaoSDKAuth (2.15.0):
+    - KakaoSDKCommon (= 2.15.0)
+  - KakaoSDKCommon (2.15.0):
+    - KakaoSDKCommon/Common (= 2.15.0)
+    - KakaoSDKCommon/Network (= 2.15.0)
+  - KakaoSDKCommon/Common (2.15.0)
+  - KakaoSDKCommon/Network (2.15.0):
     - Alamofire (~> 5.1)
-    - KakaoSDKCommon/Common (= 2.11.1)
-  - KakaoSDKFriend (2.11.1):
-    - KakaoSDKUser (= 2.11.1)
-  - KakaoSDKNavi (2.11.1):
-    - KakaoSDKCommon/Common (= 2.11.1)
-  - KakaoSDKShare (2.11.1):
-    - KakaoSDKCommon (= 2.11.1)
-    - KakaoSDKTemplate (= 2.11.1)
-  - KakaoSDKStory (2.11.1):
-    - KakaoSDKUser (= 2.11.1)
-  - KakaoSDKTalk (2.11.1):
-    - KakaoSDKTemplate (= 2.11.1)
-    - KakaoSDKUser (= 2.11.1)
-  - KakaoSDKTemplate (2.11.1):
-    - KakaoSDKCommon/Common (= 2.11.1)
-  - KakaoSDKUser (2.11.1):
-    - KakaoSDKAuth (= 2.11.1)
-  - Kingfisher (7.3.2)
-  - lottie-ios (4.1.2)
+    - KakaoSDKCommon/Common (= 2.15.0)
+  - KakaoSDKNavi (2.15.0):
+    - KakaoSDKCommon/Common (= 2.15.0)
+  - KakaoSDKShare (2.15.0):
+    - KakaoSDKCommon (= 2.15.0)
+    - KakaoSDKTemplate (= 2.15.0)
+  - KakaoSDKStory (2.15.0):
+    - KakaoSDKUser (= 2.15.0)
+  - KakaoSDKTalk (2.15.0):
+    - KakaoSDKTemplate (= 2.15.0)
+    - KakaoSDKUser (= 2.15.0)
+  - KakaoSDKTemplate (2.15.0):
+    - KakaoSDKCommon/Common (= 2.15.0)
+  - KakaoSDKUser (2.15.0):
+    - KakaoSDKAuth (= 2.15.0)
+  - Kingfisher (7.6.2)
+  - lottie-ios (4.2.0)
   - Moya (15.0.0):
     - Moya/Core (= 15.0.0)
   - Moya/Core (15.0.0):
@@ -48,7 +36,14 @@ PODS:
 DEPENDENCIES:
   - AdvancedPageControl
   - FSCalendar
-  - KakaoSDK
+  - KakaoSDKAuth
+  - KakaoSDKCommon
+  - KakaoSDKNavi
+  - KakaoSDKShare
+  - KakaoSDKStory
+  - KakaoSDKTalk
+  - KakaoSDKTemplate
+  - KakaoSDKUser
   - Kingfisher
   - lottie-ios
   - Moya
@@ -59,10 +54,8 @@ SPEC REPOS:
     - AdvancedPageControl
     - Alamofire
     - FSCalendar
-    - KakaoSDK
     - KakaoSDKAuth
     - KakaoSDKCommon
-    - KakaoSDKFriend
     - KakaoSDKNavi
     - KakaoSDKShare
     - KakaoSDKStory
@@ -76,23 +69,21 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AdvancedPageControl: 39e3b32b00b2d324c534f8e17cc6c5be9abe84b7
-  Alamofire: d368e1ff8a298e6dde360e35a3e68e6c610e7204
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   FSCalendar: 2d1d0d9398f12d439f55c1fe0f01525b151b8260
-  KakaoSDK: ab3e070e19afb7218d6897b53c4b44d65a574005
-  KakaoSDKAuth: bb2dfa7be30daa8403c9cfc8001aa6fde7a5b779
-  KakaoSDKCommon: 555e1bb46595b842ded01cf7888cc17bbae4e113
-  KakaoSDKFriend: 51b432245bfd77006df4594efd6cb606c8970e86
-  KakaoSDKNavi: 695360dc4a673c1fc4e893c6afe9922e0accc8bd
-  KakaoSDKShare: 9752730ce3339536f9d7812eb70eccb87643e9a6
-  KakaoSDKStory: 0ea94b212c07579c12f2a4c64722667cef6ace84
-  KakaoSDKTalk: 504872e5b49e5ff104c65e37d54d2a8f04c606d3
-  KakaoSDKTemplate: f8ee0b33f649e436c1aaf2a3a6bd6aa3dcae2451
-  KakaoSDKUser: 08c0a4f40bebdebdf948a9e3d0e44ed5c2754f99
-  Kingfisher: 0086ad83719761ba9b2cdaf6ef4d5b4878cbae23
-  lottie-ios: b3846a9fa8ca1a1a3bebfa256ebe8b6fd4aaaaad
+  KakaoSDKAuth: 0fe5cf1756e8a9f66f8fc77826061aafa93034f3
+  KakaoSDKCommon: 89d863b7f34398e6fb93a0acb28a204908551a39
+  KakaoSDKNavi: b47131f0fa64857bc69d3fe7d2cad5fa70137900
+  KakaoSDKShare: f9a7dc7baa8ad9eb7b6b6a3b99802407ab3c81a2
+  KakaoSDKStory: d7c0c186bf869a6b107c5d416ad7f2a88fa524a9
+  KakaoSDKTalk: 846856743650b0eea4040a38368a7c1e8dcb0072
+  KakaoSDKTemplate: c9cbc64b0248c7a33c211a56dada7e38c1210751
+  KakaoSDKUser: a997ca5c4c18ece2ab30646ff74841bc29d4399d
+  Kingfisher: 6c5449c6450c5239166510ba04afe374a98afc4f
+  lottie-ios: 809ecf2d460ed650a6aed7aa88b2ec45fab4779c
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   SwiftKeychainWrapper: 807ba1d63c33a7d0613288512399cd1eda1e470c
 
-PODFILE CHECKSUM: 8c2e94da390cbff82a70c070c7d8764232af9b40
+PODFILE CHECKSUM: 4ec92e19887411e7b060c962111b091d18a26db1
 
 COCOAPODS: 1.11.3

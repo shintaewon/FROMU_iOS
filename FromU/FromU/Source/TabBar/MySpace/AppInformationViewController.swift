@@ -93,3 +93,4 @@ class AppInformationTableViewController: UITableViewController {
     }
     
 }
+

@@ -15,6 +15,8 @@ enum ViewService{
     case getFromCount
     
     case getMailBoxViewInfo
+    
+    case getStampList
 }
 
 extension ViewService: TargetType{
@@ -34,6 +36,9 @@ extension ViewService: TargetType{
             
         case .getMailBoxViewInfo:
             return "/view/mailbox"
+            
+        case .getStampList:
+            return "/view/stampList"
         }
         
     }
@@ -47,6 +52,9 @@ extension ViewService: TargetType{
             return .get
             
         case .getMailBoxViewInfo:
+            return .get
+            
+        case .getStampList:
             return .get
         }
         
@@ -62,6 +70,9 @@ extension ViewService: TargetType{
         
         case .getMailBoxViewInfo:
             return Task.requestPlain
+            
+        case .getStampList:
+            return Task.requestPlain
         }
         
     }
@@ -76,6 +87,9 @@ extension ViewService: TargetType{
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
             
         case .getMailBoxViewInfo:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .getStampList:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }

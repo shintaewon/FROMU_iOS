@@ -21,6 +21,8 @@ enum CoupleService{
     case setFirstMetDay(firstMetDay: String)
     
     case disConnect
+    
+    case buyStamp(stampNum: String)
 }
 
 extension CoupleService: TargetType{
@@ -50,6 +52,9 @@ extension CoupleService: TargetType{
             
         case .disConnect:
             return "/d"
+            
+        case .buyStamp(let stampNum):
+            return "/stamp/\(stampNum)"
         }
         
     }
@@ -74,6 +79,9 @@ extension CoupleService: TargetType{
             
         case .disConnect:
             return .patch
+            
+        case .buyStamp:
+            return .get
         }
         
     }
@@ -97,6 +105,9 @@ extension CoupleService: TargetType{
             return .requestParameters(parameters: ["firstMetDay": firstMetDay], encoding: JSONEncoding.default)
             
         case .disConnect:
+            return Task.requestPlain
+            
+        case .buyStamp:
             return Task.requestPlain
         }
     }
@@ -122,6 +133,8 @@ extension CoupleService: TargetType{
         case .disConnect:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
             
+        case .buyStamp:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }
 }

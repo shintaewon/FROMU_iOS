@@ -9,6 +9,7 @@ import UIKit
 
 import Moya
 import Lottie
+import SwiftKeychainWrapper
 
 class DiaryViewController: UIViewController {
 
@@ -72,7 +73,6 @@ class DiaryViewController: UIViewController {
     }
     
     @objc func setFirstDayImageViewTapped() {
-        print("눌림?")
         
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingFirstDayViewController") as? SettingFirstDayViewController else {return}
         
@@ -200,11 +200,6 @@ extension DiaryViewController{
         
         navigationItem.hidesBackButton = true
         
-//        let btn1 = UIImageView(image: UIImage(named: "icn_bell"))
-//        btn1.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-//        let item1 = UIBarButtonItem()
-//        item1.customView = btn1
-
         btn2 = UILabel()
         btn2.backgroundColor = .primaryLight
         btn2.layer.cornerRadius = 10
@@ -253,9 +248,10 @@ extension DiaryViewController{
                     let response = try data.map(MainViewResponse.self)
                     
                     print(response)
-                    //일단 통신은 성공
-      
-                    if response.isSuccess == true{
+                    //통신 성공
+                    
+                    if response.code == 1000{
+                        
                         //dday가 0이 아니면 처음 만난 날 설정해준것이므로 날짜 띄워주면 됨
                         if response.result?.dday != 0 {
                             UserDefaults.standard.set(response.result?.dday, forKey: "dDay")
@@ -402,6 +398,9 @@ extension DiaryViewController{
             
                             self.animationFinger.play()
                         }
+                    }
+                    //토큰 만료
+                    else if response.code == 2001 {
                         
                     }
                     
@@ -455,6 +454,31 @@ extension DiaryViewController{
                     let response = try data.map(FromCountResponse.self)
                     self.btn2.text = "\(response.result)"
                     print(response)
+                } catch{
+                    print(error)
+                }
+                
+            case .failure(let error):
+                print("DEBUG>> getFromCount Error : \(error.localizedDescription)")
+                
+            }
+        }
+    }
+    
+    func refreshToken(){
+        
+        UserAPI.providerUser.request(.refreshToken){ result in
+            switch result{
+            case .success(let data):
+                do{
+                    let response = try data.map(RefreshTokenResponse.self)
+                    
+                    print(response)
+                    
+                    KeychainWrapper.standard.set(response.result.jwt , forKey: "X-ACCESS-TOKEN")
+                    KeychainWrapper.standard.set(response.result.refreshToken , forKey: "RefreshToken")
+                    
+                    self.getMainViewInfo()
                 } catch{
                     print(error)
                 }

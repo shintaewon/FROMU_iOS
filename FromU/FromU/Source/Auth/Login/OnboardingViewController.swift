@@ -62,12 +62,6 @@ class OnboardingViewController: UIViewController,
         
         let flowLayoutFordiaryCollectionViewCell = UICollectionViewFlowLayout()
         
-        print("collectionView.frame.size.width:", collectionView.frame.size.width)
-        
-        print("view.frame.size.width:", view.frame.size.width)
-        
-        
-        
         flowLayoutFordiaryCollectionViewCell.scrollDirection = .horizontal
         flowLayoutFordiaryCollectionViewCell.minimumInteritemSpacing = 0 // Set the minimum spacing between cells to 0
         flowLayoutFordiaryCollectionViewCell.itemSize = CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height)
@@ -99,11 +93,9 @@ class OnboardingViewController: UIViewController,
       func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
           
           guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "OnboardingCollectionViewCell", for: indexPath) as? OnboardingCollectionViewCell else { return UICollectionViewCell()}
-              
-          print(indexPath.row)
-          
+                        
           cell.explainLabel.text = onboardingTextList[indexPath.row]
-          
+          cell.explainLabel.font = .BalsamTint(.size22)
           cell.onboardingImg.image = UIImage(named: "onboarding\(indexPath.row + 1)")
           
           
@@ -126,12 +118,11 @@ class OnboardingViewController: UIViewController,
         guard let layout = self.collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
             
         // CollectionView Item Size
-        let cellWidthIncludingSpacing = layout.itemSize.width + layout.minimumLineSpacing
-            print(cellWidthIncludingSpacing)
+        let cellWidthIncludingSpacing = self.view.frame.width + layout.minimumLineSpacing
+     
         // Set the paging value after comparing the moved x-coordinate value with the item's size
         let estimatedIndex = scrollView.contentOffset.x / cellWidthIncludingSpacing
         let index: Int
-            
         // Check scroll direction
         // Determine if the item is scrolling by half its size and process it up or down
         if velocity.x > 0 {
@@ -141,10 +132,10 @@ class OnboardingViewController: UIViewController,
         } else {
             index = Int(round(estimatedIndex))
         }
-            
+                    
         // Assign the coordinate value to be paged via the above code to targetContentOffset
         targetContentOffset.pointee = CGPoint(x: CGFloat(index) * cellWidthIncludingSpacing, y: 0)
-        
+
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
@@ -160,7 +151,6 @@ class OnboardingViewController: UIViewController,
             startBtn.isHidden = false
         }
         
-        print(offSet/width)
         pageControl.setPageOffset(offSet/width)
     
 

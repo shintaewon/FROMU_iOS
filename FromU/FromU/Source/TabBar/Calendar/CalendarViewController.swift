@@ -133,7 +133,6 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
-    
     // MARK: - Helpers
     private func configureNavigationItems() {
         fromCountLabel.backgroundColor = .primaryLight
@@ -254,7 +253,6 @@ extension CalendarViewController{
                             self.calendarEventDates.append(date)
                         }
                     }
-
                     // 이벤트가 추가된 후 FSCalendar 갱신
                     self.calendarView.reloadData()
 

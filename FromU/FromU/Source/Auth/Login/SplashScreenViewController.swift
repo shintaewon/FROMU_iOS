@@ -30,6 +30,37 @@ class SplashScreenViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN"))
+        
+        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "RefreshToken"))
+        
+        inputAnimation()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+            
+            //자동로그인되어있으면 바로 홈으로
+            if self?.isLoggedIn() == true {
+                
+                //                let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
+                //                guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else { return }
+                //                self?.navigationController?.pushViewController(vc, animated: true)
+                
+                self?.showHomeVC()
+            }
+            //안되어있으면 온보딩 혹은 로그인
+            else{
+                if UserDefaults.standard.bool(forKey: "onBoardingCheck") == false {
+                    self?.showOnBoardingVC()
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     func isLoggedIn() -> Bool {
         
         if UserDefaults.standard.bool(forKey: "isAutoLoginValidation") == true {
@@ -61,37 +92,6 @@ class SplashScreenViewController: UIViewController {
         guard let vc = storyboard.instantiateViewController(withIdentifier: "OnboardingViewController") as? OnboardingViewController else { return }
         
         self.navigationController?.pushViewController(vc, animated: true)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        
-        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN"))
-        
-        print("스플래시 스크린:", KeychainWrapper.standard.string(forKey: "RefreshToken"))
-        
-        inputAnimation()
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
-            
-            //자동로그인되어있으면 바로 홈으로
-            if self?.isLoggedIn() == true {
-                
-                //                let storyboard = UIStoryboard(name: "SelectStamp", bundle: nil)
-                //                guard let vc = storyboard.instantiateViewController(withIdentifier: "SelectStampViewController") as? SelectStampViewController else { return }
-                //                self?.navigationController?.pushViewController(vc, animated: true)
-                
-                self?.showHomeVC()
-            }
-            //안되어있으면 온보딩 혹은 로그인
-            else{
-                if UserDefaults.standard.bool(forKey: "onBoardingCheck") == false {
-                    self?.showOnBoardingVC()
-                }
-                
-            }
-            
-        }
-        
     }
     
     func inputAnimation() {

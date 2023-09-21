@@ -73,6 +73,7 @@
 		5E65F8CA2AA480F1008547BA /* GetCalendarSchedulesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */; };
 		5E65F8CD2AA841BE008547BA /* CalendarEventCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8CC2AA841BE008547BA /* CalendarEventCell.swift */; };
 		5E65F8D12AB1BADC008547BA /* PlusCalendarUIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8D02AB1BADC008547BA /* PlusCalendarUIViewController.swift */; };
+		5E65F8D32AB7E36F008547BA /* PlusScheduleResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E65F8D22AB7E36F008547BA /* PlusScheduleResponse.swift */; };
 		5E6864F32A9CEF4B00B05DE6 /* RefreshTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F22A9CEF4B00B05DE6 /* RefreshTokenResponse.swift */; };
 		5E6864F52A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F42A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift */; };
 		5E6864F72A9D993200B05DE6 /* WritingReplyLetterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E6864F62A9D993200B05DE6 /* WritingReplyLetterViewController.swift */; };
@@ -255,6 +256,7 @@
 		5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetCalendarSchedulesResponse.swift; sourceTree = "<group>"; };
 		5E65F8CC2AA841BE008547BA /* CalendarEventCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEventCell.swift; sourceTree = "<group>"; };
 		5E65F8D02AB1BADC008547BA /* PlusCalendarUIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusCalendarUIViewController.swift; sourceTree = "<group>"; };
+		5E65F8D22AB7E36F008547BA /* PlusScheduleResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlusScheduleResponse.swift; sourceTree = "<group>"; };
 		5E6864F22A9CEF4B00B05DE6 /* RefreshTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshTokenResponse.swift; sourceTree = "<group>"; };
 		5E6864F42A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmReplyLetterViewController.swift; sourceTree = "<group>"; };
 		5E6864F62A9D993200B05DE6 /* WritingReplyLetterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WritingReplyLetterViewController.swift; sourceTree = "<group>"; };
@@ -549,6 +551,7 @@
 			isa = PBXGroup;
 			children = (
 				5E65F8C92AA480F1008547BA /* GetCalendarSchedulesResponse.swift */,
+				5E65F8D22AB7E36F008547BA /* PlusScheduleResponse.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -1239,6 +1242,7 @@
 				5E6864FA2A9EE58400B05DE6 /* StampBoxViewController.swift in Sources */,
 				5E38900929AC865B004EB7A6 /* InputCodeViewController.swift in Sources */,
 				5E0B47D729B2133300B0B3CF /* SettingDiaryNameViewController.swift in Sources */,
+				5E65F8D32AB7E36F008547BA /* PlusScheduleResponse.swift in Sources */,
 				5E0B47FA29B4B91400B0B3CF /* CheckMailResponse.swift in Sources */,
 				5E6864F52A9D962100B05DE6 /* ConfirmReplyLetterViewController.swift in Sources */,
 				5E94128F29AF2C52003ADFF5 /* MySpaceViewController.swift in Sources */,

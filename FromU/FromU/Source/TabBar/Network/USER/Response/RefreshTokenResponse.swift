@@ -12,7 +12,7 @@ struct RefreshTokenResponse: Codable {
     let isSuccess: Bool
     let code: Int
     let message: String
-    let result: RefreshTokenResult
+    let result: RefreshTokenResult?
 }
 
 // MARK: - Result

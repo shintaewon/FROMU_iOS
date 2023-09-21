@@ -399,9 +399,14 @@ extension DiaryViewController{
                             self.animationFinger.play()
                         }
                     }
+                    //어떤 이유로 토큰이 사라짐 -> 로그아웃
+                    else if response.code == 2000{
+                        self.logout()
+                    }
                     //토큰 만료
                     else if response.code == 2001 {
-                        
+                        print("토큰 만료")
+                        self.refreshToken()
                     }
                     
                 } catch {
@@ -475,10 +480,18 @@ extension DiaryViewController{
                     
                     print(response)
                     
-                    KeychainWrapper.standard.set(response.result.jwt , forKey: "X-ACCESS-TOKEN")
-                    KeychainWrapper.standard.set(response.result.refreshToken , forKey: "RefreshToken")
+                    if response.code == 1000{
+                        KeychainWrapper.standard.set(response.result?.jwt ?? "" , forKey: "X-ACCESS-TOKEN")
+                        KeychainWrapper.standard.set(response.result?.refreshToken ?? "" , forKey: "RefreshToken")
+                        
+                        DispatchQueue.main.async { // UI 업데이트는 메인 스레드에서 수행해야 합니다.
+                            self.getMainViewInfo()
+                            
+                        }
+                    } else{
+                        self.logout()
+                    }
                     
-                    self.getMainViewInfo()
                 } catch{
                     print(error)
                 }
@@ -487,6 +500,18 @@ extension DiaryViewController{
                 print("DEBUG>> getFromCount Error : \(error.localizedDescription)")
                 
             }
+        }
+    }
+    
+    func logout(){
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let viewControllerA = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
+            let navigationController = UINavigationController(rootViewController: viewControllerA)
+
+            // Dismiss all presented view controllers and set the new root view controller
+            self.view.window?.rootViewController?.dismiss(animated: true, completion: {
+                UIApplication.shared.keyWindow?.rootViewController = navigationController
+            })
         }
     }
 }

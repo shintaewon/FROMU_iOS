@@ -11,6 +11,8 @@ import SwiftKeychainWrapper
 enum ScheduleService{
     
     case getSpecificCalendarSchedules(month: String, date: String)
+    
+    case plusSchedule(content: String, date: String)
 }
 
 extension ScheduleService: TargetType{
@@ -25,6 +27,9 @@ extension ScheduleService: TargetType{
             
         case .getSpecificCalendarSchedules:
             return ""
+            
+        case .plusSchedule:
+            return ""
         }
         
     }
@@ -35,6 +40,8 @@ extension ScheduleService: TargetType{
         case .getSpecificCalendarSchedules:
             return .get
 
+        case .plusSchedule:
+            return .post
         }
         
     }
@@ -44,6 +51,9 @@ extension ScheduleService: TargetType{
             
         case .getSpecificCalendarSchedules(let month, let date):
             return .requestParameters(parameters: ["month": month, "date": date], encoding: URLEncoding.queryString)
+            
+        case .plusSchedule(let content, let date):
+            return .requestParameters(parameters: ["content": content, "date": date], encoding: JSONEncoding.default)
         }
     }
     
@@ -51,6 +61,9 @@ extension ScheduleService: TargetType{
         switch self{
             
         case .getSpecificCalendarSchedules:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .plusSchedule:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }

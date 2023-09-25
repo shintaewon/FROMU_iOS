@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="bXx-Iz-frK">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HCZ-6n-vz1">
+                                <rect key="frame" x="16" y="682" width="361" height="56"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="DsP-aP-47m"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icn_apple" title="  APPLE로 시작하기">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapAppleBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vP2-cX-vGU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kh8-bW-IQX">
+                                <rect key="frame" x="16" y="612" width="361" height="56"/>
+                                <color key="backgroundColor" red="0.99488407369999998" green="0.86959594490000003" blue="0.019383745269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="3xN-6g-9Xv"/>
+                                </constraints>
+                                <color key="tintColor" red="0.21568629149999999" green="0.12549020350000001" blue="0.1215686351" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="icn_kakao" title="  카카오로 시작하기">
+                                    <fontDescription key="titleFontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTapKakaoBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gde-3U-StY"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="kdT-X1-Euo">
+                                <rect key="frame" x="107.66666666666669" y="224" width="178" height="104"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="104" id="jpI-9z-116"/>
+                                    <constraint firstAttribute="width" constant="178" id="z67-vR-IKE"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kdT-X1-Euo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="224" id="2db-um-oQz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Kh8-bW-IQX" secondAttribute="trailing" constant="16" id="7mp-36-8Vp"/>
+                            <constraint firstItem="Kh8-bW-IQX" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="QiI-lx-ggx"/>
+                            <constraint firstItem="HCZ-6n-vz1" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="cLF-Tk-3kX"/>
+                            <constraint firstItem="HCZ-6n-vz1" firstAttribute="top" secondItem="Kh8-bW-IQX" secondAttribute="bottom" constant="14" id="eGO-qf-egZ"/>
+                            <constraint firstAttribute="bottom" secondItem="HCZ-6n-vz1" secondAttribute="bottom" constant="114" id="iSC-CF-xqX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HCZ-6n-vz1" secondAttribute="trailing" constant="16" id="upw-tl-dvw"/>
+                            <constraint firstItem="kdT-X1-Euo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vIT-HS-nCe"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="lD3-dj-eBy"/>
+                    <connections>
+                        <outlet property="appleBtn" destination="HCZ-6n-vz1" id="PT4-su-0g3"/>
+                        <outlet property="kakoBtn" destination="Kh8-bW-IQX" id="cbA-Al-iX9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2828.2442748091603" y="-2.8169014084507045"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a9J-uB-xyv">
+            <objects>
+                <navigationController navigationBarHidden="YES" id="bXx-Iz-frK" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lSb-9h-5F9">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="4Oo-f0-wzg"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fT8-tT-ltj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1782" y="-3"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icn_apple" width="24" height="28"/>
+        <image name="icn_kakao" width="20" height="16"/>
+        <image name="logo" width="178" height="104"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Disconnect Couple View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="DisconnectCoupleViewController" id="Y6W-OH-hqX" customClass="DisconnectCoupleViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커플 연결을 끊으려고?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCv-Xq-bpK">
+                                <rect key="frame" x="16" y="138" width="214.33333333333334" height="26"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadImogi" translatesAutoresizingMaskIntoConstraints="NO" id="tGa-fC-ao6">
+                                <rect key="frame" x="57" y="336" width="279" height="186"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="186" id="FoQ-GN-Lm6"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dZZ-Kb-ZZg">
+                                <rect key="frame" x="60" y="627" width="273" height="38"/>
+                                <string key="text">연결을 끊으면, 모든 내역이 삭제 돼...
+우리와 계속 함께하지 않겠어?</string>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dhl-Jh-Fph">
+                                <rect key="frame" x="16" y="738" width="361" height="56"/>
+                                <subviews>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FtP-27-hsz">
+                                        <rect key="frame" x="0.0" y="0.0" width="112" height="56"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="112" id="Mfz-QE-nZy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="연결 끊기">
+                                            <color key="titleColor" name="primaryFirst"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapDisconnectBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="hA5-al-jvn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jjx-Fy-lw9">
+                                        <rect key="frame" x="120" y="0.0" width="241" height="56"/>
+                                        <color key="backgroundColor" name="primaryFirst"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="함께하기">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didTapContinueBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ucO-Th-Jc7"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="a0m-rw-abZ"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tGa-fC-ao6" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="57" id="EU0-eF-Goc"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dZZ-Kb-ZZg" secondAttribute="trailing" constant="60" id="I82-Hz-xYn"/>
+                            <constraint firstItem="Dhl-Jh-Fph" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="J9Q-8j-dtw"/>
+                            <constraint firstItem="dZZ-Kb-ZZg" firstAttribute="top" secondItem="tGa-fC-ao6" secondAttribute="bottom" constant="105" id="MaD-vu-UAO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="tGa-fC-ao6" secondAttribute="trailing" constant="57" id="Mh7-Qp-nph"/>
+                            <constraint firstItem="fCv-Xq-bpK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="O8x-1C-Kql"/>
+                            <constraint firstItem="dZZ-Kb-ZZg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="60" id="a2d-o5-3fc"/>
+                            <constraint firstItem="fCv-Xq-bpK" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="138" id="c3c-gD-g5W"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Dhl-Jh-Fph" secondAttribute="trailing" constant="16" id="itL-BA-kEO"/>
+                            <constraint firstItem="tGa-fC-ao6" firstAttribute="top" secondItem="fCv-Xq-bpK" secondAttribute="bottom" constant="172" id="nA1-DS-hfX"/>
+                            <constraint firstAttribute="bottom" secondItem="Dhl-Jh-Fph" secondAttribute="bottom" constant="58" id="vzD-fL-kbe"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="continueBtn" destination="Jjx-Fy-lw9" id="nrD-yL-NOw"/>
+                        <outlet property="disconnectBtn" destination="FtP-27-hsz" id="y38-4z-Gkb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75.572519083969468" y="-2.1126760563380285"/>
+        </scene>
+        <!--Alert Disconnect Couple View Controller-->
+        <scene sceneID="10B-rt-oth">
+            <objects>
+                <viewController storyboardIdentifier="AlertDisconnectCoupleViewController" id="iGB-NT-y1f" customClass="AlertDisconnectCoupleViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2V-gL-h37">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gAA-yx-Uqs">
+                                <rect key="frame" x="28" y="308" width="337" height="159"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="정말 상대방과 연결을 끊을거야?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="io7-TP-ewQ">
+                                        <rect key="frame" x="24" y="30" width="289" height="21"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="yZa-g7-oa2">
+                                        <rect key="frame" x="24" y="81" width="289" height="48"/>
+                                        <subviews>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyS-Mh-jDa">
+                                                <rect key="frame" x="0.0" y="0.0" width="140.66666666666666" height="48"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="aUw-vb-Ohi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="연결 끊기">
+                                                    <color key="titleColor" name="primaryFirst"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapDisconnectBtn:" destination="iGB-NT-y1f" eventType="touchUpInside" id="ezE-Ao-JnH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Joj-Jp-aaf">
+                                                <rect key="frame" x="148.66666666666663" y="0.0" width="140.33333333333337" height="48"/>
+                                                <color key="backgroundColor" name="primaryFirst"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="hsC-04-2mQ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="함께하기">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="didTapContinueBtn:" destination="iGB-NT-y1f" eventType="touchUpInside" id="BaF-pA-w3O"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="io7-TP-ewQ" firstAttribute="leading" secondItem="gAA-yx-Uqs" secondAttribute="leading" constant="24" id="36j-0D-fOF"/>
+                                    <constraint firstItem="yZa-g7-oa2" firstAttribute="leading" secondItem="gAA-yx-Uqs" secondAttribute="leading" constant="24" id="L3O-8P-iIR"/>
+                                    <constraint firstItem="io7-TP-ewQ" firstAttribute="top" secondItem="gAA-yx-Uqs" secondAttribute="top" constant="30" id="OnL-6h-Bnt"/>
+                                    <constraint firstAttribute="height" constant="159" id="ThT-GI-nln"/>
+                                    <constraint firstAttribute="trailing" secondItem="yZa-g7-oa2" secondAttribute="trailing" constant="24" id="VHg-k8-F9O"/>
+                                    <constraint firstAttribute="bottom" secondItem="yZa-g7-oa2" secondAttribute="bottom" constant="30" id="ci2-Ms-pnw"/>
+                                    <constraint firstAttribute="trailing" secondItem="io7-TP-ewQ" secondAttribute="trailing" constant="24" id="dHl-PE-WvR"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="90J-kC-zEm"/>
+                        <color key="backgroundColor" red="0.15303424869999999" green="0.15303424869999999" blue="0.15303424869999999" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="gAA-yx-Uqs" firstAttribute="top" secondItem="b2V-gL-h37" secondAttribute="top" constant="308" id="KMH-z6-VCJ"/>
+                            <constraint firstItem="gAA-yx-Uqs" firstAttribute="leading" secondItem="90J-kC-zEm" secondAttribute="leading" constant="28" id="f7i-Qj-A7D"/>
+                            <constraint firstItem="90J-kC-zEm" firstAttribute="trailing" secondItem="gAA-yx-Uqs" secondAttribute="trailing" constant="28" id="j8I-87-IH0"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alertBGview" destination="gAA-yx-Uqs" id="YHa-gS-pN6"/>
+                        <outlet property="continueBtn" destination="Joj-Jp-aaf" id="bEr-cZ-nj9"/>
+                        <outlet property="disconnectBtn" destination="kyS-Mh-jDa" id="LcI-1h-nIU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ty2-w2-L52" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="952" y="-2"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="sadImogi" width="260" height="186"/>
+        <namedColor name="primaryFirst">
+            <color red="0.78823529411764703" green="0.51372549019607838" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -2,6 +2,46 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakaoc36fb0ce439b3a9e9be9673d048dadb4</string>
+			</array>
+		</dict>
+	</array>
+	<key>Item 0</key>
+	<string>Fonts/EF_Diary.ttf</string>
+	<key>Item 1</key>
+	<string>Fonts/Pretendard-Black.otf</string>
+	<key>Item 2</key>
+	<string>Fonts/Pretendard-Light.otf</string>
+	<key>Item 3</key>
+	<string>Fonts/Pretendard-ExtraBold.otf</string>
+	<key>Item 4</key>
+	<string>Fonts/Pretendard-Medium.otf</string>
+	<key>Item 5</key>
+	<string>Fonts/Pretendard-Thin.otf</string>
+	<key>Item 6</key>
+	<string>Fonts/Pretendard-Regular.otf</string>
+	<key>Item 7</key>
+	<string>Fonts/Pretendard-SemiBold.otf</string>
+	<key>Item 8</key>
+	<string>Fonts/Pretendard-ExtraLight.otf</string>
+	<key>Item 9</key>
+	<string>Fonts/Pretendard-Bold.otf</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakaokompassauth</string>
+		<string>kakaoklink</string>
+	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Balsam_Tint.otf</string>
+	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -21,5 +61,9 @@
 			</array>
 		</dict>
 	</dict>
+	<key>item 10</key>
+	<string>Fonts/Cafe24SsurroundAir.ttf</string>
+	<key>item 11</key>
+	<string>Fonts/Balsam_Tint.otf</string>
 </dict>
 </plist>

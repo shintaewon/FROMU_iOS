@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24SsurroundAir.ttf">
+            <string>Cafe24Ssurroundair</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Complete Send Letter View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="CompleteSendLetterViewController" id="Y6W-OH-hqX" customClass="CompleteSendLetterViewController" customModule="FromU" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Yw-lD-UzU">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKI-FZ-7uj" customClass="LottieAnimationView" customModule="Lottie">
+                                <rect key="frame" x="16" y="162" width="361" height="374"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="374" id="UCV-V0-bj2"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gX4-2V-u1a">
+                                <rect key="frame" x="196.66666666666666" y="560" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xKI-FZ-7uj" secondAttribute="trailing" constant="16" id="BnL-MZ-g2t"/>
+                            <constraint firstItem="xKI-FZ-7uj" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="MMq-Fs-GEZ"/>
+                            <constraint firstItem="5Yw-lD-UzU" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="OEB-Ck-fW7"/>
+                            <constraint firstItem="gX4-2V-u1a" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="P2z-qC-Ngh"/>
+                            <constraint firstItem="gX4-2V-u1a" firstAttribute="top" secondItem="xKI-FZ-7uj" secondAttribute="bottom" constant="24" id="SwO-jF-3Qu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="5Yw-lD-UzU" secondAttribute="trailing" id="XrP-g7-hRD"/>
+                            <constraint firstItem="xKI-FZ-7uj" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" constant="162" id="lKu-Jx-YZR"/>
+                            <constraint firstItem="5Yw-lD-UzU" firstAttribute="top" secondItem="5EZ-qb-Rvc" secondAttribute="top" id="xsh-IJ-ZmV"/>
+                            <constraint firstAttribute="bottom" secondItem="5Yw-lD-UzU" secondAttribute="bottom" id="z0x-B7-CBT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bgView" destination="5Yw-lD-UzU" id="apg-RK-9P6"/>
+                        <outlet property="explainLabel" destination="gX4-2V-u1a" id="iFL-sZ-18Q"/>
+                        <outlet property="lottieView" destination="xKI-FZ-7uj" id="W6w-S8-iom"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="-2"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="xKI-FZ-7uj"/>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

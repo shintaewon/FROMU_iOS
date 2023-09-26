@@ -179,7 +179,7 @@ extension MailboxViewController{
                     let response = try data.map(MailboxViewResponse.self)
                     
                     self.explainLabel.lineBreakMode = .byWordWrapping
-
+                        
                     let paragraphStyle = NSMutableParagraphStyle()
 
                     paragraphStyle.lineHeightMultiple = 1.27

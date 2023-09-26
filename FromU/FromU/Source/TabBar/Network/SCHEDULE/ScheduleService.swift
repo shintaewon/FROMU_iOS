@@ -13,6 +13,10 @@ enum ScheduleService{
     case getSpecificCalendarSchedules(month: String, date: String)
     
     case plusSchedule(content: String, date: String)
+    
+    case deleteSchedule(scheduleId: String)
+    
+    case editSchedule(scheduleId: String, content: String, date: String)
 }
 
 extension ScheduleService: TargetType{
@@ -30,6 +34,12 @@ extension ScheduleService: TargetType{
             
         case .plusSchedule:
             return ""
+            
+        case .deleteSchedule(let scheduleId):
+            return "\(scheduleId)"
+            
+        case .editSchedule(let scheduleId, let content, let date):
+            return "\(scheduleId)"
         }
         
     }
@@ -42,6 +52,12 @@ extension ScheduleService: TargetType{
 
         case .plusSchedule:
             return .post
+            
+        case .deleteSchedule:
+            return .delete
+            
+        case .editSchedule:
+            return .patch
         }
         
     }
@@ -54,6 +70,12 @@ extension ScheduleService: TargetType{
             
         case .plusSchedule(let content, let date):
             return .requestParameters(parameters: ["content": content, "date": date], encoding: JSONEncoding.default)
+            
+        case .deleteSchedule:
+            return Task.requestPlain
+            
+        case .editSchedule(let scheduleId, let content, let date):
+            return .requestParameters(parameters: ["content": content, "date": date], encoding: JSONEncoding.default)
         }
     }
     
@@ -64,6 +86,12 @@ extension ScheduleService: TargetType{
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
             
         case .plusSchedule:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .deleteSchedule:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .editSchedule:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }

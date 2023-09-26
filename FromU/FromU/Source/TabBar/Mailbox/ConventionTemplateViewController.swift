@@ -25,6 +25,7 @@ class ConventionTemplateViewController: UIViewController {
     func setupUIComponents() {
         // 기본적인 view 설정
         // 예) backgroundColor, addSubView 등
+        view.backgroundColor = .white
     }
     
     func setupConstraints() {

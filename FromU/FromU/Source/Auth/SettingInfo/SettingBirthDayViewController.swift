@@ -48,7 +48,6 @@ class SettingBirthDayViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        debugPrint("keyboardWillHide")
         self.bottomConstraint?.constant = -80
         self.view.layoutIfNeeded()
     }
@@ -70,9 +69,7 @@ class SettingBirthDayViewController: UIViewController {
         else{
             completeBirthDay = completeBirthDay + (dayTextField.text ?? "")
         }
-        
-//        print(completeBirthDay)
-        
+                
         UserDefaults.standard.set(completeBirthDay, forKey: "birthDay")
 
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingGenderViewController") as? SettingGenderViewController else {return}

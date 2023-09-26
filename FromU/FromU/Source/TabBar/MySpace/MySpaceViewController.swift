@@ -13,7 +13,6 @@ class MySpaceViewController: UIViewController {
     
     @IBOutlet weak var coupleNameStackView: UIStackView!
     
-    
     @IBOutlet weak var myNameLabel: UILabel!
     
     @IBOutlet weak var partnerNameLabel: UILabel!
@@ -86,9 +85,7 @@ class MySpaceViewController: UIViewController {
         tempLabel.font = UIFont.Cafe24SsurroundAir(.Cafe24SsurroundAir, size: 18)
         tempLabel.sizeToFit()
         let newWidth = tempLabel.frame.width + 32
-        
-        print("newWidth:", newWidth)
-        
+                
         let bottomBorder = CALayer()
         bottomBorder.backgroundColor = UIColor.primaryLight.cgColor
         bottomBorder.frame = CGRect(x: 0, y: coupleNameStackView.frame.size.height - 1, width: newWidth, height: 1)
@@ -114,6 +111,7 @@ class MySpaceViewController: UIViewController {
         // Add the layer to the stack view's layer
         ddayLabel.layer.addSublayer(bottomBorder_)
         
+        
     }
     
     override func viewDidLoad() {
@@ -134,7 +132,14 @@ class MySpaceViewController: UIViewController {
         
         sections = [
             Section(title: "", rows: [
-                Row(title: "설정", action: {
+                Row(title: "알림메세지 설정", action: {
+                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else { return }
+                    
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                }),
+                Row(title: "우편함 설정", action: {
                     guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else { return }
                     
                     vc.hidesBottomBarWhenPushed = true
@@ -146,14 +151,24 @@ class MySpaceViewController: UIViewController {
         
         ]
         
+        // UITapGestureRecognizer를 coupleNameStackView에 추가
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(navigateToInformationSetting))
+        coupleNameStackView.addGestureRecognizer(tapGesture)
+        coupleNameStackView.isUserInteractionEnabled = true
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
         self.hidesBottomBarWhenPushed = false
         self.navigationController?.navigationBar.isHidden = false
+        self.tabBarController?.tabBar.isHidden = false
         self.getFromCount()
     }
 
+    @objc func navigateToInformationSetting() {
+        let vc = InformationSettingViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension MySpaceViewController: UITableViewDelegate, UITableViewDataSource{

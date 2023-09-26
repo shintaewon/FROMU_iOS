@@ -7,6 +7,8 @@
 
 import UIKit
 
+import SwiftKeychainWrapper
+
 class InputCodeViewController: UIViewController {
 
     @IBOutlet weak var connectBtn: UIButton! //하단 다음 버튼
@@ -179,6 +181,8 @@ extension InputCodeViewController{
                             
                             UserDefaults.standard.set(response.result?.nickname, forKey: "nickName")
                             
+                            KeychainWrapper.standard.set(response.result?.coupleID ?? 0, forKey: "coupleID")
+                                                        
                             let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
                             guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
                 

@@ -25,6 +25,10 @@ enum UserService{
     
     case refreshToken
     
+    case getUserInfo(userId: String)
+    
+    case updateUserInfo(typeNum: String, string: String)
+    
 }
 
 extension UserService: TargetType{
@@ -53,7 +57,12 @@ extension UserService: TargetType{
             
         case .refreshToken:
             return "/refreshToken"
+            
+        case .getUserInfo(let userId):
+            return "/\(userId)"
 
+        case .updateUserInfo(let typeNum, _):
+            return "/\(typeNum)"
         }
         
     }
@@ -77,6 +86,12 @@ extension UserService: TargetType{
             
         case .refreshToken:
             return .post
+            
+        case .getUserInfo:
+            return .get
+            
+        case .updateUserInfo:
+            return .patch
         }
         
     }
@@ -100,6 +115,11 @@ extension UserService: TargetType{
         case .refreshToken:
             return Task.requestPlain
 
+        case .getUserInfo:
+            return Task.requestPlain
+            
+        case .updateUserInfo(_, let string):
+            return .requestParameters(parameters: ["string": string], encoding: JSONEncoding.default)
         }
         
     }
@@ -122,6 +142,12 @@ extension UserService: TargetType{
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "appleAccessToken") ?? "" ]
             
         case .refreshToken:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "RefreshToken") ?? "" ]
+            
+        case .getUserInfo:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "RefreshToken") ?? "" ]
+            
+        case .updateUserInfo:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "RefreshToken") ?? "" ]
         }
     }

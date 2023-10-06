@@ -243,6 +243,8 @@ extension SetMailBoxNameViewController{
                 
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
+                    } else{
+                        self.showToast(message: response.message, font: UIFont.BalsamTint(.size18))
                     }
                     
                 } catch {
@@ -254,4 +256,24 @@ extension SetMailBoxNameViewController{
             }
         }
     }
+}
+
+extension SetMailBoxNameViewController{
+    func showToast(message : String, font: UIFont) {
+        let toastLabel = UILabel(frame: CGRect(x: 20, y: 50, width: self.view.frame.width - decideBtn.layer.frame.origin.x * 2 , height: 48))
+        toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut,animations: {
+            toastLabel.alpha = 0.0
+            }, completion: {(isCompleted) in
+                toastLabel.removeFromSuperview()
+            })
+        }
 }

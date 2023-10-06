@@ -192,12 +192,8 @@ extension SubscriptionViewController{
                         if response.code == 1000 {
                             
                             UserDefaults.standard.set(response.result.userCode, forKey: "userCode")
-                            
-                            let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
-                    
-                            guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
-                    
-                            self.navigationController?.pushViewController(vc, animated: true)
+                            KeychainWrapper.standard.set(response.result.jwt, forKey: "X-ACCESS-TOKEN")
+                            self.registerFCMToken()
                         }
                     }
                     
@@ -207,6 +203,32 @@ extension SubscriptionViewController{
 
             case .failure(let error):
                 print("DEBUG>> signUpFromU Error : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func registerFCMToken(){
+        UserAPI.providerUser.request( .registerFCMToken(deviceToken: KeychainWrapper.standard.string(forKey: "FCMToken") ?? "")){ [weak self] result in
+            guard let self = self else { return }
+                
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(RegisterTokenResponse.self)
+                    print(response)
+                    if response.code == 1000{
+                        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
+                
+                        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
+                
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } catch {
+                    print(error)
+                }
+
+            case .failure(let error):
+                print("DEBUG>> getUserInfoWithUserID Error : \(error.localizedDescription)")
             }
         }
     }

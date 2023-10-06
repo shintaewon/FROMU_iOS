@@ -126,7 +126,9 @@ extension InvitationViewController{
                             }
                             else{//새로고침했는데 상대방이 연결은 했는데 메일박스 이름 설정은 안해놓음 -> 이름 설정하러 고고
                                 
-                                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetMailBoxNameViewController") as? SetMailBoxNameViewController else {return}
+                                let storyboard  = UIStoryboard(name: "SetMailBoxName", bundle: nil)
+                                
+                                guard let vc = storyboard.instantiateViewController(withIdentifier: "SetMailBoxNameViewController") as? SetMailBoxNameViewController else {return}
                         
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }

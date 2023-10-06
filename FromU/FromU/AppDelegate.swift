@@ -7,9 +7,10 @@
 
 import UIKit
 
-import KakaoSDKCommon
 import FirebaseCore
 import Firebase
+import KakaoSDKCommon
+import SwiftKeychainWrapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -71,7 +72,13 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
           if let error = error {
             print("Error fetching FCM registration token: \(error)")
           } else if let token = token {
-            print("FCM registration token: \(token)")
+              
+              print("FCM registration token: \(token)")
+              KeychainWrapper.standard.set(token, forKey: "FCMToken")
+              for family in UIFont.familyNames.sorted() {
+                  let fontNames = UIFont.fontNames(forFamilyName: family)
+                  print("Font Family: \(family) - Font Names: \(fontNames)")
+              }
           }
         }
     }

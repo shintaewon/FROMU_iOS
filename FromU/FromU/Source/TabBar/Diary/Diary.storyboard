@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-MK-Icl">
-                                <rect key="frame" x="128" y="429" width="136" height="38"/>
+                                <rect key="frame" x="128" y="429" width="124" height="37.333333333333314"/>
                                 <string key="text">아직 일기장이 없어!
 하나 추가해 볼까?</string>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
@@ -73,22 +73,22 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-RQ-M5O">
-                                <rect key="frame" x="16" y="148" width="157.66666666666666" height="28"/>
+                                <rect key="frame" x="16" y="148" width="145.66666666666666" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사랑한 지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7c5-Gn-JTM">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="75" height="28"/>
                                         <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8n-X7-Y2Z">
-                                        <rect key="frame" x="86" y="0.0" width="23.666666666666671" height="28"/>
+                                        <rect key="frame" x="79" y="0.0" width="22.333333333333329" height="28"/>
                                         <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51c-kA-pEK">
-                                        <rect key="frame" x="113.66666666666666" y="0.0" width="44" height="28"/>
+                                        <rect key="frame" x="105.33333333333333" y="0.0" width="40.333333333333329" height="28"/>
                                         <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -106,7 +106,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음 만난 날을 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-BE-r7M">
-                                <rect key="frame" x="44" y="193" width="151" height="14.333333333333343"/>
+                                <rect key="frame" x="57" y="193" width="138" height="14"/>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -155,7 +155,7 @@ cHJpbWFyeQhTZWNvbmQ
                                 <rect key="frame" x="66" y="257" width="261" height="362"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-eM-P2T">
-                                <rect key="frame" x="108.33333333333333" y="512.66666666666663" width="176.33333333333337" height="33.333333333333371"/>
+                                <rect key="frame" x="116" y="513.33333333333337" width="161" height="32.666666666666629"/>
                                 <string key="text">지금은 나에게 일기장이 없어 
 은다에게 벨을 울려볼까?</string>
                                 <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
@@ -527,10 +527,6 @@ cHJpbWFyeQhTZWNvbmQ
             <point key="canvasLocation" x="3717" y="750"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Sgz-hT-K82"/>
-        <designable name="VYa-Gv-VQl"/>
-    </designables>
     <resources>
         <image name="Frame 2608812" width="248" height="188"/>
         <image name="_toolip" width="180" height="60"/>

@@ -133,7 +133,7 @@ class MySpaceViewController: UIViewController {
         sections = [
             Section(title: "", rows: [
                 Row(title: "알림메세지 설정", action: {
-                    guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingTableViewController") as? SettingTableViewController else { return }
+                    let vc = SettingPushNotificationViewController()
                     
                     vc.hidesBottomBarWhenPushed = true
                     self.navigationController?.pushViewController(vc, animated: true)

@@ -75,20 +75,29 @@ extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
               
               print("FCM registration token: \(token)")
               KeychainWrapper.standard.set(token, forKey: "FCMToken")
-              for family in UIFont.familyNames.sorted() {
-                  let fontNames = UIFont.fontNames(forFamilyName: family)
-                  print("Font Family: \(family) - Font Names: \(fontNames)")
-              }
+  
           }
         }
     }
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // 알림 내용을 콘솔에 출력합니다.
+        print("Received Push Notification while in foreground: \(userInfo)")
+        
         completionHandler([.alert, .badge, .sound])
     }
+
     
     public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        // 알림 내용을 콘솔에 출력합니다.
+        print("Received Push Notification: \(userInfo)")
+        
         completionHandler()
     }
+
 }
 

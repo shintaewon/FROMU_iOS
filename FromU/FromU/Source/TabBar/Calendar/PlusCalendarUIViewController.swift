@@ -181,9 +181,7 @@ class PlusCalendarViewController: UIViewController {
     }
     
     @objc private func completeButtonTapped() {
-        
         plusCalendarSchedules(content: textField.text ?? "None" , date: dateString)
-
     }
     
     // MARK: - Helpers

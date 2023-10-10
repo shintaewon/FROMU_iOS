@@ -47,7 +47,7 @@ class DiaryViewController: UIViewController {
     
     let animationFinger = LottieAnimationView(name: "hand")
     let animationGoing = LottieAnimationView(name: "goingdiary")
-    let animationComing = LottieAnimationView(name: "coingdiary")
+    let animationComing = LottieAnimationView(name: "comingdiary")
     
     //현재 내가 일기를 썼는지 안썼는지 알려주는 flag
     var writeFlag = true

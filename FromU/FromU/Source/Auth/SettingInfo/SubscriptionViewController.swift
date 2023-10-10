@@ -191,8 +191,8 @@ extension SubscriptionViewController{
                     if response.isSuccess == true{
                         if response.code == 1000 {
                             
-                            UserDefaults.standard.set(response.result.userCode, forKey: "userCode")
-                            KeychainWrapper.standard.set(response.result.jwt, forKey: "X-ACCESS-TOKEN")
+                            UserDefaults.standard.set(response.result?.userCode, forKey: "userCode")
+                            KeychainWrapper.standard.set(response.result?.jwt ?? "", forKey: "X-ACCESS-TOKEN")
                             self.registerFCMToken()
                         }
                     }

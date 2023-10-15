@@ -24,40 +24,51 @@ class MySpaceViewController: UIViewController {
     
     var sections: [Section] = []
     
-    let btn2 = UILabel()
+    let fromCountLabel = UILabel()
     
     func configureNavigationItems(){
+        
+        fromCountLabel.backgroundColor = .primaryLight
+        fromCountLabel.layer.cornerRadius = 10
+        fromCountLabel.clipsToBounds = true
+        fromCountLabel.font = UIFont.BalsamTint(.size16)
+        fromCountLabel.text = "    "
+        fromCountLabel.textColor = .primary02
+        fromCountLabel.textAlignment = .center
+        
+        // NSAttributedString 적용 부분
+        if let currentText = fromCountLabel.text {
+            let attributedString = NSMutableAttributedString(string: currentText)
+            attributedString.addAttribute(.baselineOffset, value: 2, range: NSRange(location: 0, length: attributedString.length))
+            fromCountLabel.attributedText = attributedString
+        }
 
-//        let btn1 = UIImageView(image: UIImage(named: "icn_bell"))
-//        btn1.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-//        let item1 = UIBarButtonItem()
-//        item1.customView = btn1
+        let size = fromCountLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        fromCountLabel.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
+        
+        let fromCountItem = UIBarButtonItem()
+        fromCountItem.customView = fromCountLabel
+        fromCountItem.width = size.width + 20 - 10
 
-        btn2.backgroundColor = .primaryLight
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn2.font = UIFont.Pretendard(.regular, size: 12)
-        btn2.text = "    "
-        btn2.textColor = .primary02
-        btn2.textAlignment = .center
-        let size = btn2.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
-        btn2.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
-        let item2 = UIBarButtonItem()
-        item2.customView = btn2
-        item2.width = size.width + 20 - 10 // Decrease the width of item2 by 10 points
-
-        let btn3 = UIImageView(image: UIImage(named: "Property 28"))
-        btn3.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        let item3 = UIBarButtonItem()
-        item3.customView = btn3
-        item3.width = 32 + 10 // Increase the width of item3 by 10 points
+        let heartImage = UIImageView(image: UIImage(named: "Property 28"))
+        heartImage.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        let heartImageItem = UIBarButtonItem()
+        heartImageItem.customView = heartImage
+        heartImageItem.width = 32 + 10
 
         let space = UIImageView(image: UIImage())
         space.frame = CGRect(x: 0, y: 0, width: 2, height: 0)
         let spacer = UIBarButtonItem()
         spacer.customView = space
 
-        self.navigationItem.rightBarButtonItems = [spacer, item2, item3]
+        let bellButton = UIButton()
+        bellButton.setImage(UIImage(named: "icn_bell"), for: .normal)
+        bellButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let bellItem = UIBarButtonItem()
+        bellItem.customView = bellButton
+        bellItem.width = 32 + 10
+        
+        self.navigationItem.rightBarButtonItems = [bellItem, spacer, fromCountItem, heartImageItem]
         
         let leftItem = UIImageView(image: UIImage(named: "logotypo"))
         leftItem.frame = CGRect(x: 0, y: 0, width: 65, height: 18)
@@ -215,7 +226,7 @@ extension MySpaceViewController{
             case .success(let data):
                 do{
                     let response = try data.map(FromCountResponse.self)
-                    self.btn2.text = "\(response.result)"
+                    self.fromCountLabel.text = "\(response.result)"
                     print(response)
                 } catch{
                     print(error)

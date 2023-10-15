@@ -10,14 +10,6 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="Cafe24SsurroundAir.ttf">
-            <string>Cafe24Ssurroundair</string>
-        </array>
-        <array key="Pretendard-Regular.otf">
-            <string>Pretendard-Regular</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--Onboarding View Controller-->
         <scene sceneID="s0d-6b-0kx">
@@ -161,31 +153,45 @@ IAo
                                     <constraint firstAttribute="height" constant="8" id="iOM-w6-gIO"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rkh-d5-zCf">
-                                <rect key="frame" x="346" y="748" width="31" height="31"/>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Rkh-d5-zCf">
+                                <rect key="frame" x="342" y="741.33333333333337" width="35" height="37.666666666666629"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음">
-                                    <color key="titleColor">
-                                        <string key="name" base64-UTF8="YES">
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="다음">
+                                            <attributes>
+                                                <color key="NSColor">
+                                                    <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
 </string>
-                                    </color>
+                                                </color>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="didTapNextBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="XqS-bS-ybl"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-Lb-AFn">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mNz-Lb-AFn">
                                 <rect key="frame" x="16" y="738" width="361" height="56"/>
                                 <color key="backgroundColor" name="primaryFirst"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="aBC-Q1-ybS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="시작하기">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="시작하기">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" size="16" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="didTapStartBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Qgf-er-vvS"/>

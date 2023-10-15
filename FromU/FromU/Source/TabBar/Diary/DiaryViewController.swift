@@ -59,7 +59,7 @@ class DiaryViewController: UIViewController {
     //    * 일기장이 상대한테 있으면 4
     var diarybookStatus = 5
     
-    var btn2 = UILabel()
+    var fromCountLabel = UILabel()
     
     @objc func diaryImageTapped(){
         
@@ -181,8 +181,16 @@ class DiaryViewController: UIViewController {
 
 extension DiaryViewController{
     
-    func configureNavigationItems(){
-        print("실행은 됨?")
+
+    func showAnimation(_ animationView: LottieAnimationView) {
+        animationView.isHidden = false
+        animationView.frame = self.locationLottieView.bounds
+        animationView.contentMode = .scaleToFill
+        animationView.loopMode = .loop
+        animationView.play()
+    }
+    
+    private func configureNavigationItems() {
         
         plusDiaryBookBtn.isHidden = true
         plusDiaryLabel.isHidden = true
@@ -200,41 +208,57 @@ extension DiaryViewController{
         
         navigationItem.hidesBackButton = true
         
-        btn2 = UILabel()
-        btn2.backgroundColor = .primaryLight
-        btn2.layer.cornerRadius = 10
-        btn2.clipsToBounds = true
-        btn2.font = UIFont.Pretendard(.regular, size: 12)
-        btn2.text = "    "
-        btn2.textColor = .primary02
-        btn2.textAlignment = .center
-        let size = btn2.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
-        btn2.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
-        let item2 = UIBarButtonItem()
-        item2.customView = btn2
-        item2.width = size.width + 20 - 10 // Decrease the width of item2 by 10 points
-
-        let btn3 = UIImageView(image: UIImage(named: "Property 28"))
-        btn3.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        let item3 = UIBarButtonItem()
-        item3.customView = btn3
-        item3.width = 32 + 10 // Increase the width of item3 by 10 points
-
+        fromCountLabel.backgroundColor = .primaryLight
+        fromCountLabel.layer.cornerRadius = 10
+        fromCountLabel.clipsToBounds = true
+        fromCountLabel.font = UIFont.BalsamTint(.size16)
+        fromCountLabel.text = "    "
+        fromCountLabel.textColor = .primary02
+        fromCountLabel.textAlignment = .center
+        
+        // NSAttributedString 적용 부분
+        if let currentText = fromCountLabel.text {
+            let attributedString = NSMutableAttributedString(string: currentText)
+            attributedString.addAttribute(.baselineOffset, value: 2, range: NSRange(location: 0, length: attributedString.length))
+            fromCountLabel.attributedText = attributedString
+        }
+        
+        let size = fromCountLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
+        fromCountLabel.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
+        
+        let fromCountItem = UIBarButtonItem()
+        fromCountItem.customView = fromCountLabel
+        fromCountItem.width = size.width + 20 - 10
+        
+        let heartImage = UIImageView(image: UIImage(named: "Property 28"))
+        heartImage.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
+        let heartImageItem = UIBarButtonItem()
+        heartImageItem.customView = heartImage
+        heartImageItem.width = 32 + 10
+        
         let space = UIImageView(image: UIImage())
         space.frame = CGRect(x: 0, y: 0, width: 2, height: 0)
         let spacer = UIBarButtonItem()
         spacer.customView = space
-
-        self.navigationItem.rightBarButtonItems = [spacer, item2, item3]
+        
+        let bellButton = UIButton()
+        bellButton.setImage(UIImage(named: "icn_bell"), for: .normal)
+        bellButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let bellItem = UIBarButtonItem()
+        bellItem.customView = bellButton
+        bellItem.width = 32 + 10
+        
+        self.navigationItem.rightBarButtonItems = [bellItem, spacer, fromCountItem, heartImageItem]
         
         let leftItem = UIImageView(image: UIImage(named: "logotypo"))
         leftItem.frame = CGRect(x: 0, y: 0, width: 65, height: 18)
         
         let imageButtonItem = UIBarButtonItem(customView: leftItem)
-                
+        
         // Set the UIBarButtonItem as the left navigation item of your view controller
         navigationItem.leftBarButtonItem = imageButtonItem
     }
+    
 }
 
 extension DiaryViewController{
@@ -302,6 +326,9 @@ extension DiaryViewController{
                         //    * 일기장이 가는 중이면 3
                         //    * 일기장이 상대한테 있으면 4
                       
+                        self.animationComing.isHidden = true
+                        self.animationGoing.isHidden = true
+                        
                         if response.result?.diarybookStatus == 0{
                         
                             self.pokeBtn.isHidden = true
@@ -312,10 +339,11 @@ extension DiaryViewController{
                             self.plusDiaryLabel.isHidden = false
                             self.mainDiaryImageView.isHidden = true
                             self.partnerHasDiaryPic.isHidden = true
-                            self.fingerLottieView.isHidden = true
                             self.locationLottieView.isHidden = true
+                            self.fingerLottieView.isHidden = true
                         }
                         else if response.result?.diarybookStatus == 1{
+                            
                             self.mainDiaryImageView.isHidden = false
                             self.diaryNameLabel.isHidden = false
                             self.fingerLottieView.isHidden = true
@@ -339,12 +367,12 @@ extension DiaryViewController{
                             self.mainDiaryImageView.layer.shadowOffset = CGSize(width: 0, height: 4)
                             self.mainDiaryImageView.layer.shadowRadius = 12
                             self.mainDiaryImageView.layer.shadowOpacity = 1
-                            self.mainDiaryImageView.layer.masksToBounds = false
-                            
-                            
+                            self.partnerHasDiaryPic.isHidden = true
+                                                                                    
                         }
+                        
                         else if response.result?.diarybookStatus == 2 {
-                            
+              
                             self.plusDiaryBookBtn.isHidden = true
                             self.plusDiaryLabel.isHidden = true
                             self.mainDiaryImageView.isHidden = true
@@ -354,15 +382,13 @@ extension DiaryViewController{
                             self.diaryNameLabel.isHidden = true
                             self.sendBtn.isHidden = true
                             self.fingerLottieView.isHidden = true
-                            self.locationLottieView.isHidden = false
                             self.partnerHasDiaryPic.isHidden = true
+                            self.locationLottieView.isHidden = false
                             
-                            self.animationComing.frame = self.locationLottieView.bounds
-                            self.animationComing.contentMode = .scaleToFill
-                            self.animationComing.loopMode = .loop
-                            self.animationComing.play()
-                            
+                            self.animationGoing.isHidden = true
+                            self.showAnimation(self.animationComing)
                         }
+                        
                         else if response.result?.diarybookStatus == 3 {
               
                             self.plusDiaryBookBtn.isHidden = true
@@ -374,18 +400,14 @@ extension DiaryViewController{
                             self.diaryNameLabel.isHidden = true
                             self.sendBtn.isHidden = true
                             self.fingerLottieView.isHidden = true
-                            self.locationLottieView.isHidden = false
                             self.partnerHasDiaryPic.isHidden = true
+                            self.locationLottieView.isHidden = false
                             
-                            
-                            self.animationGoing.frame = self.locationLottieView.bounds
-                            self.animationGoing.contentMode = .scaleToFill
-                            self.animationGoing.loopMode = .loop
-                            self.animationGoing.play()
+                            self.animationComing.isHidden = true
+                            self.showAnimation(self.animationGoing)
                         }
                         else{
                             self.fingerLottieView.isHidden = false
-                            self.locationLottieView.isHidden = true
                             self.plusDiaryBookBtn.isHidden = true
                             self.plusDiaryLabel.isHidden = true
                             self.mainDiaryImageView.isHidden = true
@@ -407,6 +429,10 @@ extension DiaryViewController{
                     else if response.code == 2001 {
                         print("토큰 만료")
                         self.refreshToken()
+                    }
+                    //상대방이 커플 연결 끊어버린거
+                    else if response.code == 4002{
+                        self.logout()
                     }
                     
                 } catch {
@@ -457,7 +483,7 @@ extension DiaryViewController{
             case .success(let data):
                 do{
                     let response = try data.map(FromCountResponse.self)
-                    self.btn2.text = "\(response.result)"
+                    self.fromCountLabel.text = "\(response.result)"
                     print(response)
                 } catch{
                     print(error)
@@ -508,6 +534,15 @@ extension DiaryViewController{
         if let viewControllerA = storyboard.instantiateViewController(withIdentifier: "LoginViewController") as? LoginViewController {
             let navigationController = UINavigationController(rootViewController: viewControllerA)
 
+            //키체인에 UserPassword 삭제
+            KeychainWrapper.standard.removeObject(forKey: "X-ACCESS-TOKEN")
+
+            //키체인에 RefreshToken 삭제
+            KeychainWrapper.standard.removeObject(forKey: "RefreshToken")
+            
+            //오토로그인 false로 설정
+            UserDefaults.standard.setValue(false, forKey: "isAutoLoginValidation")
+            
             // Dismiss all presented view controllers and set the new root view controller
             self.view.window?.rootViewController?.dismiss(animated: true, completion: {
                 UIApplication.shared.keyWindow?.rootViewController = navigationController

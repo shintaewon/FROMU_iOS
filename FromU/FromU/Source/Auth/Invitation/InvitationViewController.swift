@@ -106,7 +106,7 @@ extension InvitationViewController{
                     //일단 엔드포인트 호출 성공
                     if response.isSuccess == true{
                         if response.result?.match == false {
-                            self.showToast(message: "연인과의 연결이 완료되지 않았어!", font: UIFont.Pretendard(.regular, size: 14))
+                            self.showToast(message: "연인과의 연결이 완료되지 않았어!", font: .BalsamTint(.size18))
                         }
                         else{
                             UserDefaults.standard.set(response.result?.coupleRes?.partnerNickname, forKey: "partnerNickName")

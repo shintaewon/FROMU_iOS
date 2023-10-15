@@ -179,33 +179,34 @@ class SetDiaryCoverViewController: UIViewController {
 extension SetDiaryCoverViewController{
     
     func configureNavigationItems(){
-        print("실행은 됨?")
 
         
-        let btn1 = UIImageView(image: UIImage(named: "icn_edit"))
-        btn1.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let btn1 = UIImageView(image: UIImage(named: "icn_write"))
+        btn1.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
         let item1 = UIBarButtonItem()
         item1.customView = btn1
 
-//        let btn2 = UIImageView(image: UIImage(named: "icn_list"))
-//        btn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
-//        let item2 = UIBarButtonItem()
-//        item2.customView = btn2
-//
-//
-//        self.navigationItem.rightBarButtonItems = [item2, item1]
+        let btn2 = UIImageView(image: UIImage(named: "icn_list"))
+        btn2.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let item2 = UIBarButtonItem()
+        item2.customView = btn2
+
+        let btn3 = UIImageView(image: UIImage(named: "three_dot"))
+        btn3.frame = CGRect(x: 0, y: 0, width: 24, height: 24)
+        let item3 = UIBarButtonItem()
+        item3.customView = btn3
         
-        self.navigationItem.rightBarButtonItems = [item1]
-        
+        self.navigationItem.rightBarButtonItems = [item3, item2, item1]
+                
         // Add tap gesture recognizer to btn1
         let tapGesture1 = UITapGestureRecognizer(target: self, action: #selector(btn1Tapped))
         btn1.isUserInteractionEnabled = true
         btn1.addGestureRecognizer(tapGesture1)
 
-        // Add tap gesture recognizer to btn2
-//        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(btn2Tapped))
-//        btn2.isUserInteractionEnabled = true
-//        btn2.addGestureRecognizer(tapGesture2)
+         //Add tap gesture recognizer to btn2
+        let tapGesture2 = UITapGestureRecognizer(target: self, action: #selector(btn2Tapped))
+        btn2.isUserInteractionEnabled = true
+        btn2.addGestureRecognizer(tapGesture2)
 
 
     }

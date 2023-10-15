@@ -161,22 +161,29 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let size = fromCountLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
         fromCountLabel.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
         
-        let rightBarItem2 = UIBarButtonItem()
-        rightBarItem2.customView = fromCountLabel
-        rightBarItem2.width = size.width + 20 - 10
+        let fromCountItem = UIBarButtonItem()
+        fromCountItem.customView = fromCountLabel
+        fromCountItem.width = size.width + 20 - 10
 
         let heartImage = UIImageView(image: UIImage(named: "Property 28"))
         heartImage.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        let rightBarItem3 = UIBarButtonItem()
-        rightBarItem3.customView = heartImage
-        rightBarItem3.width = 32 + 10
+        let heartImageItem = UIBarButtonItem()
+        heartImageItem.customView = heartImage
+        heartImageItem.width = 32 + 10
 
         let space = UIImageView(image: UIImage())
         space.frame = CGRect(x: 0, y: 0, width: 2, height: 0)
         let spacer = UIBarButtonItem()
         spacer.customView = space
 
-        self.navigationItem.rightBarButtonItems = [spacer, rightBarItem2, rightBarItem3]
+        let bellButton = UIButton()
+        bellButton.setImage(UIImage(named: "icn_bell"), for: .normal)
+        bellButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let bellItem = UIBarButtonItem()
+        bellItem.customView = bellButton
+        bellItem.width = 32 + 10
+        
+        self.navigationItem.rightBarButtonItems = [bellItem, spacer, fromCountItem, heartImageItem]
         
         let leftItem = UIImageView(image: UIImage(named: "logotypo"))
         leftItem.frame = CGRect(x: 0, y: 0, width: 65, height: 18)

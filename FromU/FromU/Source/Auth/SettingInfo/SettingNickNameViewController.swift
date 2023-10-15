@@ -100,6 +100,7 @@ class SettingNickNameViewController: UIViewController {
         
         nickNameTextField.layer.addSublayer(bottomBorder)
         
+        nickNameTextField.font = .BalsamTint( .size22)
         
         nextBtn.layer.cornerRadius = 8
         

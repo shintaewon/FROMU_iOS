@@ -151,6 +151,10 @@ class SettingBirthDayViewController: UIViewController {
         monthTextField.delegate = self
         dayTextField.delegate = self
         
+        yearTextField.font = .BalsamTint( .size22)
+        monthTextField.font = .BalsamTint( .size22)
+        dayTextField.font = .BalsamTint( .size22)
+        
         //화면 어딘가를 눌렀을때 키보드 내리기
         dismissKeyboardWhenTappedAround()
         

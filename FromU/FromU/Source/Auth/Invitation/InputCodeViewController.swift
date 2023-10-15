@@ -83,6 +83,7 @@ class InputCodeViewController: UIViewController {
         
         codeTextField.delegate = self
         
+        codeTextField.font = .BalsamTint(.size22)
         //화면 어딘가를 눌렀을때 키보드 내리기
         dismissKeyboardWhenTappedAround()
         
@@ -162,32 +163,33 @@ extension InputCodeViewController{
                     let response = try data.map(InputPartnerCodeResponse.self)
                     
                     print(response)
-                    //일단 엔드포인트 호출 성공
-                    if response.isSuccess == true{
+                    
+                    //코드 잘못 입력한겨
+                    if response.code == 4001 {
+                        self.showToast(message: "존재하지 않는 코드를 입력했어!", font: .BalsamTint(.size18))
+                    }
+                    //이미 커플 매칭 완료.. 바람..?
+                    else if response.code == 2020 {
                         
-                        //코드 잘못 입력한겨
-                        if response.code == 4001 {
-                            self.showToast(message: "존재하지 않는 코드를 입력했어!", font: UIFont.Pretendard(.regular, size: 14))
-                        }
-                        //이미 커플 매칭 완료.. 바람..?
-                        else if response.code == 2020 {
-                            
-                            self.showToast(message: "이미 커플 매칭이 완료된 유저입니다.", font: UIFont.Pretendard(.regular, size: 14))
-                        }
-                        //매칭 성공
-                        else if response.code == 1000 {
-                            
-                            UserDefaults.standard.set(response.result?.partnerNickname, forKey: "partnerNickName")
-                            
-                            UserDefaults.standard.set(response.result?.nickname, forKey: "nickName")
-                            
-                            KeychainWrapper.standard.set(response.result?.coupleID ?? 0, forKey: "coupleID")
-                                                        
-                            let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
-                            guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
-                
-                            self.navigationController?.pushViewController(vc, animated: true)
-                        }
+                        self.showToast(message: "이미 커플 매칭이 완료된 유저입니다.", font: .BalsamTint( .size18))
+                    }
+                    //매칭 성공
+                    else if response.code == 1000 {
+                        
+                        UserDefaults.standard.set(response.result?.partnerNickname, forKey: "partnerNickName")
+                        
+                        UserDefaults.standard.set(response.result?.nickname, forKey: "nickName")
+                        
+                        KeychainWrapper.standard.set(response.result?.coupleID ?? 0, forKey: "coupleID")
+                                                    
+                        let storyboard = UIStoryboard(name: "MatchingComplete", bundle: nil)
+                        guard let vc = storyboard.instantiateViewController(withIdentifier: "MatchingCompleteViewController") as? MatchingCompleteViewController else{ return }
+            
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    //이상 오류
+                    else{
+                        self.showToast(message: response.message, font: .BalsamTint( .size18))
                     }
                     
             
@@ -205,8 +207,8 @@ extension InputCodeViewController{
 //Toast Message를 위한 클래스 extension(코드길이가 길어서 밑에 빼둠)
 extension InputCodeViewController{
     
-    func showToast(message : String, font: UIFont) {
-        let toastLabel = UILabel(frame: CGRect(x: explainLabel.layer.frame.origin.x, y: explainLabel.layer.frame.origin.y - 94, width: self.view.frame.width - explainLabel.layer.frame.origin.x * 2 , height: 52))
+    func showToast(message: String, font: UIFont) {
+        let toastLabel = UILabel()
         toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
         toastLabel.textColor = UIColor.white
         toastLabel.font = font
@@ -214,13 +216,23 @@ extension InputCodeViewController{
         toastLabel.text = message
         toastLabel.alpha = 1.0
         toastLabel.layer.cornerRadius = 4
-        toastLabel.clipsToBounds  =  true
+        toastLabel.clipsToBounds = true
+        
         self.view.addSubview(toastLabel)
-        UIView.animate(withDuration: 5.0, delay: 0.1, options: .curveEaseOut,animations: {
+        
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            toastLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 44),
+            toastLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            toastLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            toastLabel.heightAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
-            }, completion: {(isCompleted) in
-                toastLabel.removeFromSuperview()
-            })
-        }
+        }, completion: { (isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
 }
 

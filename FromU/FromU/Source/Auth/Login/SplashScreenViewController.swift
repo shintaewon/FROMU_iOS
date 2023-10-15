@@ -38,7 +38,7 @@ class SplashScreenViewController: UIViewController {
         
         inputAnimation()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.8) { [weak self] in
             
             //자동로그인되어있으면 바로 홈으로
             if self?.isLoggedIn() == true {
@@ -97,6 +97,8 @@ class SplashScreenViewController: UIViewController {
     func inputAnimation() {
         let explainString = "당신으로부터,"
         var index = 0
+        
+        explainLabel.font = .BalsamTint( .size22)
         
         Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true) { timer in
             if index < explainString.count {

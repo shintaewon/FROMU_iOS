@@ -17,7 +17,7 @@
 
 네이티브 앱으로 제작되었고 사용자들과 소통을 위한 인스타, 노션도 운영중입니다.
 ```
-# [기능 명세서](https://www.figma.com/file/LNBqy6BbZoLmvTrbsaGqCD/FROMU-%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C?type=design&node-id=0%3A1&mode=design&t=wNuAKNeo1WuSAx4S-1)
+## [기능 명세서](https://www.figma.com/file/LNBqy6BbZoLmvTrbsaGqCD/FROMU-%EA%B8%B0%EB%8A%A5-%EB%AA%85%EC%84%B8%EC%84%9C?type=design&node-id=0%3A1&mode=design&t=wNuAKNeo1WuSAx4S-1)
 
 ## Develop Tag 
 

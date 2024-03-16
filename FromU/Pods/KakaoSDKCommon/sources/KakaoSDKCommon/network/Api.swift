@@ -16,10 +16,14 @@ import Foundation
 import UIKit
 import Alamofire
 
-/// :nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public let API = Api.shared
 
-/// :nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public enum SessionType {
     case Auth       //KA
     case Api        //KA
@@ -33,7 +37,9 @@ public enum SessionType {
 //    case KAuth
 //}
 
-/// :nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public class Api {
     public static let shared = Api()
     
@@ -47,15 +53,14 @@ public class Api {
     }
 }
 
-/// :nodoc:
 extension Api {    
     private func initSession() {
         let apiSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
-        apiSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        apiSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         addSession(type: .Api, session:Session(configuration: apiSessionConfiguration, interceptor: ApiRequestAdapter()))
         
         let authSessionConfiguration : URLSessionConfiguration = URLSessionConfiguration.default
-        authSessionConfiguration.tlsMinimumSupportedProtocol = .tlsProtocol12
+        authSessionConfiguration.tlsMinimumSupportedProtocolVersion = .TLSv12
         addSession(type: .Auth, session:Session(configuration: authSessionConfiguration, interceptor: ApiRequestAdapter()))
     }
     
@@ -64,7 +69,7 @@ extension Api {
             self.sessions[type] = session
         }
         
-//        SdkLog.d("<<<<<<< sessions: \(self.sessions)   count: \(self.sessions.count)")
+        //        SdkLog.d("<<<<<<< sessions: \(self.sessions)   count: \(self.sessions.count)")
     }
     
     public func session(_ sessionType: SessionType) -> Session {
@@ -72,7 +77,6 @@ extension Api {
     }
 }
 
-/// :nodoc:
 extension Api {
     public func getSdkError(error: Error) -> SdkError? {
         if let aferror = error as? AFError {
@@ -84,6 +88,8 @@ extension Api {
                 default:
                     break
                 }
+            case .requestAdaptationFailed(let error):
+                return error as? SdkError
             default:
                 break
             }
@@ -104,13 +110,13 @@ extension Api {
     }
     
     public func responseData(_ HTTPMethod: Alamofire.HTTPMethod,
-                      _ url: String,
-                      parameters: [String: Any]? = nil,
-                      headers: [String: String]? = nil,
-                      sessionType: SessionType = .AuthApi,
-                      apiType: ApiType,
-                      logging: Bool = true,
-                      completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
+                             _ url: String,
+                             parameters: [String: Any]? = nil,
+                             headers: [String: String]? = nil,
+                             sessionType: SessionType = .AuthApi,
+                             apiType: ApiType,
+                             logging: Bool = true,
+                             completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
         
         API.session(sessionType)
             .request(url, method:HTTPMethod, parameters:parameters, encoding:API.encoding, headers:(headers != nil ? HTTPHeaders(headers!):nil) )
@@ -176,7 +182,7 @@ extension Api {
                        sessionType: SessionType = .AuthApi,   //현재 authapi인 story만 쓰고 있고 나중을 위해 열어둠
                        apiType: ApiType,
                        completion: @escaping (HTTPURLResponse?, Data?, Error?) -> Void) {
-
+        
         API.session(sessionType)
             .upload(multipartFormData: { (formData) in
                 images.forEach({ (image) in

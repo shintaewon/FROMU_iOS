@@ -22,19 +22,17 @@
 ## Develop Tag 
 
 ```
-1. Jetpack Lib
-  * Compose
-  * Paging Compose
-  * Hilt
-  * Datastore
-  * RoomDB
-
-2. Compose Naver Map
-3. Coil
-4. Retrofit2
-5. Firebase Analytics and Crashlytics
-6. Oauth2 with Kakao
+1. KakaoSDK
+2. Moya
+3. SwiftKeychainWrapper
+4. FSCalendar
+5. Kingfisher
+6. lottie-ios
+7. Firebase/Messaging, Firebase/Analytics
 ```
 
+---
+
+## 세부설명 
 
 ![프롬유](https://github.com/shintaewon/FROMU_iOS/assets/53418280/65760827-a153-4968-ab48-d17828bbfc0a)

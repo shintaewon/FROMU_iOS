@@ -96,11 +96,10 @@ class SetMailBoxNameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        mainLabel.text = "둘만의 우편함 이름을 정해줄래?"
-        
+                
         decideBtn.isEnabled = false
         
+        mailboxNameTextField.font = .BalsamTint(.size22)
         mailboxNameTextField.delegate = self
         
         //화면 어딘가를 눌렀을때 키보드 내리기
@@ -243,6 +242,8 @@ extension SetMailBoxNameViewController{
                 
                             self.navigationController?.pushViewController(vc, animated: true)
                         }
+                    } else{
+                        self.showToast(message: response.message, font: UIFont.BalsamTint(.size18))
                     }
                     
                 } catch {
@@ -253,5 +254,35 @@ extension SetMailBoxNameViewController{
                 print("DEBUG>> setMailBoxName Error : \(error.localizedDescription)")
             }
         }
+    }
+}
+
+extension SetMailBoxNameViewController{
+    func showToast(message: String, font: UIFont) {
+        let toastLabel = UILabel()
+        toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds = true
+        
+        self.view.addSubview(toastLabel)
+        
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            toastLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 44),
+            toastLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            toastLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            toastLabel.heightAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: { (isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }

@@ -48,7 +48,6 @@ class SettingBirthDayViewController: UIViewController {
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        debugPrint("keyboardWillHide")
         self.bottomConstraint?.constant = -80
         self.view.layoutIfNeeded()
     }
@@ -70,9 +69,7 @@ class SettingBirthDayViewController: UIViewController {
         else{
             completeBirthDay = completeBirthDay + (dayTextField.text ?? "")
         }
-        
-//        print(completeBirthDay)
-        
+                
         UserDefaults.standard.set(completeBirthDay, forKey: "birthDay")
 
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SettingGenderViewController") as? SettingGenderViewController else {return}
@@ -153,6 +150,10 @@ class SettingBirthDayViewController: UIViewController {
         yearTextField.delegate = self
         monthTextField.delegate = self
         dayTextField.delegate = self
+        
+        yearTextField.font = .BalsamTint( .size22)
+        monthTextField.font = .BalsamTint( .size22)
+        dayTextField.font = .BalsamTint( .size22)
         
         //화면 어딘가를 눌렀을때 키보드 내리기
         dismissKeyboardWhenTappedAround()

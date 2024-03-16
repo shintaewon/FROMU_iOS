@@ -7,7 +7,10 @@
 
 import UIKit
 
+import FirebaseCore
+import Firebase
 import KakaoSDKCommon
+import SwiftKeychainWrapper
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +20,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        //푸시알림 설정
+        if #available(iOS 12.0, *) {
+            UNUserNotificationCenter.current().requestAuthorization(
+                options: [.alert, .sound, .badge, .providesAppNotificationSettings], completionHandler: { didAllow,Error in
+            })
+        } else {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: {didAllow,Error in
+                print(didAllow)
+            })
+        }
+        UNUserNotificationCenter.current().delegate = self
+        
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        
+        application.registerForRemoteNotifications()
+        
+        
+        
+        //백버튼 없애주기
         UIBarButtonItem.appearance().setBackButtonTitlePositionAdjustment(UIOffset(horizontal: -1000, vertical: 0), for: .default)
         
+        
+        //카카오 SDK 등록
         KakaoSDK.initSDK(appKey: "c36fb0ce439b3a9e9be9673d048dadb4")
         
         return true
@@ -38,6 +63,41 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate, MessagingDelegate {
+    
+    public func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
+        Messaging.messaging().token { token, error in
+          if let error = error {
+            print("Error fetching FCM registration token: \(error)")
+          } else if let token = token {
+              
+              print("FCM registration token: \(token)")
+              KeychainWrapper.standard.set(token, forKey: "FCMToken")
+  
+          }
+        }
+    }
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        let userInfo = notification.request.content.userInfo
+        
+        // 알림 내용을 콘솔에 출력합니다.
+        print("Received Push Notification while in foreground: \(userInfo)")
+        
+        completionHandler([.alert, .badge, .sound])
+    }
+
+    
+    public func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        let userInfo = response.notification.request.content.userInfo
+        
+        // 알림 내용을 콘솔에 출력합니다.
+        print("Received Push Notification: \(userInfo)")
+        
+        completionHandler()
+    }
 
 }
 

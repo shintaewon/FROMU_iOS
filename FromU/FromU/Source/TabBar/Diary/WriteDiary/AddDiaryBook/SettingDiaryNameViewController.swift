@@ -88,6 +88,7 @@ class SettingDiaryNameViewController: UIViewController {
         
         nextBtn.isEnabled = false
         
+        diaryNameTextField.font = .BalsamTint( .size22)
         diaryNameTextField.delegate = self
         
         //화면 어딘가를 눌렀을때 키보드 내리기

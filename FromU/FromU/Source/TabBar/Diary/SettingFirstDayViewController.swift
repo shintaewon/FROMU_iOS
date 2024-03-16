@@ -148,6 +148,11 @@ class SettingFirstDayViewController: UIViewController {
         
         nextBtn.isEnabled = false
         
+        
+        yearTextField.font = .BalsamTint( .size22)
+        monthTextField.font = .BalsamTint( .size22)
+        dayTextField.font = .BalsamTint( .size22)
+        
         yearTextField.delegate = self
         monthTextField.delegate = self
         dayTextField.delegate = self
@@ -185,7 +190,15 @@ class SettingFirstDayViewController: UIViewController {
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
 
         navigationController?.navigationBar.tintColor = .icon
+        
+        self.tabBarController?.tabBar.isHidden = true
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        
+        self.tabBarController?.tabBar.isHidden = false
+    }
+    
 }
 
 extension SettingFirstDayViewController: UITextFieldDelegate{

@@ -7,9 +7,14 @@
 
 import UIKit
 
+protocol CalendarBottomSheetViewControllerDelegate: AnyObject {
+    func didUpdateCalendar()
+}
+
 class CalendarBottomSheetViewController: UIViewController {
     
     // MARK: - Properties
+    weak var delegate: CalendarBottomSheetViewControllerDelegate?
     // 바텀 시트 높이
     let bottomHeight: CGFloat = 320
     
@@ -17,7 +22,7 @@ class CalendarBottomSheetViewController: UIViewController {
 
     var selectedDate: Date?
     var data: [GetCalendarSchedulesResult] = []
-    
+    var specificDateString = ""
     // bottomSheet가 view의 상단에서 떨어진 거리
     private var bottomSheetViewTopConstraint: NSLayoutConstraint!
     
@@ -200,9 +205,9 @@ class CalendarBottomSheetViewController: UIViewController {
             formatter.dateFormat = "dd"
             let dateString = formatter.string(from: date)
             
-            print("monthString:", monthString)
-            print("dateString:", dateString)
+
             getSpecificCalendarSchedules(month: monthString, date: dateString)
+            specificDateString = monthString + dateString
         }
     }
     
@@ -229,6 +234,7 @@ class CalendarBottomSheetViewController: UIViewController {
             self.view.layoutIfNeeded()
         }) { _ in
             if self.presentingViewController != nil {
+                self.delegate?.didUpdateCalendar()
                 self.dismiss(animated: false, completion: nil)
             }
         }
@@ -332,17 +338,39 @@ class CalendarBottomSheetViewController: UIViewController {
     
     @objc private func addScheduleButtonTapped() {
         
-        let vc = PlusCalendarUIViewController()
+        let vc = PlusCalendarViewController()
+        vc.dateString = specificDateString
+        vc.delegate = self
         self.present(vc, animated: true)
         
     }
 
-    @objc func handleEditButtonTap() {
-        print("Edit button tapped!")
+    @objc func handleEditButtonTap(sender: UIButton) {
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
+        guard let indexPath = self.tableView.indexPathForRow(at: buttonPosition) else { return }
+        
+        // indexPath를 이용해 data 배열에서 해당 일정의 content와 scheduleId를 얻음
+        let scheduleContent = String(data[indexPath.row].content)
+        let scheduleId = String(data[indexPath.row].scheduleID)
+        
+        let vc = EditScheduleViewController()
+        vc.dateString = specificDateString
+        vc.delegate = self
+        vc.scheduleContent = scheduleContent
+        vc.scheduleId = scheduleId
+        self.present(vc, animated: true)
     }
 
-    @objc func handleDeleteButtonTap() {
-        print("Delete button tapped!")
+    @objc func handleDeleteButtonTap(sender: UIButton) {
+        // sender가 속한 cell을 찾아 indexPath를 얻음
+        let buttonPosition = sender.convert(CGPoint.zero, to: self.tableView)
+        guard let indexPath = self.tableView.indexPathForRow(at: buttonPosition) else { return }
+        
+        // indexPath를 이용해 data 배열에서 해당 일정의 scheduleId를 얻습니다.
+        let scheduleId = String(data[indexPath.row].scheduleID)
+        
+        // scheduleId를 이용해 해당 일정을 삭제합니다.
+        deleteSchedules(scheduleId: scheduleId)
     }
 }
 
@@ -382,18 +410,25 @@ extension CalendarBottomSheetViewController{
             case .success(let data):
                 do {
                     let response = try data.map(GetCalendarSchedulesResponse.self)
-                    self.data = response.result.compactMap { $0 }
-                    if self.data.count > 0 {
-                        // 여기서 버튼을 테이블뷰의 footer로 설정
-                        self.tableView.tableFooterView = self.createAddScheduleButton()
+                    DispatchQueue.main.async {
+                        self.data = response.result.compactMap { $0 }
+                        if self.data.count > 0 {
+                            // 여기서 버튼을 테이블뷰의 footer로 설정
+                            self.tableView.isHidden = false
+                            self.defaultImageView.isHidden = true
+                            self.emptyLabel.isHidden = true
+                            self.plusCalendarButton.isHidden = true
+                            
+                            self.tableView.tableFooterView = self.createAddScheduleButton()
+                        }
+                        else{
+                            self.tableView.isHidden = true
+                            self.defaultImageView.isHidden = false
+                            self.emptyLabel.isHidden = false
+                            self.plusCalendarButton.isHidden = false
+                        }
+                        self.tableView.reloadData()
                     }
-                    else{
-                        self.tableView.isHidden = true
-                        self.defaultImageView.isHidden = false
-                        self.emptyLabel.isHidden = false
-                        self.plusCalendarButton.isHidden = false
-                    }
-                    self.tableView.reloadData()
                 } catch {
                     print(error)
                 }
@@ -403,4 +438,51 @@ extension CalendarBottomSheetViewController{
         }
     }
 
+    private func deleteSchedules(scheduleId: String) {
+        ScheduleAPI.providerSchedule.request(.deleteSchedule(scheduleId: scheduleId)) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let response = try data.map(DeleteScheduleResponse.self)
+                    
+                    if response.code == 1000{
+                        DispatchQueue.main.async {
+                            
+                            if let date = self.selectedDate {
+                                let formatter = DateFormatter()
+                                formatter.dateFormat = "YYYYMM"
+                                let monthString = formatter.string(from: date)
+                                formatter.dateFormat = "dd"
+                                let dateString = formatter.string(from: date)
+                                
+                                self.getSpecificCalendarSchedules(month: monthString, date: dateString)
+                            }
+
+                        }
+                    }
+    
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print("DEBUG>> getSpecificCalendarSchedules Error : \(error.localizedDescription)")
+            }
+        }
+    }
+}
+
+extension CalendarBottomSheetViewController: PlusCalendarViewControllerDelegate {
+    func didUpdateSchedule() {
+        DispatchQueue.main.async {
+            if let date = self.selectedDate {
+                let formatter = DateFormatter()
+                formatter.dateFormat = "YYYYMM"
+                let monthString = formatter.string(from: date)
+                formatter.dateFormat = "dd"
+                let dateString = formatter.string(from: date)
+                
+                self.getSpecificCalendarSchedules(month: monthString, date: dateString)
+            }
+        }
+    }
 }

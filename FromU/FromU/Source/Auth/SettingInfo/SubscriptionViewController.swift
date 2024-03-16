@@ -110,13 +110,16 @@ class SubscriptionViewController: UIViewController {
         nickNameLabel.text = ""
         helloLabel.text = ""
         
-        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue]
+        let underlineAttribute = [
+                NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue,
+                NSAttributedString.Key.foregroundColor: UIColor.black // 여기에 검은색을 지정
+        ] as [NSAttributedString.Key : Any]
         
-        let attributedString1 = NSMutableAttributedString(string: subsBtn1.currentTitle!, attributes: underlineAttribute)
+        let attributedString1 = NSMutableAttributedString(string: "(필수)이용약관", attributes: underlineAttribute)
         
         subsBtn1.setAttributedTitle(attributedString1, for: .normal)
         
-        let attributedString2 = NSMutableAttributedString(string: subsBtn2.currentTitle!, attributes: underlineAttribute)
+        let attributedString2 = NSMutableAttributedString(string: "(필수)개인 정보 수집/이용 동의", attributes: underlineAttribute)
         
         subsBtn2.setAttributedTitle(attributedString2, for: .normal)
         
@@ -152,6 +155,35 @@ class SubscriptionViewController: UIViewController {
             }
         }
     }
+    
+    func showToast(message: String, font: UIFont) {
+        let toastLabel = UILabel()
+        toastLabel.backgroundColor = UIColor(red: 0.167, green: 0.167, blue: 0.167, alpha: 1)
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .center
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds = true
+        
+        self.view.addSubview(toastLabel)
+        
+        toastLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            toastLabel.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 44),
+            toastLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
+            toastLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
+            toastLabel.heightAnchor.constraint(equalToConstant: 48)
+        ])
+        
+        UIView.animate(withDuration: 2.5, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: { (isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
+    }
+
 }
 
 
@@ -191,14 +223,12 @@ extension SubscriptionViewController{
                     if response.isSuccess == true{
                         if response.code == 1000 {
                             
-                            UserDefaults.standard.set(response.result.userCode, forKey: "userCode")
-                            
-                            let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
-                    
-                            guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
-                    
-                            self.navigationController?.pushViewController(vc, animated: true)
+                            UserDefaults.standard.set(response.result?.userCode, forKey: "userCode")
+                            KeychainWrapper.standard.set(response.result?.jwt ?? "", forKey: "X-ACCESS-TOKEN")
+                            self.registerFCMToken()
                         }
+                    } else{
+                        self.showToast(message: response.message, font: .BalsamTint( .size18))
                     }
                     
                 } catch {
@@ -207,6 +237,32 @@ extension SubscriptionViewController{
 
             case .failure(let error):
                 print("DEBUG>> signUpFromU Error : \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func registerFCMToken(){
+        UserAPI.providerUser.request( .registerFCMToken(deviceToken: KeychainWrapper.standard.string(forKey: "FCMToken") ?? "")){ [weak self] result in
+            guard let self = self else { return }
+                
+            switch result {
+            case .success(let data):
+                do{
+                    let response = try data.map(RegisterTokenResponse.self)
+                    print(response)
+                    if response.code == 1000{
+                        let storyboard = UIStoryboard(name: "Invitation", bundle: nil)
+                
+                        guard let vc = storyboard.instantiateViewController(withIdentifier: "InvitationViewController") as? InvitationViewController else {return}
+                
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                } catch {
+                    print(error)
+                }
+
+            case .failure(let error):
+                print("DEBUG>> getUserInfoWithUserID Error : \(error.localizedDescription)")
             }
         }
     }

@@ -106,7 +106,7 @@ extension InvitationViewController{
                     //일단 엔드포인트 호출 성공
                     if response.isSuccess == true{
                         if response.result?.match == false {
-                            self.showToast(message: "연인과의 연결이 완료되지 않았어!", font: UIFont.Pretendard(.regular, size: 14))
+                            self.showToast(message: "연인과의 연결이 완료되지 않았어!", font: .BalsamTint(.size18))
                         }
                         else{
                             UserDefaults.standard.set(response.result?.coupleRes?.partnerNickname, forKey: "partnerNickName")
@@ -126,7 +126,9 @@ extension InvitationViewController{
                             }
                             else{//새로고침했는데 상대방이 연결은 했는데 메일박스 이름 설정은 안해놓음 -> 이름 설정하러 고고
                                 
-                                guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "SetMailBoxNameViewController") as? SetMailBoxNameViewController else {return}
+                                let storyboard  = UIStoryboard(name: "SetMailBoxName", bundle: nil)
+                                
+                                guard let vc = storyboard.instantiateViewController(withIdentifier: "SetMailBoxNameViewController") as? SetMailBoxNameViewController else {return}
                         
                                 self.navigationController?.pushViewController(vc, animated: true)
                             }

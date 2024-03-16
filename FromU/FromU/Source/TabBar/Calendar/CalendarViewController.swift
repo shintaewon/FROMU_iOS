@@ -16,6 +16,8 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     
     private var calendarEventDates = [Date]()
     
+    private var monthString: String = ""
+    
     let fromCountLabel = UILabel()
 
     lazy private var plusPlanButtonContainer: UIView = {
@@ -62,6 +64,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        print("viewWillAppear")
     }
 
     // MARK: - UI Setup
@@ -120,7 +123,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let today = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYYMM"
-        let monthString = formatter.string(from: today)
+        monthString = formatter.string(from: today)
         
         // 원하는 형식의 문자열로 변환된 month를 사용하여 getSpecificCalendarSchedules 메서드 호출
         getSpecificCalendarSchedules(month: monthString, date: "")
@@ -130,6 +133,11 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
     @objc private func plusPlanButtonTapped() {
         let bottomSheetVC = CalendarBottomSheetViewController()
         bottomSheetVC.modalPresentationStyle = .overFullScreen
+        bottomSheetVC.delegate = self
+        
+        let currentDate = Date()
+        bottomSheetVC.selectedDate = currentDate
+        
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 
@@ -153,22 +161,29 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let size = fromCountLabel.sizeThatFits(CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude))
         fromCountLabel.frame = CGRect(x: 0, y: 0, width: size.width + 20, height: 20)
         
-        let rightBarItem2 = UIBarButtonItem()
-        rightBarItem2.customView = fromCountLabel
-        rightBarItem2.width = size.width + 20 - 10
+        let fromCountItem = UIBarButtonItem()
+        fromCountItem.customView = fromCountLabel
+        fromCountItem.width = size.width + 20 - 10
 
         let heartImage = UIImageView(image: UIImage(named: "Property 28"))
         heartImage.frame = CGRect(x: 0, y: 0, width: 32, height: 32)
-        let rightBarItem3 = UIBarButtonItem()
-        rightBarItem3.customView = heartImage
-        rightBarItem3.width = 32 + 10
+        let heartImageItem = UIBarButtonItem()
+        heartImageItem.customView = heartImage
+        heartImageItem.width = 32 + 10
 
         let space = UIImageView(image: UIImage())
         space.frame = CGRect(x: 0, y: 0, width: 2, height: 0)
         let spacer = UIBarButtonItem()
         spacer.customView = space
 
-        self.navigationItem.rightBarButtonItems = [spacer, rightBarItem2, rightBarItem3]
+        let bellButton = UIButton()
+        bellButton.setImage(UIImage(named: "icn_bell"), for: .normal)
+        bellButton.frame = CGRect(x: 0, y: 0, width: 36, height: 36)
+        let bellItem = UIBarButtonItem()
+        bellItem.customView = bellButton
+        bellItem.width = 32 + 10
+        
+        self.navigationItem.rightBarButtonItems = [bellItem, spacer, fromCountItem, heartImageItem]
         
         let leftItem = UIImageView(image: UIImage(named: "logotypo"))
         leftItem.frame = CGRect(x: 0, y: 0, width: 65, height: 18)
@@ -202,7 +217,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let firstDayOfMonth = calendar.currentPage
         let formatter = DateFormatter()
         formatter.dateFormat = "YYYYMM"
-        let monthString = formatter.string(from: firstDayOfMonth)
+        monthString = formatter.string(from: firstDayOfMonth)
         
         // 원하는 형식의 문자열로 변환된 month를 사용하여 getSpecificCalendarSchedules 메서드 호출
         getSpecificCalendarSchedules(month: monthString, date: "")
@@ -212,6 +227,7 @@ class CalendarViewController: UIViewController, FSCalendarDelegate, FSCalendarDa
         let bottomSheetVC = CalendarBottomSheetViewController()
         bottomSheetVC.selectedDate = date
         bottomSheetVC.modalPresentationStyle = .overFullScreen
+        bottomSheetVC.delegate = self
         self.present(bottomSheetVC, animated: false, completion: nil)
     }
 }
@@ -224,8 +240,10 @@ extension CalendarViewController{
             case .success(let data):
                 do {
                     let response = try data.map(FromCountResponse.self)
-                    self.fromCountLabel.text = "\(response.result)"
-                    print(response)
+                    DispatchQueue.main.async {
+                        self.fromCountLabel.text = "\(response.result)"
+                        print(response)
+                    }
                 } catch {
                     print(error)
                 }
@@ -241,20 +259,22 @@ extension CalendarViewController{
             case .success(let data):
                 do {
                     let response = try data.map(GetCalendarSchedulesResponse.self)
-                    print(response)
 
-                    // Date formatter 설정
-                    let dateFormatter = DateFormatter()
-                    dateFormatter.dateFormat = "yyyyMMdd"
+                    DispatchQueue.main.async {
+                        // Date formatter 설정
+                        let dateFormatter = DateFormatter()
+                        dateFormatter.dateFormat = "yyyyMMdd"
 
-                    // 날짜 데이터 추출 후 Date 객체로 변환
-                    for schedule in response.result {
-                        if let dateString = schedule?.date, let date = dateFormatter.date(from: dateString) {
-                            self.calendarEventDates.append(date)
+                        // 날짜 데이터 추출 후 Date 객체로 변환
+                        self.calendarEventDates.removeAll() // 기존의 날짜 데이터를 제거한 후 새로운 데이터를 추가
+                        for schedule in response.result {
+                            if let dateString = schedule?.date, let date = dateFormatter.date(from: dateString) {
+                                self.calendarEventDates.append(date)
+                            }
                         }
+                        // 이벤트가 추가된 후 FSCalendar 갱신
+                        self.calendarView.reloadData()
                     }
-                    // 이벤트가 추가된 후 FSCalendar 갱신
-                    self.calendarView.reloadData()
 
                 } catch {
                     print(error)
@@ -265,4 +285,14 @@ extension CalendarViewController{
         }
     }
     
+}
+
+extension CalendarViewController: CalendarBottomSheetViewControllerDelegate {
+    func didUpdateCalendar() {
+        DispatchQueue.main.async {
+            // 원하는 형식의 문자열로 변환된 month를 사용하여 getSpecificCalendarSchedules 메서드 호출
+            print("monthString: ", self.monthString)
+            self.getSpecificCalendarSchedules(month: self.monthString, date: "")
+        }
+    }
 }

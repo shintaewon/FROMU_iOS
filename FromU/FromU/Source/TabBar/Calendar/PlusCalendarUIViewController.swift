@@ -1,14 +1,21 @@
 //
-//  PlusCalendarUIViewController.swift
+//  PlusCalendarViewController.swift
 //  FromU
 //
 //  Created by 신태원 on 2023/09/13.
 //
 import UIKit
 
-class PlusCalendarUIViewController: UIViewController {
+protocol PlusCalendarViewControllerDelegate: AnyObject {
+    func didUpdateSchedule()
+}
+
+class PlusCalendarViewController: UIViewController {
 
     // MARK: - Properties
+    weak var delegate: PlusCalendarViewControllerDelegate?
+    var dateString = ""
+    
     private let handleView: UIView = {
         let view = UIView()
         view.backgroundColor = .disabled
@@ -41,6 +48,7 @@ class PlusCalendarUIViewController: UIViewController {
         let textField = UITextField()
         textField.borderStyle = .none
         textField.addTarget(self, action: #selector(textFieldTextChanged), for: .editingChanged)
+        textField.font = UIFont.BalsamTint( .size22)
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
     }()
@@ -78,6 +86,8 @@ class PlusCalendarUIViewController: UIViewController {
         return button
     }()
     
+    private var completeButtonBottomConstraint: NSLayoutConstraint!
+
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,6 +113,7 @@ class PlusCalendarUIViewController: UIViewController {
         setupTextField()
         setupBottomBorderBorder()
         setupLimitTextLabel()
+        setupCompleteButton()
     }
     
     func setupActions() {
@@ -112,6 +123,10 @@ class PlusCalendarUIViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
         
         textField.delegate = self
+        
+        // 키보드의 등장과 소멸에 대한 알림을 등록합니다.
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     func setupNavigation() {
@@ -128,6 +143,30 @@ class PlusCalendarUIViewController: UIViewController {
     @objc private func dismissButtonTapped() {
         self.dismiss(animated: true)
     }
+    // MARK: - Actions
+    @objc private func keyboardWillShow(notification: Notification) {
+        guard let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect else { return }
+        
+        let keyboardHeight = keyboardFrame.height
+        completeButtonBottomConstraint.constant = -(keyboardHeight + 24)
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    @objc private func keyboardWillHide(notification: Notification) {
+        completeButtonBottomConstraint.constant = -58
+        
+        UIView.animate(withDuration: 0.3) {
+            self.view.layoutIfNeeded()
+        }
+    }
+
+    deinit {
+        // 객체가 해제될 때 알림을 해제합니다.
+        NotificationCenter.default.removeObserver(self)
+    }
     
     @objc private func textFieldTextChanged(_ textField: UITextField) {
         if let text = textField.text, text.isEmpty {
@@ -142,13 +181,7 @@ class PlusCalendarUIViewController: UIViewController {
     }
     
     @objc private func completeButtonTapped() {
-        
-        let vc = ConfirmSendReviewAlertViewController()
-        vc.modalPresentationStyle = .overCurrentContext
-        vc.modalTransitionStyle = .crossDissolve
-
-        self.present(vc, animated: true, completion: nil)
-
+        plusCalendarSchedules(content: textField.text ?? "None" , date: dateString)
     }
     
     // MARK: - Helpers
@@ -224,10 +257,44 @@ class PlusCalendarUIViewController: UIViewController {
             limitTextLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
     }
+    
+    private func setupCompleteButton() {
+        view.addSubview(completeButton)
+        
+        completeButtonBottomConstraint = completeButton.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -58)
+        completeButtonBottomConstraint.isActive = true
+
+        NSLayoutConstraint.activate([
+            completeButton.heightAnchor.constraint(equalToConstant: 56),
+            completeButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
+            completeButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
+        ])
+    }
+    
+    private func plusCalendarSchedules(content: String, date: String) {
+        ScheduleAPI.providerSchedule.request(.plusSchedule(content: content, date: date)) { result in
+            switch result {
+            case .success(let data):
+                do {
+                    let response = try data.map(PlusScheduleResponse.self)
+                    
+                    if response.code == 1000{
+                        self.delegate?.didUpdateSchedule()
+                        self.dismiss(animated: true)
+                    }
+                    
+                } catch {
+                    print(error)
+                }
+            case .failure(let error):
+                print("DEBUG>> getSpecificCalendarSchedules Error : \(error.localizedDescription)")
+            }
+        }
+    }
 }
 
 // MARK: - UITextFieldDelegate
-extension PlusCalendarUIViewController: UITextFieldDelegate {
+extension PlusCalendarViewController: UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentText = textField.text ?? ""
         guard let stringRange = Range(range, in: currentText) else { return false }
@@ -236,4 +303,16 @@ extension PlusCalendarUIViewController: UITextFieldDelegate {
         
         return updatedText.count <= 20 // Limit to 20 characters
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        bottomBorderView.backgroundColor = UIColor.primary01
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if let text = textField.text, text.isEmpty {
+            bottomBorderView.backgroundColor = UIColor(hex: 0xDEDEE2)
+        }
+    }
 }
+
+

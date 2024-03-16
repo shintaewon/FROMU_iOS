@@ -25,6 +25,12 @@ enum UserService{
     
     case refreshToken
     
+    case getUserInfo(userId: String)
+    
+    case updateUserInfo(typeNum: String, string: String)
+    
+    case registerFCMToken(deviceToken: String)
+    
 }
 
 extension UserService: TargetType{
@@ -53,7 +59,15 @@ extension UserService: TargetType{
             
         case .refreshToken:
             return "/refreshToken"
+            
+        case .getUserInfo(let userId):
+            return "/\(userId)"
 
+        case .updateUserInfo(let typeNum, _):
+            return "/\(typeNum)"
+            
+        case .registerFCMToken:
+            return "/deviceToken"
         }
         
     }
@@ -77,6 +91,15 @@ extension UserService: TargetType{
             
         case .refreshToken:
             return .post
+            
+        case .getUserInfo:
+            return .get
+            
+        case .updateUserInfo:
+            return .patch
+            
+        case .registerFCMToken:
+            return .patch
         }
         
     }
@@ -100,6 +123,14 @@ extension UserService: TargetType{
         case .refreshToken:
             return Task.requestPlain
 
+        case .getUserInfo:
+            return Task.requestPlain
+            
+        case .updateUserInfo(_, let string):
+            return .requestParameters(parameters: ["string": string], encoding: JSONEncoding.default)
+            
+        case .registerFCMToken(let deviceToken):
+            return .requestParameters(parameters: ["deviceToken": deviceToken], encoding: JSONEncoding.default)
         }
         
     }
@@ -123,6 +154,15 @@ extension UserService: TargetType{
             
         case .refreshToken:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "RefreshToken") ?? "" ]
+            
+        case .getUserInfo:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .updateUserInfo:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .registerFCMToken:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }
 }

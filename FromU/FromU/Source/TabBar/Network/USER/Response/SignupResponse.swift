@@ -12,7 +12,7 @@ struct SignupResponse: Codable {
     let code: Int
     let isSuccess: Bool
     let message: String
-    let result: SignupResult
+    let result: SignupResult?
 }
 
 // MARK: - Result

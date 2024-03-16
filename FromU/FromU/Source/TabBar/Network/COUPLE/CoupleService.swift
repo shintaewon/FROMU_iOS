@@ -23,6 +23,8 @@ enum CoupleService{
     case disConnect
     
     case buyStamp(stampNum: String)
+    
+    case getUserInfo(coupleId: String)
 }
 
 extension CoupleService: TargetType{
@@ -55,6 +57,9 @@ extension CoupleService: TargetType{
             
         case .buyStamp(let stampNum):
             return "/stamp/\(stampNum)"
+            
+        case .getUserInfo(let coupleId):
+            return "/\(coupleId)"
         }
         
     }
@@ -81,6 +86,9 @@ extension CoupleService: TargetType{
             return .patch
             
         case .buyStamp:
+            return .get
+            
+        case .getUserInfo:
             return .get
         }
         
@@ -109,6 +117,9 @@ extension CoupleService: TargetType{
             
         case .buyStamp:
             return Task.requestPlain
+            
+        case .getUserInfo:
+            return Task.requestPlain
         }
     }
     
@@ -134,6 +145,9 @@ extension CoupleService: TargetType{
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
             
         case .buyStamp:
+            return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
+            
+        case .getUserInfo:
             return [ "X-ACCESS-TOKEN" : KeychainWrapper.standard.string(forKey: "X-ACCESS-TOKEN") ?? "" ]
         }
     }

@@ -14,7 +14,9 @@
 
 import Foundation
 
-///:nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public class Hosts {
     public static let shared = Hosts()
     
@@ -28,6 +30,8 @@ public class Hosts {
     public let talkLinkVersion : String
     public let sharerLink : String
     public let universalLink : String
+    public let cert : String
+    public let plusFriend: String
     
     public init(kapi: String = "kapi.kakao.com",
                 dapi: String = "dapi.kakao.com",
@@ -38,7 +42,9 @@ public class Hosts {
                 talkLink: String = "kakaolink",
                 talkLinkVersion: String = "kakaotalk-5.9.7",
                 sharerLink: String = "sharer.kakao.com",
-                universalLink: String = "talk-apps.kakao.com")
+                universalLink: String = "talk-apps.kakao.com",
+                cert: String = "cert-sign-papi.kakao.com",
+                plusFriend: String = "kakaoplus")
     {
         self.kapi = kapi
         self.dapi = dapi
@@ -50,10 +56,14 @@ public class Hosts {
         self.talkLinkVersion = talkLinkVersion
         self.sharerLink = sharerLink
         self.universalLink = universalLink
+        self.cert = cert
+        self.plusFriend = plusFriend
     }
 }
 
-///:nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public enum HostType {
     case Kapi
     case Dapi
@@ -67,6 +77,8 @@ public enum HostType {
     case TalkLinkVersion
     case SharerLink
     case UniversalLink
+    case Cert
+    case PlusFriend
     
     public var host: String {
         switch self {
@@ -94,14 +106,21 @@ public enum HostType {
             return "https://\(KakaoSDK.shared.hosts().sharerLink)"
         case .UniversalLink:
             return "https://\(KakaoSDK.shared.hosts().universalLink)"
+        case .Cert:
+            return "http://\(KakaoSDK.shared.hosts().cert)"
+        case .PlusFriend:
+            return "\(KakaoSDK.shared.hosts().plusFriend)://"
         }
     }
 }
 
-///:nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public class Paths {
     //kauth
     public static let authAuthorize = "/oauth/authorize"
+    public static let authPrepare = "/oauth/authorize/prepare"
     public static let authToken = "/oauth/token"
     public static let authAgt = "/api/agt"
     
@@ -118,16 +137,20 @@ public class Paths {
     public static let userLogout = "/v1/user/logout"
     public static let userUnlink = "/v1/user/unlink"
     public static let userShippingAddress = "/v1/user/shipping_address"
-    public static let userServiceTerms = "/v1/user/service/terms"
+    public static let userServiceTerms = "/v2/user/service_terms"
     public static let userScopes = "/v2/user/scopes"
     public static let userRevokeScopes = "/v2/user/revoke/scopes"
+    public static let userRevokeServiceTerms = "/v2/user/revoke/service_terms"
     
     //talk
     public static let talkProfile = "/v1/api/talk/profile"
     public static let customMemo = "/v2/api/talk/memo/send"
     public static let defaultMemo = "/v2/api/talk/memo/default/send"
     public static let scrapMemo = "/v2/api/talk/memo/scrap/send"    
-    public static let channels = "/v1/api/talk/channels"
+    public static let channels = "/v2/api/talk/channels"
+    
+    // plusfriend
+    public static let channelValidate = "/v1/app/validate/sdk"
     
     public static let friends = "/v1/api/talk/friends"
     
@@ -137,7 +160,7 @@ public class Paths {
     
     //friend
     public static let selectFriends = "/v1/friends/sdk"
-    public static let userScpoes = "/v2/user/scopes/sdk"
+    public static let sdkUserScopes = "/v2/user/scopes/sdk"
     
     public static let selectChats = "/v1/api/talk/chat/list/sdk"
     public static let selectChatMembers = "/v1/api/talk/members/sdk"
@@ -180,10 +203,24 @@ public class Paths {
     public static let universalLink = "/scheme"
     
     //search
-    public static let searchCafe = "/v2/search/cafe"
+    public static let searchCafe = "/v2/search/cafe"    
+    
+    //kakaocert
+    public static let sessionInfo = "/v1/api/cert/sign/session_info"
+    
+    //kakaocert demo(임시 이용기관)
+    public static let demoLogin = "/k2220/login"
+    public static let demoVerify = "/k2220/verify"
+    public static let demoSign = "/k2220/sign"
+    public static let demoSignTest = "/k2220/sign/temp"
+
+    //token refresher
+    public static let checkAccessToken = "/v1/user/check_access_token"
 }
 
-///:nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 public class Urls {
     public static func compose(_ hostType:HostType = .Kapi, path:String) -> String {
         return "\(hostType.host)\(path)"

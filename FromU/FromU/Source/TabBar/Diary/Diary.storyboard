@@ -10,9 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Cafe24SsurroundAir.ttf">
-            <string>Cafe24Ssurroundair</string>
-        </array>
         <array key="Pretendard-Regular.otf">
             <string>Pretendard-Regular</string>
         </array>
@@ -41,30 +38,132 @@
                                     <action selector="didTapAddDiaryBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="YsH-Ed-pcb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-MK-Icl">
-                                <rect key="frame" x="128" y="429" width="136" height="38"/>
-                                <string key="text">아직 일기장이 없어!
-하나 추가해 볼까?</string>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="16"/>
-                                <color key="textColor" name="text-disabled"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QMr-MK-Icl">
+                                <rect key="frame" x="128" y="429" width="153.33333333333337" height="51.666666666666686"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="아직">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="일기장이">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="없어">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content">!
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="하나">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="추가해">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="볼까">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="?">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="d27-lI-qns">
-                                <rect key="frame" x="16" y="119" width="132" height="25"/>
+                                <rect key="frame" x="15.999999999999996" y="119" width="42.666666666666657" height="25"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-kF-q68">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="25"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rlg-kF-q68">
+                                        <rect key="frame" x="0.0" y="0.0" width="5.333333333333333" height="25"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icn_heart_fill" translatesAutoresizingMaskIntoConstraints="NO" id="yGO-vt-3WW">
-                                        <rect key="frame" x="54" y="0.0" width="24" height="25"/>
+                                        <rect key="frame" x="9.3333333333333321" y="0.0" width="23.999999999999996" height="25"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-za-79A">
-                                        <rect key="frame" x="82" y="0.0" width="50" height="25"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bHa-za-79A">
+                                        <rect key="frame" x="37.333333333333336" y="0.0" width="5.3333333333333357" height="25"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -72,25 +171,64 @@
                                     <constraint firstAttribute="height" constant="25" id="9lR-vV-TXr"/>
                                 </constraints>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-RQ-M5O">
-                                <rect key="frame" x="16" y="148" width="157.66666666666666" height="28"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="ppQ-RQ-M5O">
+                                <rect key="frame" x="16" y="148" width="152.66666666666666" height="28"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사랑한 지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7c5-Gn-JTM">
-                                        <rect key="frame" x="0.0" y="0.0" width="82" height="28"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7c5-Gn-JTM">
+                                        <rect key="frame" x="0.0" y="0.0" width="77" height="28"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="사랑한">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="지">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="    " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8n-X7-Y2Z">
-                                        <rect key="frame" x="86" y="0.0" width="23.666666666666671" height="28"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x8n-X7-Y2Z">
+                                        <rect key="frame" x="84" y="0.0" width="21.333333333333329" height="28"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="    ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일 째" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51c-kA-pEK">
-                                        <rect key="frame" x="113.66666666666666" y="0.0" width="44" height="28"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="51c-kA-pEK">
+                                        <rect key="frame" x="112.33333333333333" y="0.0" width="40.333333333333329" height="28"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="일">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="째">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -99,53 +237,159 @@
                                 </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="_toolip" translatesAutoresizingMaskIntoConstraints="NO" id="uV3-fh-Aib">
-                                <rect key="frame" x="22" y="169" width="195" height="54"/>
+                                <rect key="frame" x="14" y="169" width="195" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="5Lk-JE-Cbv"/>
                                     <constraint firstAttribute="width" constant="195" id="FAd-wq-FsP"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="처음 만난 날을 설정해주세요!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-BE-r7M">
-                                <rect key="frame" x="44" y="193" width="151" height="14.333333333333343"/>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="12"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyJ-BE-r7M">
+                                <rect key="frame" x="38.333333333333329" y="190" width="146.66666666666669" height="16.666666666666657"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="처음">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="만난">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="날을">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="설정해주세요">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="!">
+                                        <attributes>
+                                            <font key="NSFont" size="14" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-VW-VnY">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WOS-VW-VnY">
                                 <rect key="frame" x="16" y="689" width="361" height="56"/>
                                 <color key="backgroundColor" red="0.8860861659" green="0.86039632560000001" blue="0.99910837409999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="tkg-9R-uZU"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="일기장 전송하기">
-                                    <color key="titleColor">
-                                        <string key="name" base64-UTF8="YES">
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="일기장">
+                                            <attributes>
+                                                <color key="NSColor">
+                                                    <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
 </string>
-                                    </color>
+                                                </color>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor">
+                                                    <string key="name" base64-UTF8="YES">
+cHJpbWFyeQhTZWNvbmQ
+</string>
+                                                </color>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="전송하기">
+                                            <attributes>
+                                                <color key="NSColor">
+                                                    <string key="name" base64-UTF8="YES">
+cHJpbWFyeQhTZWNvbmQ
+</string>
+                                                </color>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="didTapSendBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Bks-sr-uwd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-JG-C1T">
-                                <rect key="frame" x="151" y="691" width="91" height="22"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qcb-JG-C1T">
+                                <rect key="frame" x="137" y="691" width="119" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="Hdo-kp-kbc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="띵동! 벨 울리기">
+                                <state key="normal">
                                     <attributedString key="attributedTitle">
-                                        <fragment content="띵동! 벨 울리기">
+                                        <fragment content="띵동">
                                             <attributes>
-                                                <font key="NSFont" metaFont="system" size="15"/>
+                                                <color key="NSColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="! ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="벨">
+                                            <attributes>
+                                                <color key="NSColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content=" ">
+                                            <attributes>
+                                                <color key="NSColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            </attributes>
+                                        </fragment>
+                                        <fragment content="울리기">
+                                            <attributes>
+                                                <color key="NSColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" size="15" name="HelveticaNeue"/>
                                             </attributes>
                                         </fragment>
                                     </attributedString>
-                                    <color key="titleColor" red="0.78910070659999998" green="0.51159411669999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="didTapPokeBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7Nq-EN-R0D"/>
@@ -154,22 +398,135 @@ cHJpbWFyeQhTZWNvbmQ
                             <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GxT-Gp-f9i">
                                 <rect key="frame" x="66" y="257" width="261" height="362"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-eM-P2T">
-                                <rect key="frame" x="108.33333333333333" y="512.66666666666663" width="176.33333333333337" height="33.333333333333371"/>
-                                <string key="text">지금은 나에게 일기장이 없어 
-은다에게 벨을 울려볼까?</string>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
-                                <color key="textColor" name="text-disabled"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lbL-eM-P2T">
+                                <rect key="frame" x="82.666666666666686" y="494.33333333333331" width="228" height="51.666666666666686"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="지금은">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="나에게">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="일기장이">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="없어">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment>
+                                        <string key="content" base64-UTF8="YES">
+IAo
+</string>
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="은다에게">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="벨을">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="울려볼까">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="?">
+                                        <attributes>
+                                            <color key="NSColor" name="text-disabled"/>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="추억기록장" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Jn-Ttd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="leO-Jn-Ttd">
                                 <rect key="frame" x="128" y="293" width="176" height="48"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="48" id="3qT-ga-5rW"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
-                                <nil key="textColor"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="추억기록장">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Frame 2608812" translatesAutoresizingMaskIntoConstraints="NO" id="oSX-Vl-Cdg">
@@ -215,16 +572,16 @@ cHJpbWFyeQhTZWNvbmQ
                             <constraint firstItem="Sgz-hT-K82" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Lhn-d3-nB0"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="oSX-Vl-Cdg" secondAttribute="trailing" constant="58" id="Ool-QQ-ggi"/>
                             <constraint firstItem="GxT-Gp-f9i" firstAttribute="trailing" secondItem="leO-Jn-Ttd" secondAttribute="trailing" constant="23" id="Ora-Wt-a3z"/>
+                            <constraint firstItem="vyJ-BE-r7M" firstAttribute="centerX" secondItem="uV3-fh-Aib" secondAttribute="centerX" id="Tm2-bX-EFn"/>
                             <constraint firstItem="QMr-MK-Icl" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="128" id="Vya-zZ-VpE"/>
-                            <constraint firstItem="vyJ-BE-r7M" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="top" constant="24" id="WZ8-Dt-cw3"/>
+                            <constraint firstItem="vyJ-BE-r7M" firstAttribute="top" secondItem="uV3-fh-Aib" secondAttribute="top" constant="21" id="WZ8-Dt-cw3"/>
                             <constraint firstItem="d27-lI-qns" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="16" id="XbF-ez-JU7"/>
                             <constraint firstItem="leO-Jn-Ttd" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="top" constant="36" id="XlJ-9n-bvg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="WOS-VW-VnY" secondAttribute="trailing" constant="16" id="ZEx-Wl-XFO"/>
                             <constraint firstItem="1HK-SL-qXK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="ZFq-fc-QrB"/>
                             <constraint firstItem="WOS-VW-VnY" firstAttribute="top" secondItem="GxT-Gp-f9i" secondAttribute="bottom" constant="70" id="Zge-Vh-Buz"/>
-                            <constraint firstItem="uV3-fh-Aib" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="22" id="bhL-32-AsP"/>
+                            <constraint firstItem="uV3-fh-Aib" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="14" id="bhL-32-AsP"/>
                             <constraint firstItem="Sgz-hT-K82" firstAttribute="top" secondItem="ppQ-RQ-M5O" secondAttribute="bottom" constant="55" id="eFb-LJ-5us"/>
-                            <constraint firstItem="uV3-fh-Aib" firstAttribute="trailing" secondItem="vyJ-BE-r7M" secondAttribute="trailing" constant="22" id="faR-0p-gL4"/>
                             <constraint firstItem="GxT-Gp-f9i" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="66" id="kQw-PV-C2m"/>
                             <constraint firstItem="GxT-Gp-f9i" firstAttribute="top" secondItem="ppQ-RQ-M5O" secondAttribute="bottom" constant="81" id="nMJ-E4-6mp"/>
                             <constraint firstItem="Qcb-JG-C1T" firstAttribute="top" secondItem="VYa-Gv-VQl" secondAttribute="bottom" constant="19" id="rvS-16-gLm"/>
@@ -349,27 +706,133 @@ cHJpbWFyeQhTZWNvbmQ
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KHf-R3-UhT">
                                 <rect key="frame" x="28" y="308" width="337" height="180"/>
                                 <subviews>
-                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="783-zr-ruX">
+                                    <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="783-zr-ruX">
                                         <rect key="frame" x="24" y="102" width="289" height="48"/>
                                         <color key="backgroundColor" name="primaryFirst"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="48" id="aje-cU-jHc"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="14"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                        <state key="normal" title="알겠어">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal">
+                                            <attributedString key="attributedTitle">
+                                                <fragment content="알겠어">
+                                                    <attributes>
+                                                        <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <font key="NSFont" size="18" name="777Balsamtint"/>
+                                                        <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                         </state>
                                         <connections>
                                             <action selector="didTapChangeBtn:" destination="qcT-3g-h3n" eventType="touchUpInside" id="8fv-tJ-4mX"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-dV-Zxp">
-                                        <rect key="frame" x="24" y="23.999999999999996" width="289" height="42.666666666666657"/>
-                                        <string key="text">일기를 작성하지 않으면 
-상대방에게 일기를 보낼 수 없어</string>
-                                        <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="18"/>
-                                        <nil key="textColor"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U2J-dV-Zxp">
+                                        <rect key="frame" x="24" y="23.999999999999996" width="289" height="51.666666666666657"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="일기를">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="작성하지">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="않으면">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment>
+                                                <string key="content" base64-UTF8="YES">
+IAo
+</string>
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="상대방에게">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="일기를">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="보낼">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="수">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content=" ">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                            <fragment content="없어">
+                                                <attributes>
+                                                    <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                    <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -411,17 +874,72 @@ cHJpbWFyeQhTZWNvbmQ
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연인과 처음 만난 날을 알려줘!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-om-lC3">
-                                <rect key="frame" x="16" y="138" width="257.66666666666669" height="23.666666666666657"/>
-                                <fontDescription key="fontDescription" name="Cafe24Ssurroundair" family="Cafe24 Ssurround air" pointSize="20"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lK7-om-lC3">
+                                <rect key="frame" x="15.999999999999986" y="138" width="235.66666666666663" height="26"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="연인과">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="처음">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="만난">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="날을">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content=" ">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="알려줘">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                            <font key="NSOriginalFont" metaFont="system" size="17"/>
+                                        </attributes>
+                                    </fragment>
+                                    <fragment content="!">
+                                        <attributes>
+                                            <font key="NSFont" size="22" name="777Balsamtint"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="00r-71-miE">
-                                <rect key="frame" x="120.66666666666667" y="281.66666666666669" width="151.66666666666663" height="22"/>
+                                <rect key="frame" x="108.33333333333333" y="284" width="176.66666666666669" height="22"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="YYYY" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="MX6-W0-G16">
-                                        <rect key="frame" x="0.0" y="0.0" width="50" height="22"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="22"/>
                                         <color key="tintColor">
                                             <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
@@ -429,19 +947,19 @@ cHJpbWFyeQhTZWNvbmQ
                                         </color>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="hC4-eh-tOc"/>
-                                            <constraint firstAttribute="width" constant="50" id="mnc-7h-7Ea"/>
+                                            <constraint firstAttribute="width" constant="60" id="mnc-7h-7Ea"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SaV-di-Q9h">
-                                        <rect key="frame" x="55.999999999999986" y="0.0" width="6.3333333333333357" height="22"/>
+                                        <rect key="frame" x="66.000000000000014" y="0.0" width="6.3333333333333286" height="22"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                         <color key="textColor" name="text-disabled"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="MM" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FHN-mr-T2W">
-                                        <rect key="frame" x="68.333333333333329" y="0.0" width="35" height="22"/>
+                                        <rect key="frame" x="78.333333333333329" y="0.0" width="40" height="22"/>
                                         <color key="tintColor">
                                             <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
@@ -449,19 +967,19 @@ cHJpbWFyeQhTZWNvbmQ
                                         </color>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="0RP-TQ-hJ6"/>
-                                            <constraint firstAttribute="width" constant="35" id="W7h-Bg-HJg"/>
+                                            <constraint firstAttribute="width" constant="40" id="W7h-Bg-HJg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI8-rj-L04">
-                                        <rect key="frame" x="109.33333333333333" y="0.0" width="6.3333333333333286" height="22"/>
+                                        <rect key="frame" x="124.33333333333333" y="0.0" width="6.3333333333333286" height="22"/>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                         <color key="textColor" name="text-disabled"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="DD" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pch-St-Mz6">
-                                        <rect key="frame" x="121.66666666666669" y="0.0" width="30" height="22"/>
+                                        <rect key="frame" x="136.66666666666669" y="0.0" width="40" height="22"/>
                                         <color key="tintColor">
                                             <string key="name" base64-UTF8="YES">
 cHJpbWFyeQhTZWNvbmQ
@@ -469,30 +987,38 @@ cHJpbWFyeQhTZWNvbmQ
                                         </color>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="jGE-1F-jeU"/>
-                                            <constraint firstAttribute="width" constant="30" id="ySR-j2-T6n"/>
+                                            <constraint firstAttribute="width" constant="40" id="ySR-j2-T6n"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="18"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caV-U8-fOD">
-                                <rect key="frame" x="16" y="682" width="361" height="56"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="caV-U8-fOD">
+                                <rect key="frame" x="16" y="738" width="361" height="56"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.94509804249999996" blue="0.9529411793" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="tWd-I3-7bo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Pretendard-Regular" family="Pretendard" pointSize="16"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" title="다음">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="완료">
+                                            <attributes>
+                                                <color key="NSColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <font key="NSFont" size="22" name="777Balsamtint"/>
+                                                <font key="NSOriginalFont" metaFont="system" size="15"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
                                 </state>
                                 <connections>
                                     <action selector="didTapNextBtn:" destination="rHd-bt-Z8r" eventType="touchUpInside" id="Pmt-cP-igY"/>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iGA-ac-3CZ">
-                                <rect key="frame" x="16" y="309.66666666666669" width="361" height="1"/>
+                                <rect key="frame" x="16" y="312" width="361" height="1"/>
                                 <color key="backgroundColor" name="disabled"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="Q0h-qN-1wW"/>
@@ -502,7 +1028,7 @@ cHJpbWFyeQhTZWNvbmQ
                         <viewLayoutGuide key="safeArea" id="HUH-5g-0g2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HUH-5g-0g2" firstAttribute="bottom" secondItem="caV-U8-fOD" secondAttribute="bottom" constant="80" id="1Vs-gU-KNK"/>
+                            <constraint firstAttribute="bottom" secondItem="caV-U8-fOD" secondAttribute="bottom" constant="58" id="1Vs-gU-KNK"/>
                             <constraint firstItem="iGA-ac-3CZ" firstAttribute="leading" secondItem="HUH-5g-0g2" secondAttribute="leading" constant="16" id="1pb-3B-QUG"/>
                             <constraint firstItem="00r-71-miE" firstAttribute="centerX" secondItem="nIV-Tj-a9C" secondAttribute="centerX" id="9jU-aw-wcf"/>
                             <constraint firstItem="lK7-om-lC3" firstAttribute="leading" secondItem="HUH-5g-0g2" secondAttribute="leading" constant="16" id="Ja4-En-OKo"/>

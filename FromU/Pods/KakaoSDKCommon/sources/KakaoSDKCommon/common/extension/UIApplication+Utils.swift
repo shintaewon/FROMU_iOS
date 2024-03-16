@@ -15,7 +15,9 @@
 import Foundation
 import UIKit
 
-///:nodoc:
+#if swift(>=5.8)
+@_documentation(visibility: private)
+#endif
 extension UIApplication {
     @available(iOSApplicationExtension, unavailable)
     public class func getMostTopViewController(base: UIViewController? = nil) -> UIViewController? {
@@ -25,15 +27,7 @@ extension UIApplication {
             baseVC = base
         }
         else {
-            if #available(iOS 13, *) {
-                baseVC = (UIApplication.shared.connectedScenes
-                            .compactMap { $0 as? UIWindowScene }
-                            .flatMap { $0.windows }
-                            .first { $0.isKeyWindow })?.rootViewController
-            }
-            else {
-                baseVC = UIApplication.shared.keyWindow?.rootViewController
-            }
+            baseVC = UIApplication.sdkKeyWindow()?.rootViewController
         }
         
         if let naviController = baseVC as? UINavigationController {
@@ -46,5 +40,14 @@ extension UIApplication {
             return getMostTopViewController(base: presented)
         }
         return baseVC
+    }
+    
+    @available(iOSApplicationExtension, unavailable)
+    public class func sdkKeyWindow() -> UIWindow?
+    {
+        return UIApplication.shared.connectedScenes
+                .compactMap { $0 as? UIWindowScene }
+                .flatMap { $0.windows }
+                .last { $0.isKeyWindow }
     }
 }

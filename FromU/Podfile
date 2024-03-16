@@ -18,7 +18,9 @@ pod 'FSCalendar'
 pod 'Kingfisher'
 pod 'lottie-ios'
 pod 'AdvancedPageControl'
-
+pod 'Firebase/Analytics'
+pod 'Firebase/Messaging'
+pod 'DropDown'
   # Pods for FromU
   target 'FromUTests' do
     inherit! :search_paths

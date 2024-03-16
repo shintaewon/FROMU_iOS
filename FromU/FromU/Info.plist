@@ -61,6 +61,11 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
 	<key>item 10</key>
 	<string>Fonts/Cafe24SsurroundAir.ttf</string>
 	<key>item 11</key>
